@@ -1,0 +1,102 @@
+﻿FilePath
+\Program Files\cmak
+\Program Files\Common Files\
+\Program Files\Internet Explorer\
+\Program Files\NetMeeting\
+\Program Files\Outlook Express\
+\Program Files\Symantec\
+\Program Files\Windows Media Player\
+\Program Files\Windows NT\
+\ProgramData\Package Cache
+\Program Files (x86)\Windows NT
+\Program Files (x86)\Realtek
+\Program Files (x86)\Microsoft SDKs
+\Program Files\Realtek 
+\Program Files\Synaptics 
+\Program Files\Microsoft SQL Server\80\COM\distrib.exe
+\Program Files\Microsoft SQL Server\80\COM\dw15.exe
+\Program Files\Microsoft SQL Server\80\COM\logread.exe
+\Program Files\Microsoft SQL Server\80\COM\qrdrsvc.exe
+\Program Files\Microsoft SQL Server\80\COM\replmerg.exe
+\Program Files\Microsoft SQL Server\80\COM\snapshot.exe
+\Program Files\Microsoft SQL Server\80\COM\sqldumper.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\Backup\0818\osql.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\Backup\0818\svrnetcn.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\bcp.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\cdw.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\cnfgsvr.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\dcomscm.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\dtsrun.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\dtsrunui.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\dtswiz.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\isql.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\isqlw.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\itwiz.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\odbccmpt.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\osql.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\profiler.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\rebuildm.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\scm.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\sqladhlp.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\sqlftwiz.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\sqlmangr.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\svrnetcn.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\uncol.exe
+\Program Files\Microsoft SQL Server\80\Tools\Binn\wiztrace.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\cmdwrap.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\console.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\ftsetup.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\replupd.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\sqlagent.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\sqldiag.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\sqlmaint.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\sqlservr.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\sqlstbss.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\textcopy.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\vswitch.exe
+\Program Files\Microsoft SQL Server\MSSQL\Binn\xpadsi.exe
+\Program Files\Microsoft SQL Server\MSSQL\Upgrade\
+\Program Files\Microsoft SQL Server\MSSQL\Install\
+\Program Files\Microsoft SQL Server\MSSQL\100\Setup Bootstrap\
+\Program Files\Microsoft SQL Server\MSSQL\110\DAC\bin\DacUnpack.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DAC\bin\SqlPackage.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\DataProfileViewer.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\DTExec.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\DtsDebugHost.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\dtshost.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\dtsinstall.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\DTSWizard.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\dtutil.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\ISDeploymentWizard.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\ISProjectWizard.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\ISServerExec.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\DTS\Binn\SSISUpgrade.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Setup Bootstrap\
+\Program Files\Microsoft SQL Server\MSSQL\110\Shared\SqlDumper.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Shared\sqlsqm.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Shared\SqlWtsn.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\DQ\DataQualityServices.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\DQ\dumpbin.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\DQ\link.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\DReplay.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\DTA.EXE
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\dtadbxfer.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\dtaengine.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\DTASHELL.EXE
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\ManagementStudio\ConflictViewer.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\ManagementStudio\ControlService.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\ManagementStudio\CopyDatabaseWizard.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\ManagementStudio\DatabaseMailWizard.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\ManagementStudio\DTExecUI.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\ManagementStudio\Microsoft.AnalysisServices.Deployment.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\ManagementStudio\Ssms.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\PROFILER.EXE
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\rs.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\rsconfig.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\RSConfigTool.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\RSKeyMgmt.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\sqlmonitor.exe
+\Program Files\Microsoft SQL Server\MSSQL\110\Tools\Binn\SQLPS.exe
+\Program Files\Microsoft SQL Server\MSSQL\80\Tools\Binn\DTSRun.exe
+\Program Files\Microsoft SQL Server\MSSQL\90\Shared\sqlbrowser.exe
+\Program Files (x86)\Microsoft\SQL Server\110\Tools\

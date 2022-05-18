@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StepConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Check">
+
+	<step name="Valida Conectividad" type="TestConnectivity" params="IgnoreSourceSysadminError=True" flag="!noEsSysAdmin"  />
+	<step name="Compara Estructura de servidor" type="commandLine" params="MetadataCompare &quot;%source%&quot; master &quot;%sourceUser%&quot; &quot;%sourcePass%&quot; &quot;%target%&quot; &quot;master&quot; &quot;%targetUser%&quot; &quot;%targetPass%&quot; logs\Check" /> 
+	<step name="Compara Estructura de bases de datos" type="commandLine" params="MetadataCompare &quot;%source%&quot; &quot;%sourceDb%&quot; &quot;%sourceUser%&quot; &quot;%sourcePass%&quot; &quot;%target%&quot; &quot;%targetDb%&quot; &quot;%targetUser%&quot; &quot;%targetPass%&quot; logs\Check" /> 
+	<step name="Compara Procedimientos y Funciones" type="commandLine" params="SpCompare &quot;%source%&quot; &quot;%sourceDb%&quot; &quot;%sourceUser%&quot; &quot;%sourcePass%&quot; &quot;%target%&quot; &quot;%targetDb%&quot; &quot;%targetUser%&quot; &quot;%targetPass%&quot; true logs\Check &quot;Scripts\[%db%]&quot;" />
+	<step name="Generar Resumen de logs" type="commandLine" params="SqlLogReader.exe logs\Check" />
+</StepConfiguration>
