@@ -1,0 +1,17 @@
+﻿[core].[snapshot_timetable_internal].[IDX_snapshot_time].sql                                                                                                    	       89	      176
+[core].[snapshots_internal].[IDX_snapshot_time_id].sql                                                                                                          	      348	      192
+[core].[source_info_internal].[UQ_collection_set_uid_instance_name].sql                                                                                         	      640	      251
+[snapshots].[active_sessions_and_requests].[IDX_blocking_session_id].sql                                                                                        	      992	      194
+[snapshots].[active_sessions_and_requests].[IDX_collection_time].sql                                                                                            	     1283	      186
+[snapshots].[notable_query_plan].[IDX_notable_query_plan_plan_handle].sql                                                                                       	     1571	      291
+[snapshots].[os_wait_stats].[IDX_os_wait_stats1].sql                                                                                                            	     1943	      243
+[snapshots].[os_wait_stats].[IDX_os_wait_stats2].sql                                                                                                            	     2267	      191
+[snapshots].[performance_counter_instances].[IDX_performance_counter_instances1].sql                                                                            	     2571	      220
+[snapshots].[performance_counter_instances].[UN_performance_counter_path].sql                                                                                   	     2897	      202
+[snapshots].[performance_counter_values].[IDX_performance_counter_values1].sql                                                                                  	     3206	      290
+[snapshots].[sysutility_ucp_cpu_memory_conf].[NCI_sysutility_ucp_c#E2C2C7D9D8C93ED08AAFEF2B77313FF0].sql                                                        	     3629	      237
+[snapshots].[sysutility_ucp_dac_collected_e].[NCI_sysutility_ucp_d#6ABCDC1F26CC13C6C932D4C5BDC91627].sql                                                        	     3999	      255
+[snapshots].[sysutility_ucp_smo_properties_internal].[NCI_sysutility_ucp_smo_properties_internal].sql                                                           	     4384	      215
+[snapshots].[sysutility_ucp_volumes_internal].[NCI_sysutility_ucp_volumes_internal].sql                                                                         	     4715	      201
+[snapshots].[trace_data].[IDX_trace_data_StartTime_EventClass].sql                                                                                              	     5011	      198
+[snapshots].[trace_data].[IDX_trace_data_trace_info_id].sql                                                                                                     	     5297	      175

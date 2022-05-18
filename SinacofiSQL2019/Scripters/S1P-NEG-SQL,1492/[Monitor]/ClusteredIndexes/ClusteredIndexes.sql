@@ -1,0 +1,40 @@
+
+GO
+--SqlScripter----[dbo].[Ft3trace].[PK__Ft3trace__AAAC09D848E2B0DC].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[Ft3trace] ADD CONSTRAINT [PK__Ft3trace__AAAC09D848E2B0DC] PRIMARY KEY CLUSTERED (
+	[RowNumber] ASC
+) ON [PRIMARY]
+
+GO
+--SqlScripter----[dbo].[LoginFailed20080722].[PK__LoginFailed20080__625A9A57].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[LoginFailed20080722] ADD CONSTRAINT [PK__LoginFailed20080__625A9A57] PRIMARY KEY CLUSTERED (
+	[RowNumber] ASC
+) ON [PRIMARY]
+
+GO
+--SqlScripter----[dbo].[tblLoginFailed20080722].[PK__tblLoginFailed20__607251E5].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[tblLoginFailed20080722] ADD CONSTRAINT [PK__tblLoginFailed20__607251E5] PRIMARY KEY CLUSTERED (
+	[RowNumber] ASC
+) ON [PRIMARY]
+
+GO
+--SqlScripter----[dbo].[tblLoginFailedByProfiler].[PK__tblLoginFailedBy__5BAD9CC8].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[tblLoginFailedByProfiler] ADD CONSTRAINT [PK__tblLoginFailedBy__5BAD9CC8] PRIMARY KEY CLUSTERED (
+	[RowNumber] ASC
+) ON [PRIMARY]

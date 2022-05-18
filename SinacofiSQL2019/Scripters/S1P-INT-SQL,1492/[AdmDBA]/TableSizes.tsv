@@ -1,0 +1,5 @@
+Schema	TableName	Rows	Reserve Space	Space Used	Index Space Used	Unused Space	Type	Blob Columns
+dbo	sysdiagrams	0	0	0	0	0	Heap	1
+dbo	tb_drives	6	73728	8192	8192	57344	Heap	0
+dbo	TEMPORAL	87	139264	16384	8192	114688	Heap	0
+dbo	tmp_drives	10	73728	8192	8192	57344	Heap	0

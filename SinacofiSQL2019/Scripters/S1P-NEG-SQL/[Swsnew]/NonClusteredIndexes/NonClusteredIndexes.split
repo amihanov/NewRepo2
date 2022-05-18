@@ -1,0 +1,5 @@
+﻿[dbo].[AdminLogs].[idx_AdminLogs_LogTime].sql                                                                                                                   	       74	      155
+[dbo].[Entidades].[idx_Entidades_EntId].sql                                                                                                                     	      301	      151
+[dbo].[ProfileMenu].[idx_ProfileMenu_nEntId].sql                                                                                                                	      529	      156
+[dbo].[TiposTransaccion].[idx_TiposTransaccion_CodTran].sql                                                                                                     	      773	      169
+[dbo].[Usuarios].[idx_Usuarios_UserNamed].sql                                                                                                                   	     1016	      156

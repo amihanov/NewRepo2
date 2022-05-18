@@ -1,0 +1,7 @@
+﻿[dbo].[MenuTree2].sql                                                                                                                                           	       50	      433
+[dbo].[ProfMenu2].sql                                                                                                                                           	      533	      607
+[dbo].[spCsuEntidadesPorOwner].sql                                                                                                                              	     1203	     1376
+[dbo].[spCsuUsuario].sql                                                                                                                                        	     2632	     1071
+[dbo].[spEliminaCurrentUser].sql                                                                                                                                	     3764	     1079
+[dbo].[spInsCurrentUser].sql                                                                                                                                    	     4900	     1319
+[dbo].[spInsUsuario].sql                                                                                                                                        	     6272	     1206

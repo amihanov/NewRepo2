@@ -1,0 +1,25 @@
+﻿Name                       : intercajas
+Id                         : 6
+Compatibility Level        : 140
+Recovery Model             : 
+Collation                  : SQL_Latin1_General_CP1_CI_AS
+Offline                    : False
+Read Only                  : False
+Dbo Use Only               : False
+Single User                : False
+Creation Date              : 07/01/2020 14:45:36
+Active Connections         : 0
+Last Backup Size           : 11403076608
+Last Backup Size Change    : 05/01/2022 00:11:51
+Database Files Size        : 0
+Log Files Size             : 0
+Table Size                 : 0
+Rows                       : 0
+Tables                     : 0
+Tables > 500 MB            : 0
+Tables >500 MB With Blobs  : 0
+Stored Procedures          : 0
+Functions                  : 0
+Views                      : 0
+Triggers                   : 0
+Extended Stored Procedures : 0

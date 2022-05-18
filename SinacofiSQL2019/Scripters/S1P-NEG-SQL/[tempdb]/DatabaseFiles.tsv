@@ -1,0 +1,10 @@
+Name	File Name	File Size	File Group Name	MaxSize	Growth	Is Growth Percentage	Is Disk	Is Log
+tempdev	H:\TEMPDB_A\tempdb.mdf	268435456	PRIMARY	-1	8192	False	True	False
+templog	H:\TEMPDB_A\templog.ldf	134217728		-1	8192	False	False	True
+temp2	H:\TEMPDB_A\tempdb_mssql_2.ndf	268435456	PRIMARY	-1	8192	False	True	False
+temp3	H:\TEMPDB_A\tempdb_mssql_3.ndf	268435456	PRIMARY	-1	8192	False	True	False
+temp4	H:\TEMPDB_A\tempdb_mssql_4.ndf	268435456	PRIMARY	-1	8192	False	True	False
+temp5	H:\TEMPDB_A\tempdb_mssql_5.ndf	268435456	PRIMARY	-1	8192	False	True	False
+temp6	H:\TEMPDB_A\tempdb_mssql_6.ndf	268435456	PRIMARY	-1	8192	False	True	False
+temp7	H:\TEMPDB_A\tempdb_mssql_7.ndf	268435456	PRIMARY	-1	8192	False	True	False
+temp8	H:\TEMPDB_A\tempdb_mssql_8.ndf	268435456	PRIMARY	-1	8192	False	True	False

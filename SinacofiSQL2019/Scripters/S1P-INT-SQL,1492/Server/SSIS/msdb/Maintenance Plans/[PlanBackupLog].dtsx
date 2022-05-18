@@ -1,0 +1,209 @@
+<?xml version="1.0"?><DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:refId="Package" DTS:CreationDate="7/22/2019 2:58:01 PM" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="S1P-INT-SQL" DTS:CreatorName="SKYLAB\nhuenul" DTS:DTSID="{7A05AFB5-62FB-43CB-AFD7-130656178608}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="15.0.1301.438" DTS:LocaleID="13322" DTS:ObjectName="PlanBackupLog" DTS:PackageType="6" DTS:ProtectionLevel="5" DTS:VersionBuild="10" DTS:VersionGUID="{9DB93958-1A51-4E0F-B35F-3F029E429CEE}">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[Local server connection]" DTS:CreationName="ADO.NET:SQL" DTS:DTSID="{B9630F1D-21ED-460A-A86E-69833B0A5E36}" DTS:ObjectName="Local server connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:ConnectionString="Data Source=S1P-INT-SQL;Integrated Security=True;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Packet Size=4096;Application Name=&quot;Microsoft SQL Server Management Studio&quot;;"/>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{44F44F5C-4277-4F3A-A3A9-7348DFFA5135}" DTS:IncludeInDebugDump="2345" DTS:Namespace="global" DTS:ObjectName="EmailReportToOperator">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{8EBDE67B-1446-4A0B-9846-C9176BF45F10}" DTS:IncludeInDebugDump="6789" DTS:Namespace="global" DTS:ObjectName="ExtendedLogging">
+      <DTS:VariableValue DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{2F54347B-4F2F-4163-AA5E-C31DEE71F95E}" DTS:IncludeInDebugDump="6789" DTS:Namespace="global" DTS:ObjectName="GenerateEmailReport">
+      <DTS:VariableValue DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{0FDB3FC2-D4B9-43B8-A22A-B72EA8BAAF55}" DTS:IncludeInDebugDump="6789" DTS:Namespace="global" DTS:ObjectName="GenerateTextReport">
+      <DTS:VariableValue DTS:DataType="11">-1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{C565B025-9EAE-4407-8A6B-67CB4C51AE76}" DTS:IncludeInDebugDump="2345" DTS:Namespace="global" DTS:ObjectName="LocalConnectionForReportingAndLogging">
+      <DTS:VariableValue DTS:DataType="8">Local server connection</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{F3F50A36-343A-48F4-8243-2EC32D4F91FA}" DTS:IncludeInDebugDump="6789" DTS:Namespace="global" DTS:ObjectName="LogRemote">
+      <DTS:VariableValue DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{F6A18040-7E6A-42C1-BE08-00FDA78F1E57}" DTS:IncludeInDebugDump="2345" DTS:Namespace="global" DTS:ObjectName="MaintenanceDesignerVersion">
+      <DTS:VariableValue DTS:DataType="8">15.0.1301.438</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{E3198842-AC00-4FD5-8CC8-83BB5F186030}" DTS:IncludeInDebugDump="2345" DTS:Namespace="global" DTS:ObjectName="ProxyAccount">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{3F95C516-231C-4513-9F95-B0ACFF13CE80}" DTS:IncludeInDebugDump="2345" DTS:Namespace="global" DTS:ObjectName="RemoteConnectionName">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{3AE7A3D9-CEE6-4AA1-A48D-EBC784FB5004}" DTS:IncludeInDebugDump="2345" DTS:Namespace="global" DTS:ObjectName="RunId">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{D6DF2BE4-1263-4FB8-8DEA-E39BB0ABA0F7}" DTS:IncludeInDebugDump="6789" DTS:Namespace="global" DTS:ObjectName="TextReportInNewFile">
+      <DTS:VariableValue DTS:DataType="11">-1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{DB08C9A2-DED5-4197-B990-D600E08B8211}" DTS:IncludeInDebugDump="2345" DTS:Namespace="global" DTS:ObjectName="TextReportPath">
+      <DTS:VariableValue DTS:DataType="8">E:\ROOT\MSSQL14.MSSQLSERVER\MSSQL\Log</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable DTS:refId="Package\Reporting Task for subplan-{61DC1B49-988A-4CB1-8773-9D198761D60E\}" DTS:CreationName="Microsoft.ReportingTask" DTS:DTSID="{43289959-A647-467E-B6F2-24DBD7A40C39}" DTS:ExecutableType="Microsoft.ReportingTask" DTS:LocaleID="-1" DTS:ObjectName="Reporting Task for subplan-{61DC1B49-988A-4CB1-8773-9D198761D60E}" DTS:TaskContact="Maintenance Plan Reporting Task; Microsoft Corporation; Microsoft SQL Server v9; � 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1" DTS:ThreadHint="0">
+      <DTS:Variables/>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData SQLTask:Connection="{B9630F1D-21ED-460A-A86E-69833B0A5E36}" SQLTask:ServerVersion="9" SQLTask:ExtendedLogging="True" SQLTask:LocalConnectionForLogging="Local server connection" SQLTask:TaskName="" SQLTask:IgnoreDatabasesInNotOnlineState="False" SQLTask:GenerateTextReport="True" SQLTask:ProxyAccount="" SQLTask:CreateNewFile="True" SQLTask:Path="E:\ROOT\MSSQL14.MSSQLSERVER\MSSQL\Log" SQLTask:EmailReport="False" SQLTask:LogRemote="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask"/>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\Subplan_1" DTS:CreationName="STOCK:SEQUENCE" DTS:Description="Subplan_1" DTS:Disabled="True" DTS:DTSID="{61DC1B49-988A-4CB1-8773-9D198761D60E}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:FailParentOnFailure="True" DTS:LocaleID="-1" DTS:ObjectName="Subplan_1">
+      <DTS:Variables>
+        <DTS:Variable DTS:CreationName="" DTS:DTSID="{569DF0B5-AE5A-455F-8AD2-EFDB4A12D39C}" DTS:IncludeInDebugDump="6789" DTS:Namespace="subplans" DTS:ObjectName="SubplanSortIndex" DTS:ReadOnly="True">
+          <DTS:VariableValue DTS:DataType="3">1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable DTS:refId="Package\Subplan_1\Back Up Database Task" DTS:CreationName="Microsoft.DbMaintenanceBackupTask" DTS:Description="Back Up Database Task" DTS:DTSID="{90195F79-41C2-4175-A78C-C46EF347D5F9}" DTS:ExecutableType="Microsoft.DbMaintenanceBackupTask" DTS:LocaleID="-1" DTS:ObjectName="Back Up Database Task" DTS:TaskContact="Back Up Database Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1" DTS:ThreadHint="0">
+          <DTS:Variables/>
+          <DTS:EventHandlers>
+            <DTS:EventHandler DTS:refId="Package\Subplan_1\Back Up Database Task.EventHandlers[OnPostExecute]" DTS:CreationName="OnPostExecute" DTS:DTSID="{A3868746-DA9B-45C9-92F9-CD5FC59D385B}" DTS:EventID="-1" DTS:EventName="OnPostExecute" DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable DTS:CreationName="" DTS:Description="The propagate property of the event" DTS:DTSID="{6B9D9BA1-4505-4F48-A5BC-C8C6FC1FCA65}" DTS:IncludeInDebugDump="6789" DTS:Namespace="System" DTS:ObjectName="Propagate">
+                  <DTS:VariableValue DTS:DataType="11">0</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables/>
+            </DTS:EventHandler>
+            <DTS:EventHandler DTS:refId="Package\Subplan_1\Back Up Database Task.EventHandlers[OnPreExecute]" DTS:CreationName="OnPreExecute" DTS:DTSID="{811C6F79-EDAD-4ABA-82CF-B9C9FDFB502A}" DTS:EventID="2" DTS:EventName="OnPreExecute" DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable DTS:CreationName="" DTS:Description="The propagate property of the event" DTS:DTSID="{DC88BE59-C02B-486C-98D4-73AC082CB944}" DTS:IncludeInDebugDump="6789" DTS:Namespace="System" DTS:ObjectName="Propagate">
+                  <DTS:VariableValue DTS:DataType="11">0</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables/>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData SQLTask:Connection="{B9630F1D-21ED-460A-A86E-69833B0A5E36}" SQLTask:DatabaseSelectionType="3" SQLTask:ServerVersion="14" SQLTask:ExtendedLogging="False" SQLTask:LocalConnectionForLogging="Local server connection" SQLTask:TaskName="" SQLTask:IgnoreDatabasesInNotOnlineState="True" SQLTask:BackupAction="2" SQLTask:BackupIsIncremental="False" SQLTask:BackupFileGroupsFiles="" SQLTask:BackupDeviceType="2" SQLTask:BackupPhysicalDestinationType="2" SQLTask:BackupDestinationType="0" SQLTask:BackupDestinationAutoFolderPath="G:\BACKUP\BackupLog" SQLTask:BackupActionForExistingBackups="0" SQLTask:BackupCreateSubFolder="False" SQLTask:BackupFileExtension="trn" SQLTask:BackupVerifyIntegrity="True" SQLTask:ExpireDate="2021-03-10T00:00:00" SQLTask:RetainDays="14" SQLTask:InDays="True" SQLTask:UseExpiration="False" SQLTask:BackupCompressionAction="1" SQLTask:CopyOnlyBackup="False" SQLTask:IgnoreReplicaType="False" SQLTask:CredentialName="" SQLTask:ContainerName="" SQLTask:UrlPrefix="" SQLTask:IsBackupEncrypted="False" SQLTask:BackupEncryptionAlgorithm="0" SQLTask:BackupEncryptorType="0" SQLTask:BackupEncryptorName="" SQLTask:Checksum="False" SQLTask:ContinueOnError="False" SQLTask:IsBlockSizeUsed="False" SQLTask:IsMaxTransferSizeUsed="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:SelectedDatabases SQLTask:DatabaseName="FluigDB"/>
+              <SQLTask:SelectedDatabases SQLTask:DatabaseName="harvest"/>
+              <SQLTask:SelectedDatabases SQLTask:DatabaseName="ISOKEYNET"/>
+              <SQLTask:SelectedDatabases SQLTask:DatabaseName="Monitor"/>
+              <SQLTask:SelectedDatabases SQLTask:DatabaseName="Snman2000"/>
+              <SQLTask:SelectedDatabases SQLTask:DatabaseName="AdmDBA"/>
+              <SQLTask:SelectedDatabases SQLTask:DatabaseName="docrel"/>
+              <SQLTask:SelectedDatabases SQLTask:DatabaseName="DataCollector"/>
+              <SQLTask:SelectedDatabases SQLTask:DatabaseName="facture"/>
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable DTS:refId="Package\Subplan_1\Maintenance Cleanup Task" DTS:CreationName="Microsoft.DbMaintenanceFileCleanupTask" DTS:Description="Maintenance Cleanup Task" DTS:DTSID="{4380E488-C480-439B-8972-2B7633DDA472}" DTS:ExecutableType="Microsoft.DbMaintenanceFileCleanupTask" DTS:LocaleID="-1" DTS:ObjectName="Maintenance Cleanup Task" DTS:TaskContact="File Cleanup Task; Microsoft Corporation; Microsoft SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1" DTS:ThreadHint="0">
+          <DTS:Variables/>
+          <DTS:EventHandlers>
+            <DTS:EventHandler DTS:refId="Package\Subplan_1\Maintenance Cleanup Task.EventHandlers[OnPostExecute]" DTS:CreationName="OnPostExecute" DTS:DTSID="{BFE06F60-24D6-4B83-BF3D-CC5E8FECD59A}" DTS:EventID="-1" DTS:EventName="OnPostExecute" DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable DTS:CreationName="" DTS:Description="The propagate property of the event" DTS:DTSID="{6D463BD0-596D-4729-8C7E-A320DFA38BB9}" DTS:IncludeInDebugDump="6789" DTS:Namespace="System" DTS:ObjectName="Propagate">
+                  <DTS:VariableValue DTS:DataType="11">0</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables/>
+            </DTS:EventHandler>
+            <DTS:EventHandler DTS:refId="Package\Subplan_1\Maintenance Cleanup Task.EventHandlers[OnPreExecute]" DTS:CreationName="OnPreExecute" DTS:DTSID="{20F8E339-EE48-440E-8D7C-1C602126AE51}" DTS:EventID="13" DTS:EventName="OnPreExecute" DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable DTS:CreationName="" DTS:Description="The propagate property of the event" DTS:DTSID="{D9D30DAE-4CD8-4733-9284-7D7F2B6F3647}" DTS:IncludeInDebugDump="6789" DTS:Namespace="System" DTS:ObjectName="Propagate">
+                  <DTS:VariableValue DTS:DataType="11">0</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables/>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData SQLTask:Connection="{B9630F1D-21ED-460A-A86E-69833B0A5E36}" SQLTask:ServerVersion="9" SQLTask:ExtendedLogging="False" SQLTask:LocalConnectionForLogging="Local server connection" SQLTask:TaskName="" SQLTask:IgnoreDatabasesInNotOnlineState="False" SQLTask:FileTypeSelected="0" SQLTask:FilePath="" SQLTask:FolderPath="G:\BACKUP\BackupLog" SQLTask:CleanSubFolders="False" SQLTask:FileExtension="trn" SQLTask:AgeBased="True" SQLTask:DeleteSpecificFile="False" SQLTask:RemoveOlderThan="2" SQLTask:TimeUnitsType="0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask"/>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint DTS:refId="Package\Subplan_1.PrecedenceConstraints[Constraint]" DTS:CreationName="" DTS:DTSID="{3A59790C-9F94-4C0F-9931-79B141354CE5}" DTS:From="Package\Subplan_1\Maintenance Cleanup Task" DTS:LogicalAnd="True" DTS:ObjectName="Constraint" DTS:To="Package\Subplan_1\Back Up Database Task"/>
+      </DTS:PrecedenceConstraints>
+      <DTS:EventHandlers>
+        <DTS:EventHandler DTS:refId="Package\Subplan_1.EventHandlers[OnPostExecute]" DTS:CreationName="OnPostExecute" DTS:DTSID="{1319E54B-F2FE-4A9F-894C-F5BF96BCF928}" DTS:EventID="0" DTS:EventName="OnPostExecute" DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable DTS:CreationName="" DTS:Description="The propagate property of the event" DTS:DTSID="{7BA17F12-4666-4657-A74A-78352010A97E}" DTS:IncludeInDebugDump="6789" DTS:Namespace="System" DTS:ObjectName="Propagate">
+              <DTS:VariableValue DTS:DataType="11">0</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable DTS:refId="Package\Subplan_1.EventHandlers[OnPostExecute]\{33E6ED19-18B6-46C9-8BA0-B1D332831449\}" DTS:CreationName="Microsoft.SubPlanPostExecuteTask" DTS:DTSID="{33E6ED19-18B6-46C9-8BA0-B1D332831449}" DTS:ExecutableType="Microsoft.SubPlanPostExecuteTask" DTS:LocaleID="-1" DTS:ObjectName="{33E6ED19-18B6-46C9-8BA0-B1D332831449}" DTS:TaskContact="Maintenance Plan Reporting Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables/>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData SQLTask:Connection="{B9630F1D-21ED-460A-A86E-69833B0A5E36}" SQLTask:ServerVersion="9" SQLTask:ExtendedLogging="True" SQLTask:LocalConnectionForLogging="" SQLTask:TaskName="" SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask"/>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler DTS:refId="Package\Subplan_1.EventHandlers[OnPreExecute]" DTS:CreationName="OnPreExecute" DTS:DTSID="{DAD4AF93-5B1E-43B6-97F7-921A2658DF72}" DTS:EventID="0" DTS:EventName="OnPreExecute" DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable DTS:CreationName="" DTS:Description="The propagate property of the event" DTS:DTSID="{DA31EE19-1443-42F3-8A24-7B8C22722021}" DTS:IncludeInDebugDump="6789" DTS:Namespace="System" DTS:ObjectName="Propagate">
+              <DTS:VariableValue DTS:DataType="11">0</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable DTS:refId="Package\Subplan_1.EventHandlers[OnPreExecute]\{F3EB9A02-45C0-41A5-A8D3-8C48A6E066D6\}" DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{F3EB9A02-45C0-41A5-A8D3-8C48A6E066D6}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="{F3EB9A02-45C0-41A5-A8D3-8C48A6E066D6}" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables/>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData SQLTask:Connection="{B9630F1D-21ED-460A-A86E-69833B0A5E36}" SQLTask:SqlStatementSource="DECLARE @Guid UNIQUEIDENTIFIER &#xA;&#xA; EXECUTE msdb..sp_maintplan_open_logentry '{7A05AFB5-62FB-43CB-AFD7-130656178608}', '{61DC1B49-988A-4CB1-8773-9D198761D60E}',NULL, @Guid OUTPUT &#xA;&#xA; Select CONVERT(nvarchar(38),@Guid) AS RunId" SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding SQLTask:ResultName="0" SQLTask:DtsVariableName="RunId"/>
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint DTS:refId="Package.PrecedenceConstraints[{61DC1B49-988A-4CB1-8773-9D198761D60E\}]" DTS:CreationName="" DTS:DTSID="{30CBFB1A-2501-4F32-A2FB-96A889D5247A}" DTS:EvalOp="3" DTS:Expression="LEN(@[global::RunId]) &gt; 0" DTS:From="Package\Subplan_1" DTS:LogicalAnd="True" DTS:ObjectName="{61DC1B49-988A-4CB1-8773-9D198761D60E}" DTS:To="Package\Reporting Task for subplan-{61DC1B49-988A-4CB1-8773-9D198761D60E\}" DTS:Value="2"/>
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Sequence
+    design-time-name="Package\Subplan_1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="230,105"
+          Id="{}{90195F79-41C2-4175-A78C-C46EF347D5F9}"
+          TopLeft="175,179" />
+        <NodeLayout
+          Size="219,67"
+          Id="{}{4380E488-C480-439B-8972-2B7633DDA472}"
+          TopLeft="178,71" />
+        <EdgeLayout
+          Id="{}{3A59790C-9F94-4C0F-9931-79B141354CE5}"
+          TopLeft="288.75,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Sequence>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

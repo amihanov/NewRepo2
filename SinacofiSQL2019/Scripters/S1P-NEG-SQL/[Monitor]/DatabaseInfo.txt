@@ -1,0 +1,25 @@
+﻿Name                       : Monitor
+Id                         : 5
+Compatibility Level        : 140
+Recovery Model             : 
+Collation                  : Modern_Spanish_CI_AS
+Offline                    : False
+Read Only                  : False
+Dbo Use Only               : False
+Single User                : False
+Creation Date              : 08/19/2019 11:46:41
+Active Connections         : 0
+Last Backup Size           : 1240605696
+Last Backup Size Change    : 01/01/0001 00:00:00
+Database Files Size        : 0
+Log Files Size             : 0
+Table Size                 : 0
+Rows                       : 0
+Tables                     : 0
+Tables > 500 MB            : 0
+Tables >500 MB With Blobs  : 0
+Stored Procedures          : 0
+Functions                  : 0
+Views                      : 0
+Triggers                   : 0
+Extended Stored Procedures : 0

@@ -1,0 +1,3 @@
+Name	File Name	File Size	File Group Name	MaxSize	Growth	Is Growth Percentage	Is Disk	Is Log
+ft3_PRIMARY	E:\USER\ft3\ft3_PRIMARY.mdf	754974720	PRIMARY	-1	16384	False	True	False
+ft3_LOG	F:\LOG\ft3\ft3_LOG.ldf	398458880		2199023255552	1280	False	False	True

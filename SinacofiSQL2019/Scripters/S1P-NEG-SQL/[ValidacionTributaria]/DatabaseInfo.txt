@@ -1,0 +1,25 @@
+﻿Name                       : ValidacionTributaria
+Id                         : 10
+Compatibility Level        : 140
+Recovery Model             : 
+Collation                  : Modern_Spanish_CI_AS
+Offline                    : False
+Read Only                  : False
+Dbo Use Only               : False
+Single User                : False
+Creation Date              : 03/17/2020 23:44:58
+Active Connections         : 3
+Last Backup Size           : 37778402304
+Last Backup Size Change    : 05/09/2022 00:10:51
+Database Files Size        : 47244640256
+Log Files Size             : 37096521728
+Table Size                 : 0
+Rows                       : 0
+Tables                     : 0
+Tables > 500 MB            : 0
+Tables >500 MB With Blobs  : 0
+Stored Procedures          : 0
+Functions                  : 0
+Views                      : 0
+Triggers                   : 0
+Extended Stored Procedures : 0

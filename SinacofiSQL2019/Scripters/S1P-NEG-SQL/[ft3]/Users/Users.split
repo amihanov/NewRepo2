@@ -1,0 +1,14 @@
+﻿[ope_ruteador].sql                                                                                                                                              	       47	       53
+[ope_limpieza].sql                                                                                                                                              	      147	       53
+[ope_appsbif].sql                                                                                                                                               	      246	       51
+[ope_monitorft3].sql                                                                                                                                            	      346	       57
+[ope_TransformadorDSF].sql                                                                                                                                      	      458	       69
+[ope_ft3web].sql                                                                                                                                                	      572	       49
+[ope_pwc_ft3].sql                                                                                                                                               	      667	       51
+[ope_appexplotacion].sql                                                                                                                                        	      771	       65
+[ope_hostmonitor].sql                                                                                                                                           	      886	       59
+[ope_monConsFt3].sql                                                                                                                                            	      994	       57
+[ope_splunkbd].sql                                                                                                                                              	     1098	       53
+[ope_pwc_bd].sql                                                                                                                                                	     1196	       49
+[ope_brokerft3].sql                                                                                                                                             	     1293	       55
+[ope_monitoreonagios].sql                                                                                                                                       	     1402	       67

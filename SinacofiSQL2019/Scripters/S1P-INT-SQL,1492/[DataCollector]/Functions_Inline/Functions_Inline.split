@@ -1,0 +1,3 @@
+﻿[snapshots].[fn_get_performance_counter_statistics].sql                                                                                                         	       84	     1283
+[snapshots].[fn_get_performance_counters].sql                                                                                                                   	     1441	     1228
+[snapshots].[fn_trace_gettable].sql                                                                                                                             	     2733	     2044

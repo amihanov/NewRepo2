@@ -1,0 +1,3 @@
+﻿[dbo].[vis_tblIndicadorResumen_jul_dic].sql                                                                                                                     	       72	      380
+[dbo].[vwUltimoArchivoEnviado].sql                                                                                                                              	      515	     2741
+[dbo].[vwUltimoArchivoEnviadoValidado].sql                                                                                                                      	     3327	     3211

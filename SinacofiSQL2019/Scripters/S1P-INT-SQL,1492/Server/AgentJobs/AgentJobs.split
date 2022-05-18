@@ -1,0 +1,30 @@
+﻿[JobMonitorErrorLog].sql                                                                                                                                        	       53	      976
+[JobMonitorJobFallido].sql                                                                                                                                      	     1084	      979
+[JobAvisoCambioPassword].sql                                                                                                                                    	     2120	      984
+[syspolicy_purge_history].sql                                                                                                                                   	     3162	     2082
+[JobSeguridadSplunk].sql                                                                                                                                        	     5297	     1003
+[JobMonitorEspacioBD].sql                                                                                                                                       	     6354	     1362
+[sysutility_get_cache_tables_data_into_aggregate_tables_daily].sql                                                                                              	     7811	     2272
+[Facture Alarmas].sql                                                                                                                                           	    10133	      995
+[JobCycleErrorLog].sql                                                                                                                                          	    11179	      994
+[JobMonitorSesiones].sql                                                                                                                                        	    12226	      976
+[Facture Actualiza Canales y Estados ERN].sql                                                                                                                   	    13276	     1123
+[JobMonitorAuditoria].sql                                                                                                                                       	    14453	      978
+[JobCpuMonitor].sql                                                                                                                                             	    15479	      971
+[JobSpaceDisc].sql                                                                                                                                              	    16497	     1039
+[Facture Limpieza BD Facture].sql                                                                                                                               	    17598	     1011
+[JobMonitorLoginFail].sql                                                                                                                                       	    18663	      978
+[JobPurgeMail].sql                                                                                                                                              	    19688	      964
+[JobReporteDiario].sql                                                                                                                                          	    20703	      972
+[sysutility_get_cache_tables_data_into_aggregate_tables_hourly].sql                                                                                             	    21771	     1351
+[sysutility_get_views_data_into_cache_tables].sql                                                                                                               	    23200	     2316
+[collection_set_1_noncached_collect_and_upload].sql                                                                                                             	    25596	     2042
+[collection_set_2_upload].sql                                                                                                                                   	    27696	     1478
+[mdw_purge_data_[DataCollector]].sql                                                                                                                            	    29239	     1059
+[collection_set_3_collection].sql                                                                                                                               	    30360	     1537
+[collection_set_2_collection].sql                                                                                                                               	    31959	     1537
+[collection_set_3_upload].sql                                                                                                                                   	    33554	     1478
+[PlanLimpiaLog].sql                                                                                                                                             	    35080	     1056
+[PlanBackupFull.Subplan_1].sql                                                                                                                                  	    36195	     1060
+[PlanBackupLog].sql                                                                                                                                             	    37303	     1056
+[PlanCheckIntegrityDB].sql                                                                                                                                      	    38414	     1070

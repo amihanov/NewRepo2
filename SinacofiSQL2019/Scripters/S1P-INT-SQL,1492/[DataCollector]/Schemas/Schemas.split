@@ -1,0 +1,6 @@
+﻿[core].sql                                                                                                                                                      	       39	       40
+[snapshots].sql                                                                                                                                                 	      123	       45
+[custom_snapshots].sql                                                                                                                                          	      219	       52
+[sysutility_ucp_misc].sql                                                                                                                                       	      325	       55
+[sysutility_ucp_staging].sql                                                                                                                                    	      437	       58
+[sysutility_ucp_core].sql                                                                                                                                       	      549	       55

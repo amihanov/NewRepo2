@@ -1,0 +1,52 @@
+﻿[##MS_AgentSigningCertificate##].sql                                                                                                                            	       65	      575
+[##MS_PolicyEventProcessingLogin##].sql                                                                                                                         	      708	      584
+[##MS_PolicySigningCertificate##].sql                                                                                                                           	     1358	      568
+[##MS_PolicyTsqlExecutionLogin##].sql                                                                                                                           	     1992	      578
+[##MS_SmoExtendedSigningCertificate##].sql                                                                                                                      	     2641	      583
+[##MS_SQLAuthenticatorCertificate##].sql                                                                                                                        	     3293	      577
+[##MS_SQLReplicationSigningCertificate##].sql                                                                                                                   	     3944	      592
+[##MS_SQLResourceSigningCertificate##].sql                                                                                                                      	     4607	      583
+[dperez].sql                                                                                                                                                    	     5231	      507
+[jarce].sql                                                                                                                                                     	     5778	      504
+[nhuenul].sql                                                                                                                                                   	     6324	      506
+[NT AUTHORITY_SYSTEM].sql                                                                                                                                       	     6884	      457
+[NT Service_MSSQLSERVER].sql                                                                                                                                    	     7398	      463
+[NT SERVICE_SQLSERVERAGENT].sql                                                                                                                                 	     7921	      469
+[NT SERVICE_SQLTELEMETRY].sql                                                                                                                                   	     8448	      465
+[NT SERVICE_SQLWriter].sql                                                                                                                                      	     8968	      459
+[NT SERVICE_Winmgmt].sql                                                                                                                                        	     9480	      455
+[ocardenas].sql                                                                                                                                                 	     9979	      516
+[ope_appexplotacion].sql                                                                                                                                        	    10548	      536
+[ope_appsbif].sql                                                                                                                                               	    11130	      515
+[ope_brokerft3].sql                                                                                                                                             	    11693	      521
+[ope_credexweb].sql                                                                                                                                             	    12262	      538
+[ope_dba].sql                                                                                                                                                   	    12842	      506
+[ope_ft3web].sql                                                                                                                                                	    13393	      512
+[ope_hostmonitor].sql                                                                                                                                           	    13955	      527
+[ope_intercajasBD].sql                                                                                                                                          	    14533	      537
+[ope_intercajasweb].sql                                                                                                                                         	    15122	      540
+[ope_limpieza].sql                                                                                                                                              	    15709	      518
+[ope_LoginFailed].sql                                                                                                                                           	    16277	      531
+[ope_monConsFt3].sql                                                                                                                                            	    16857	      524
+[ope_monitoreonagios].sql                                                                                                                                       	    17435	      543
+[ope_monitorft3].sql                                                                                                                                            	    18027	      524
+[ope_pwc_bd].sql                                                                                                                                                	    18596	      512
+[ope_pwc_ft3].sql                                                                                                                                               	    19154	      515
+[ope_pwc_intercajas].sql                                                                                                                                        	    19722	      543
+[ope_ruteador].sql                                                                                                                                              	    20312	      518
+[ope_sa].sql                                                                                                                                                    	    20871	      503
+[ope_splunkbd].sql                                                                                                                                              	    21421	      525
+[ope_TransformadorDSF].sql                                                                                                                                      	    22001	      542
+[rperez].sql                                                                                                                                                    	    22584	      503
+[sa].sql                                                                                                                                                        	    23124	      491
+[SKYLAB_Admplataforma].sql                                                                                                                                      	    23670	      459
+[SKYLAB_nhuenul].sql                                                                                                                                            	    24178	      447
+[SKYLAB_ope_respaldo].sql                                                                                                                                       	    24679	      457
+[SKYLAB_ope_sql_neg].sql                                                                                                                                        	    25189	      455
+[SKYLAB_rperez].sql                                                                                                                                             	    25692	      445
+[SKYLAB_svasquez].sql                                                                                                                                           	    26187	      449
+[SKYLAB_usr_rojo_s2].sql                                                                                                                                        	    26689	      455
+[SKYLAB_usr_rojo_s3].sql                                                                                                                                        	    27197	      455
+[SKYLAB_usr_rojo_s5].sql                                                                                                                                        	    27705	      455
+[svasquez].sql                                                                                                                                                  	    28203	      509
+[webuser].sql                                                                                                                                                   	    28754	      506

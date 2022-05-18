@@ -1,0 +1,15 @@
+﻿[JobMonitorSesiones].sql                                                                                                                                        	       53	      976
+[JobMonitorJobFallido].sql                                                                                                                                      	     1084	      979
+[JobAvisoCambioPassword].sql                                                                                                                                    	     2120	      984
+[syspolicy_purge_history].sql                                                                                                                                   	     3162	     2394
+[JobPurgeMail].sql                                                                                                                                              	     5603	      964
+[JobMonitorErrorLog].sql                                                                                                                                        	     6620	      976
+[JobCycleErrorLog].sql                                                                                                                                          	     7647	      994
+[JobMonitorEspacioBD].sql                                                                                                                                       	     8695	     1362
+[jobSpaceDisc].sql                                                                                                                                              	    10104	     1039
+[JobMonitorAuditoria].sql                                                                                                                                       	    11197	      978
+[JobMonitorLoginFail].sql                                                                                                                                       	    12229	      978
+[PlanLimpiaLog].sql                                                                                                                                             	    13255	     1057
+[PlanCheckIntegrityDB].sql                                                                                                                                      	    14367	     1071
+[PlanBackupFull].sql                                                                                                                                            	    15487	     1050
+[PlanBackupLog].sql                                                                                                                                             	    16585	     1057

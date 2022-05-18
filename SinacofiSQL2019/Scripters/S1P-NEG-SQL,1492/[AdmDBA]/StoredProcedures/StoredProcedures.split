@@ -1,0 +1,12 @@
+﻿[dbo].[spAvisoCambioPassword].sql                                                                                                                               	       62	     4504
+[dbo].[spBackupDatabases].sql                                                                                                                                   	     4624	     4165
+[dbo].[spBloqueoUsuarioFT3].sql                                                                                                                                 	     8849	     4322
+[dbo].[spMonitorAuditoria].sql                                                                                                                                  	    13230	     2235
+[dbo].[spMonitorErrorLog].sql                                                                                                                                   	    15523	     3891
+[dbo].[spMonitorEspacioBD].sql                                                                                                                                  	    19473	     4612
+[dbo].[spMonitorEspacioBDLog].sql                                                                                                                               	    24147	     3249
+[dbo].[spMonitorJobFallido].sql                                                                                                                                 	    27456	     3202
+[dbo].[spMonitorLoginFail].sql                                                                                                                                  	    30717	     4292
+[dbo].[spMonitorSesiones].sql                                                                                                                                   	    35067	     3983
+[dbo].[spPurgeMail].sql                                                                                                                                         	    39102	     1412
+[dbo].[spSpaceDisc].sql                                                                                                                                         	    40566	     4930

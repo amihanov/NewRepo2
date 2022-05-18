@@ -1,0 +1,18 @@
+Path	Name	Date	FileSize
+msdb\Data Collector\	PerfCountersCollect	09/29/2021 23:38:37	88462
+msdb\Data Collector\	PerfCountersUpload	09/29/2021 23:38:37	218042
+msdb\Maintenance Plans\	PlanBackupFull	04/24/2019 12:22:53	19095
+msdb\Maintenance Plans\	PlanBackupLog	05/09/2019 10:45:29	20924
+msdb\Maintenance Plans\	PlanCheckIntegrityDB	05/08/2019 10:43:40	15610
+msdb\Maintenance Plans\	PlanLimpiaHistorial&Log	04/22/2019 16:41:20	24300
+msdb\Maintenance Plans\	PlanReindex&Statistics	04/22/2019 16:24:51	20793
+msdb\Data Collector\	QueryActivityCollect	09/29/2021 23:38:37	368458
+msdb\Data Collector\	QueryActivityUpload	09/29/2021 23:38:37	1980612
+msdb\Data Collector\	SqlTraceCollect	09/29/2021 23:38:37	64622
+msdb\Data Collector\	SqlTraceUpload	09/29/2021 23:38:37	896556
+msdb\Generated\Data Collector\	TSQLQuery_S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_1_Collect	08/07/2019 15:07:46	66927
+msdb\Generated\Data Collector\	TSQLQuery_S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_1_Upload	08/07/2019 15:07:46	91577
+msdb\Generated\Data Collector\	TSQLQuery_S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_2_Collect	08/07/2019 15:07:46	59417
+msdb\Generated\Data Collector\	TSQLQuery_S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_2_Upload	08/07/2019 15:07:46	84487
+msdb\Data Collector\	TSQLQueryCollect	09/29/2021 23:38:37	44124
+msdb\Data Collector\	TSQLQueryUpload	09/29/2021 23:38:37	34218

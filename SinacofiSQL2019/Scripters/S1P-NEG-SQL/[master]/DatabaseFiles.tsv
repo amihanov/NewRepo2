@@ -1,0 +1,3 @@
+Name	File Name	File Size	File Group Name	MaxSize	Growth	Is Growth Percentage	Is Disk	Is Log
+master	E:\ROOT\MSSQL14.MSSQLSERVER\MSSQL\DATA\master.mdf	20971520	PRIMARY	1073741824	1280	False	True	False
+mastlog	E:\ROOT\MSSQL14.MSSQLSERVER\MSSQL\DATA\mastlog.ldf	20971520		1073741824	1280	False	False	True

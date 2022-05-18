@@ -1,0 +1,8 @@
+﻿[dbo].[DF_tblConsolidacionCabecera_iCorrelativo].sql                                                                                                            	       81	      133
+[dbo].[DF_tblConsolidacionCabeceraPensioando_iCorrelativo].sql                                                                                                  	      305	      153
+[dbo].[DF_tblInstitucion_participa].sql                                                                                                                         	      526	      108
+[dbo].[DF_sis_Menu_idMenuPadre].sql                                                                                                                             	      698	       99
+[dbo].[DF_tblPerfil_bAsignaCaja].sql                                                                                                                            	      862	      101
+[dbo].[DF_tblSUSESO_TipoAfiliado_iIdEstado].sql                                                                                                                 	     1039	      124
+[dbo].[DF_tblSUSESO_TipoIdentificador_iIdEstado].sql                                                                                                            	     1244	      134
+[dbo].[DF_tblUsuario_tIntentos].sql                                                                                                                             	     1442	       99

@@ -1,0 +1,37 @@
+﻿[##MS_AgentSigningCertificate##].sql                                                                                                                            	       65	      575
+[##MS_PolicyEventProcessingLogin##].sql                                                                                                                         	      708	      584
+[##MS_PolicySigningCertificate##].sql                                                                                                                           	     1358	      568
+[##MS_PolicyTsqlExecutionLogin##].sql                                                                                                                           	     1992	      578
+[##MS_SmoExtendedSigningCertificate##].sql                                                                                                                      	     2641	      583
+[##MS_SQLAuthenticatorCertificate##].sql                                                                                                                        	     3293	      577
+[##MS_SQLReplicationSigningCertificate##].sql                                                                                                                   	     3944	      592
+[##MS_SQLResourceSigningCertificate##].sql                                                                                                                      	     4607	      583
+[nhuenul].sql                                                                                                                                                   	     5232	      506
+[NT AUTHORITY_SYSTEM].sql                                                                                                                                       	     5792	      457
+[NT Service_MSSQLSERVER].sql                                                                                                                                    	     6306	      463
+[NT SERVICE_SQLSERVERAGENT].sql                                                                                                                                 	     6829	      469
+[NT SERVICE_SQLTELEMETRY].sql                                                                                                                                   	     7356	      465
+[NT SERVICE_SQLWriter].sql                                                                                                                                      	     7876	      459
+[NT SERVICE_Winmgmt].sql                                                                                                                                        	     8388	      455
+[ope_dba].sql                                                                                                                                                   	     8885	      506
+[ope_docrel].sql                                                                                                                                                	     9436	      515
+[ope_erp_v12].sql                                                                                                                                               	     9997	      519
+[ope_facture].sql                                                                                                                                               	    10562	      519
+[ope_fluig].sql                                                                                                                                                 	    11125	      513
+[ope_harvest].sql                                                                                                                                               	    11684	      519
+[ope_isokey].sql                                                                                                                                                	    12248	      518
+[ope_mantencionBD].sql                                                                                                                                          	    12817	      533
+[ope_monitoreonagios].sql                                                                                                                                       	    13404	      543
+[ope_reporteharvest].sql                                                                                                                                        	    14000	      540
+[ope_sa].sql                                                                                                                                                    	    14581	      503
+[ope_splunkbd].sql                                                                                                                                              	    15131	      522
+[rperez].sql                                                                                                                                                    	    15694	      503
+[sa].sql                                                                                                                                                        	    16234	      491
+[SKYLAB_nhuenul].sql                                                                                                                                            	    16774	      447
+[SKYLAB_ope_clus_int].sql                                                                                                                                       	    17275	      457
+[SKYLAB_ope_respaldo].sql                                                                                                                                       	    17786	      457
+[SKYLAB_ope_sql_int].sql                                                                                                                                        	    18296	      455
+[SKYLAB_rperez].sql                                                                                                                                             	    18799	      445
+[SKYLAB_svasquez].sql                                                                                                                                           	    19294	      449
+[snman].sql                                                                                                                                                     	    19783	      503
+[svasquez].sql                                                                                                                                                  	    20329	      509

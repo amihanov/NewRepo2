@@ -1,0 +1,4 @@
+﻿[core].[fn_query_text_from_handle].sql                                                                                                                          	       67	     2215
+[snapshots].[fn_get_notable_query_plans].sql                                                                                                                    	     2355	     1284
+[snapshots].[fn_get_notable_query_text].sql                                                                                                                     	     3711	      632
+[snapshots].[fn_get_query_text].sql                                                                                                                             	     4407	     1321

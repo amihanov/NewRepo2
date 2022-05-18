@@ -1,0 +1,6 @@
+﻿[core].[fn_check_operator].sql                                                                                                                                  	       59	      691
+[snapshots].[fn_get_query_fragment].sql                                                                                                                         	      818	     2502
+[snapshots].[fn_hexstrtovarbin].sql                                                                                                                             	     3384	     2155
+[sysutility_ucp_misc].[fn_get_max_size_available].sql                                                                                                           	     5621	     4356
+[sysutility_ucp_misc].[fn_get_max_size_available_by_growth_type_kb].sql                                                                                         	    10077	      983
+[sysutility_ucp_misc].[fn_get_max_size_available_by_growth_type_percent].sql                                                                                    	    11165	     1339

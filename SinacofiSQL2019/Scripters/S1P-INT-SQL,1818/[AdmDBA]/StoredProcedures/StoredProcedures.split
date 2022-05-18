@@ -1,0 +1,11 @@
+﻿[dbo].[spAvisoCambioPassword].sql                                                                                                                               	       62	     4398
+[dbo].[spBackupDatabases].sql                                                                                                                                   	     4518	     4166
+[dbo].[spMonitorAuditoria].sql                                                                                                                                  	     8743	     2235
+[dbo].[spMonitorErrorLog].sql                                                                                                                                   	    11036	     3891
+[dbo].[spMonitorEspacioBD].sql                                                                                                                                  	    14986	     4612
+[dbo].[spMonitorEspacioBDLog].sql                                                                                                                               	    19660	     3251
+[dbo].[spMonitorJobFallido].sql                                                                                                                                 	    22971	     3252
+[dbo].[spMonitorLoginFail].sql                                                                                                                                  	    26282	     4292
+[dbo].[spMonitorSesiones].sql                                                                                                                                   	    30632	     3983
+[dbo].[spPurgeMail].sql                                                                                                                                         	    34667	     1412
+[dbo].[spSpaceDisc].sql                                                                                                                                         	    36131	     4875

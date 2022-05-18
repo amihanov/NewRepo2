@@ -1,0 +1,461 @@
+<?xml version="1.0"?><DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:refId="Package" DTS:CreationDate="8/7/2019 3:07:46 PM" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="S1P-NEG-SQL" DTS:CreatorName="ope_sql_neg" DTS:DelayValidation="True" DTS:Description="Auto-generated collection package for collection set {7B191952-8ECF-4E12-AEB2-EF646EF79FEF} collection item 1" DTS:DTSID="{EF76B1B5-A1E7-42CB-ABA4-3D297529C940}" DTS:EnableConfig="True" DTS:ExecutableType="Microsoft.Package" DTS:FailParentOnFailure="True" DTS:LastModifiedProductVersion="14.0.3162.1" DTS:LocaleID="13322" DTS:MaxConcurrentExecutables="2" DTS:MaxErrorCount="0" DTS:ObjectName="TSQLQuery_S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_1_Collect" DTS:PackageType="5" DTS:VersionGUID="{8E16622C-943B-460C-8785-941F828A50EE}">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[ConfigConnection]" DTS:CreationName="OLEDB" DTS:Description="OLE DB connection" DTS:DTSID="{11A5F9EA-EBDB-4428-8EDE-FBD7912E9C86}" DTS:ObjectName="ConfigConnection">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[User::ConfigConnectionString]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager/>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[TargetConnection]" DTS:CreationName="OLEDB" DTS:Description="OLE DB connection" DTS:DTSID="{16671163-3AED-4AC2-A3A1-08ACB1E83A9B}" DTS:ObjectName="TargetConnection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Retain="True" DTS:ConnectionString="Data Source=S1P-NEG-SQL;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SQL Server Data Collector - Controller;"/>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration DTS:ConfigurationString="UploadPackageUID" DTS:ConfigurationVariable="\Package.Variables[User::UploadPackageUID].Properties[Value]" DTS:CreationName="" DTS:DTSID="{1736EE27-F073-401F-818F-F388BA21DFFB}" DTS:ObjectName="UploadPackageUID"/>
+    <DTS:Configuration DTS:ConfigurationString="UploadPackageName" DTS:ConfigurationVariable="\Package.Variables[User::UploadPackageName].Properties[Value]" DTS:CreationName="" DTS:DTSID="{9E522C44-7468-4D56-92B8-5BA227CDEC7C}" DTS:ObjectName="UploadPackageName"/>
+    <DTS:Configuration DTS:ConfigurationString="CollectionPackageUID" DTS:ConfigurationVariable="\Package.Variables[User::CollectionPackageUID].Properties[Value]" DTS:CreationName="" DTS:DTSID="{258466BD-D2A6-42A1-BA59-EE2FE87D745C}" DTS:ObjectName="CollectionPackageUID"/>
+    <DTS:Configuration DTS:ConfigurationString="CollectionPackageName" DTS:ConfigurationVariable="\Package.Variables[User::CollectionPackageName].Properties[Value]" DTS:CreationName="" DTS:DTSID="{47BF954B-0AAA-4138-AB30-15DE5B41E6E6}" DTS:ObjectName="CollectionPackageName"/>
+    <DTS:Configuration DTS:ConfigurationString="InstanceName" DTS:ConfigurationVariable="\Package.Variables[User::InstanceName].Properties[Value]" DTS:CreationName="" DTS:DTSID="{A5D26BA7-AB82-43E4-B6BC-B1B491EFAB79}" DTS:ObjectName="InstanceName"/>
+    <DTS:Configuration DTS:ConfigurationString="CacheDirectory" DTS:ConfigurationVariable="\Package.Variables[User::CacheDirectory].Properties[Value]" DTS:CreationName="" DTS:DTSID="{ACCE4F1B-02B6-4A19-AA40-C4E9681698BB}" DTS:ObjectName="CacheDirectory"/>
+    <DTS:Configuration DTS:ConfigurationString="InputParameters" DTS:ConfigurationVariable="\Package.Variables[User::InputParameters].Properties[Value]" DTS:CreationName="" DTS:DTSID="{4CC61C78-F060-4A9A-AE15-9FF81229739C}" DTS:ObjectName="InputParameters"/>
+    <DTS:Configuration DTS:ConfigurationString="ConfigConnectionString" DTS:ConfigurationVariable="\Package.Variables[User::ConfigConnectionString].Properties[Value]" DTS:CreationName="" DTS:DTSID="{BBCCEE14-557E-4060-B708-DF556B3E5C71}" DTS:ObjectName="ConfigConnectionString"/>
+    <DTS:Configuration DTS:ConfigurationString="MDWConnectionString" DTS:ConfigurationVariable="\Package.Variables[User::MDWConnectionString].Properties[Value]" DTS:CreationName="" DTS:DTSID="{F2F0AABE-C497-40D8-B548-B3F7D0297281}" DTS:ObjectName="MDWConnectionString"/>
+    <DTS:Configuration DTS:ConfigurationString="TargetConnectionString" DTS:ConfigurationVariable="\Package.Variables[User::TargetConnectionString].Properties[Value]" DTS:CreationName="" DTS:DTSID="{25806656-C2BE-424C-B6C6-F15B37BA946E}" DTS:ObjectName="TargetConnectionString"/>
+    <DTS:Configuration DTS:ConfigurationString="CollectorTypeUID" DTS:ConfigurationVariable="\Package.Variables[User::CollectorTypeUID].Properties[Value]" DTS:CreationName="" DTS:DTSID="{69C8BE9B-FA57-49B3-A26D-AC102261496E}" DTS:ObjectName="CollectorTypeUID"/>
+    <DTS:Configuration DTS:ConfigurationString="CollectionSetUID" DTS:ConfigurationVariable="\Package.Variables[User::CollectionSetUID].Properties[Value]" DTS:CreationName="" DTS:DTSID="{20C28922-43B4-4723-A6BE-AE8A050EB553}" DTS:ObjectName="CollectionSetUID"/>
+    <DTS:Configuration DTS:ConfigurationString="LoopEventName" DTS:ConfigurationVariable="\Package.Variables[User::LoopEventName].Properties[Value]" DTS:CreationName="" DTS:DTSID="{DB20B8A2-8450-4A86-8319-1A90024BC347}" DTS:ObjectName="LoopEventName"/>
+    <DTS:Configuration DTS:ConfigurationString="ExitEventName" DTS:ConfigurationVariable="\Package.Variables[User::ExitEventName].Properties[Value]" DTS:CreationName="" DTS:DTSID="{4805A18E-1667-4E5B-A41E-4677B00DD713}" DTS:ObjectName="ExitEventName"/>
+    <DTS:Configuration DTS:ConfigurationString="ItemID" DTS:ConfigurationVariable="\Package.Variables[User::ItemID].Properties[Value]" DTS:CreationName="" DTS:DTSID="{8C8D1F81-0084-4103-A14C-A70B3FADC06F}" DTS:ObjectName="ItemID"/>
+    <DTS:Configuration DTS:ConfigurationString="CacheWindow" DTS:ConfigurationVariable="\Package.Variables[User::CacheWindow].Properties[Value]" DTS:CreationName="" DTS:DTSID="{12021C93-516D-4B0E-8A4E-4433D457C496}" DTS:ObjectName="CacheWindow"/>
+    <DTS:Configuration DTS:ConfigurationString="LoggingLevel" DTS:ConfigurationVariable="\Package.Variables[User::LoggingLevel].Properties[Value]" DTS:CreationName="" DTS:DTSID="{1335EDE7-AFC1-43A0-A7A3-15F6FD8B7A96}" DTS:ObjectName="LoggingLevel"/>
+    <DTS:Configuration DTS:ConfigurationString="LogID" DTS:ConfigurationVariable="\Package.Variables[User::LogID].Properties[Value]" DTS:CreationName="" DTS:DTSID="{EF729A15-C0DC-467F-9DB4-7E67F0E5CE67}" DTS:ObjectName="LogID"/>
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{E6B787D5-982D-4CCF-B20F-5D09AF7EA1BA}" DTS:EvaluateAsExpression="True" DTS:Expression="@[User::CacheDirectory] + &quot;\\S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_10Copy_at&quot;" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="CacheCleanupPath0">
+      <DTS:VariableValue DTS:DataType="8">\S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_10Copy_at</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{D9C53D73-65E6-4B89-BCEB-5C7FB3BAC1C7}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="CacheDirectory">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{1687E977-96E6-4520-AD94-6C25C53DB634}" DTS:EvaluateAsExpression="True" DTS:Expression="@[User::CacheDirectory] + &quot;\\S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_10Copy_at&quot; + REPLACE( REPLACE( (DT_WSTR, 40) GETDATE(), &quot; &quot;, &quot;-&quot; ), &quot;:&quot;, &quot;-&quot; ) + &quot;.cache&quot;" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="CacheNewPath0">
+      <DTS:VariableValue DTS:DataType="8">\S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_10Copy_at2019-08-07-15-07-46.858000000.cache</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{DA4D7E23-78F6-4DB4-8A50-497D3B37F61D}" DTS:EvaluateAsExpression="True" DTS:Expression="@[User::CacheDirectory] + &quot;\\S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_10.cache&quot;" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="CachePath0">
+      <DTS:VariableValue DTS:DataType="8">\S1P-NEG-SQL_MSSQL14_MSSQLSERVER_{7B191952-8ECF-4E12-AEB2-EF646EF79FEF}_10.cache</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{EBA4D22E-FC4B-4568-B1CD-B451F4636BAE}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="CacheWindow">
+      <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{43EE2860-8987-47A5-AA94-D86448F88027}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="CollectionPackageName">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{216A3F7D-7FF6-46EC-9BE0-66CD627CA7E5}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="CollectionPackageUID">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{06C4A85B-44A9-44E9-AC71-B0BFCCDED1BB}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="CollectionSetUID">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{3774056E-0FCE-454C-A0DB-A781EDCA2375}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="CollectionTimeUtc">
+      <DTS:VariableValue DTS:DataType="7">8/7/2019 7:07:46 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{CA489653-5223-4AB8-B274-0CF70501C22D}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="CollectorTypeUID">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{4BAD9218-E3D4-4AAD-AF30-2EEE6D939EF3}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="ConfigConnectionString">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{BCC8F179-9E80-45C4-A768-2EA4E2AD0231}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="DatabaseEnumerationList">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{525E67C5-C735-4128-A8C0-1242FC377FBE}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="DatabaseEnumerationMode">
+      <DTS:VariableValue DTS:DataType="2">3</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{D150691B-DEC9-40DF-8321-674EFB034681}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="ExitEventName">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{BA226CC9-372B-46CE-A648-A96559390017}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="InputParameters">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{5F08A17C-3797-43D2-91E7-EDD6614AC79D}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="InstanceName">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{EB44E7C7-65F6-42E8-96B5-3EB83F854F5A}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="ItemID">
+      <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{1CC46AA8-C5CA-40F7-BC27-1CEC284CED93}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="LoggingLevel">
+      <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{7E5E1670-A37C-4816-976D-FF4A03820C1E}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="LogID">
+      <DTS:VariableValue DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{72171A64-7757-400C-8BEC-BEBC1409DB57}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="LoopDuration">
+      <DTS:VariableValue DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{69C23B27-9801-4E4A-A581-76FB2AB7C30E}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="LoopEventName">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{9963CC20-B7D4-4FA7-94DB-F4FF38C62AAC}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="MDWConnectionString">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{4A703323-0556-49D4-8C30-47DCA41F0E5E}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="ParentLogID">
+      <DTS:VariableValue DTS:DataType="20">-1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{92B72695-6EA1-4570-94B0-C9C86709393D}" DTS:EvaluateAsExpression="True" DTS:Expression="@[User::RowCountIn0] + 0" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="RowCount">
+      <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{A888E56A-F449-4BAD-979B-1D6323B3A56B}" DTS:EvaluateAsExpression="True" DTS:Expression="@[User::RowCountError0] + 0" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="RowCountError">
+      <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{B4F4DE73-0D88-4BC3-9DE9-DC5A99273600}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="RowCountError0">
+      <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{78D7070A-BFC5-4128-ACEE-F7E6153B296E}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="RowCountIn0">
+      <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{9F78E8D9-2269-4EA9-9875-AA6B918DA5CE}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="RowCountOut0">
+      <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{99F6358F-0822-49FB-A1C0-45A6FE5C7437}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="SelectedDatabaseName">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{4D654AF4-0025-4A56-9CDD-0DE97ED5FCC0}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="TargetConnectionString">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{53683B5E-3507-42ED-B13E-0A291F371F91}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="UploadPackageName">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{9DF32998-AA08-4383-AEB0-1CA3F836BAAB}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="UploadPackageUID">
+      <DTS:VariableValue DTS:DataType="8" xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable DTS:refId="Package\ForEach Collection Loop" DTS:CreationName="STOCK:ForEachLoop" DTS:DelayValidation="True" DTS:DTSID="{BC60EAD5-39A5-43D9-9CDF-C62F3B3D3165}" DTS:ExecutableType="STOCK:ForEachLoop" DTS:FailParentOnFailure="True" DTS:LocaleID="-1" DTS:MaxErrorCount="0" DTS:ObjectName="ForEach Collection Loop">
+      <DTS:ForEachEnumerator DTS:CreationName="Microsoft.ForEachEventEnumerator" DTS:DTSID="{07DD5CBE-92CC-4CAD-8FC8-3A32056899C6}" DTS:ObjectName="{07DD5CBE-92CC-4CAD-8FC8-3A32056899C6}">
+        <DTS:PropertyExpression DTS:Name="ExitEventName">@[User::ExitEventName]</DTS:PropertyExpression>
+        <DTS:PropertyExpression DTS:Name="LoopEventName">@[User::LoopEventName]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachEventEnumeratorProperties>
+            <FEEEProperty LoopEventName=""/>
+            <FEEEProperty ExitEventName=""/>
+          </ForEachEventEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables/>
+      <DTS:Executables>
+        <DTS:Executable DTS:refId="Package\ForEach Collection Loop\SEQ - Lock" DTS:CreationName="STOCK:Sequence" DTS:DelayValidation="True" DTS:DTSID="{2E8C66D8-19EA-4D78-8B92-FA894D9F5AD9}" DTS:ExecutableType="STOCK:Sequence" DTS:FailParentOnFailure="True" DTS:LocaleID="-1" DTS:MaxErrorCount="0" DTS:ObjectName="SEQ - Lock">
+          <DTS:Variables>
+            <DTS:Variable DTS:CreationName="" DTS:DTSID="{6CF544B5-1416-4138-B3DA-23E862630018}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="RowCountErrorLocal">
+              <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable DTS:CreationName="" DTS:DTSID="{C29DBEEA-88BF-443F-88F9-9331FF74D527}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="RowCountInLocal">
+              <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable DTS:CreationName="" DTS:DTSID="{71CABBF4-1526-42A2-8E39-C99FB8DF2724}" DTS:IncludeInDebugDump="6789" DTS:Namespace="User" DTS:ObjectName="RowCountOutLocal">
+              <DTS:VariableValue DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable DTS:CreationName="" DTS:DTSID="{261C76A2-65F8-4855-A16F-993A7654BEC5}" DTS:IncludeInDebugDump="2345" DTS:Namespace="" DTS:ObjectName="SyncRoot">
+              <DTS:VariableValue DTS:DataType="8">TSQLCollectorLock</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable DTS:refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop" DTS:CreationName="STOCK:ForEachLoop" DTS:DelayValidation="True" DTS:DTSID="{006DFF04-9067-43DE-8180-C8A8CD810E43}" DTS:ExecutableType="STOCK:ForEachLoop" DTS:FailParentOnFailure="True" DTS:LocaleID="-1" DTS:MaxErrorCount="0" DTS:ObjectName="ForEach Database Loop">
+              <DTS:ForEachEnumerator DTS:CreationName="Microsoft.ForEachDbEnumerator" DTS:DTSID="{A64877B0-E2E2-4BC5-96CE-930276CF6205}" DTS:ObjectName="{A64877B0-E2E2-4BC5-96CE-930276CF6205}">
+                <DTS:PropertyExpression DTS:Name="CustomDatabasesList">@[User::DatabaseEnumerationList]</DTS:PropertyExpression>
+                <DTS:PropertyExpression DTS:Name="DatabaseEnumerationMode">@[User::DatabaseEnumerationMode]</DTS:PropertyExpression>
+                <DTS:ObjectData>
+                  <ForEachDbEnumeratorProperties>
+                    <FEDEProperty ConnectionManagerName="TargetConnection"/>
+                    <FEDEProperty DatabasesList=""/>
+                    <FEDEProperty DatabasesList="3"/>
+                  </ForEachDbEnumeratorProperties>
+                </DTS:ObjectData>
+              </DTS:ForEachEnumerator>
+              <DTS:Variables/>
+              <DTS:Executables>
+                <DTS:Executable DTS:refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0" DTS:CreationName="Microsoft.Pipeline" DTS:DelayValidation="True" DTS:DTSID="{4756F9B9-0269-4DF8-81D7-166EAD125374}" DTS:ExecutableType="Microsoft.Pipeline" DTS:FailParentOnFailure="True" DTS:LocaleID="-1" DTS:MaxErrorCount="0" DTS:ObjectName="DFT - Collect Query 0" DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables/>
+                  <DTS:LoggingOptions DTS:FilterKind="0" DTS:LoggingMode="1">
+                    <DTS:Property DTS:DataType="8" DTS:Name="EventFilter">9,7,OnError,9,OnWarning,12,OnPreExecute,13,OnPostExecute,16,BufferSizeTuning,18,PipelineBufferLeak,21,PipelineExecutionPlan,22,PipelineExecutionTrees,22,PipelineInitialization</DTS:Property>
+                  </DTS:LoggingOptions>
+                  <DTS:ObjectData>
+                    <pipeline defaultBufferMaxRows="500" defaultBufferSize="1048576" engineThreads="2" version="1">
+                      <components>
+                        <component refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column" componentClassID="Microsoft.DerivedColumn" contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0" description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column." name="Derived Column" usesDispositions="true">
+                          <inputs>
+                            <input refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Inputs[Derived Column Input]" description="Input to the Derived Column Transformation" name="Derived Column Input">
+                              <externalMetadataColumns/>
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Output]" description="Default Output of the Derived Column Transformation" exclusionGroup="1" name="Derived Column Output" synchronousInputId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Inputs[Derived Column Input]">
+                              <outputColumns>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Output].Columns[database_name]" dataType="wstr" errorOrTruncationOperation="Computation" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source" length="128" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Output].Columns[database_name]" name="database_name" truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property containsID="true" dataType="System.String" name="Expression">@[User::SelectedDatabaseName]</property>
+                                    <property containsID="true" dataType="System.String" name="FriendlyExpression">User::SelectedDatabaseName</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Output].Columns[collection_time]" dataType="dbTimeStampOffset" errorOrTruncationOperation="Computation" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Output].Columns[collection_time]" name="collection_time" scale="7" truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property containsID="true" dataType="System.String" name="Expression">@[User::CollectionTimeUtc]</property>
+                                    <property containsID="true" dataType="System.String" name="FriendlyExpression">User::CollectionTimeUtc</property>
+                                  </properties>
+                                </outputColumn>
+                              </outputColumns>
+                              <externalMetadataColumns/>
+                            </output>
+                            <output refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Error Output]" description="Error Output of the Derived Column Transformation" exclusionGroup="1" isErrorOut="true" name="Derived Column Error Output" synchronousInputId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Inputs[Derived Column Input]">
+                              <outputColumns>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]" dataType="i4" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]" name="ErrorCode" specialFlags="1"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]" dataType="i4" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]" name="ErrorColumn" specialFlags="2"/>
+                              </outputColumns>
+                              <externalMetadataColumns/>
+                            </output>
+                          </outputs>
+                        </component>
+                        <component refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source" componentClassID="Microsoft.OLEDBSource" contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7" description="OLE DB Source" name="OLE DB Source" usesDispositions="true" validateExternalMetadata="False" version="7">
+                          <properties>
+                            <property dataType="System.Int32" description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out." name="CommandTimeout">0</property>
+                            <property dataType="System.String" description="Specifies the name of the database object used to open a rowset." name="OpenRowset"></property>
+                            <property dataType="System.String" description="Specifies the variable that contains the name of the database object used to open a rowset." name="OpenRowsetVariable"></property>
+                            <property dataType="System.String" description="The SQL command to be executed." name="SqlCommand" UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">
+DECLARE @dbsize bigint 
+DECLARE @logsize bigint 
+DECLARE @ftsize bigint 
+DECLARE @reservedpages bigint 
+DECLARE @pages bigint 
+DECLARE @usedpages bigint
+
+SELECT @dbsize = SUM(convert(bigint,case when type = 0 then size else 0 end)) 
+      ,@logsize = SUM(convert(bigint,case when type = 1 then size else 0 end)) 
+      ,@ftsize = SUM(convert(bigint,case when type = 4 then size else 0 end)) 
+FROM sys.database_files
+
+DECLARE @allocateUnits table( 
+        total_pages bigint
+,       used_pages bigint
+,       data_pages bigint
+,       container_id bigint
+,       type tinyint
+); 
+
+INSERT @allocateUnits SELECT total_pages, used_pages, data_pages, container_id, type FROM sys.allocation_units;
+
+SELECT @reservedpages = SUM(a.total_pages) 
+       ,@usedpages = SUM(a.used_pages) 
+       ,@pages = SUM(CASE 
+                        WHEN it.internal_type IN (202,204) THEN 0 
+                        WHEN a.type != 1 THEN a.used_pages 
+                        WHEN p.index_id &lt; 2 THEN a.data_pages 
+                        ELSE 0 
+                     END) 
+FROM sys.partitions p  
+JOIN @allocateUnits a ON p.partition_id = a.container_id 
+LEFT JOIN sys.internal_tables it ON p.object_id = it.object_id 
+
+SELECT 
+        @dbsize as 'dbsize',
+        @logsize as 'logsize',
+        @ftsize as 'ftsize',
+        @reservedpages as 'reservedpages',
+        @usedpages as 'usedpages',
+        @pages as 'pages'
+</property>
+                            <property dataType="System.String" description="The variable that contains the SQL command to be executed." name="SqlCommandVariable"></property>
+                            <property dataType="System.Int32" description="Specifies the column code page to use when code page information is unavailable from the data source." name="DefaultCodePage">1252</property>
+                            <property dataType="System.Boolean" description="Forces the use of the DefaultCodePage property value when describing character data." name="AlwaysUseDefaultCodePage">false</property>
+                            <property dataType="System.Int32" description="Specifies the mode used to access the database." name="AccessMode" typeConverter="AccessMode">2</property>
+                            <property dataType="System.String" description="The mappings between the parameters in the SQL command and variables." name="ParameterMapping"></property>
+                          </properties>
+                          <connections>
+                            <connection refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Connections[OleDbConnection]" connectionManagerID="Package.ConnectionManagers[TargetConnection]" connectionManagerRefId="Package.ConnectionManagers[TargetConnection]" description="The OLE DB runtime connection used to access the database." name="OleDbConnection"/>
+                          </connections>
+                          <outputs>
+                            <output refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output]" name="OLE DB Source Output">
+                              <outputColumns>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[dbsize]" dataType="i8" errorOrTruncationOperation="Conversion" errorRowDisposition="RedirectRow" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dbsize]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[dbsize]" name="dbsize" truncationRowDisposition="RedirectRow"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[logsize]" dataType="i8" errorOrTruncationOperation="Conversion" errorRowDisposition="RedirectRow" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[logsize]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[logsize]" name="logsize" truncationRowDisposition="RedirectRow"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[ftsize]" dataType="i8" errorOrTruncationOperation="Conversion" errorRowDisposition="RedirectRow" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ftsize]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[ftsize]" name="ftsize" truncationRowDisposition="RedirectRow"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[reservedpages]" dataType="i8" errorOrTruncationOperation="Conversion" errorRowDisposition="RedirectRow" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reservedpages]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[reservedpages]" name="reservedpages" truncationRowDisposition="RedirectRow"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[usedpages]" dataType="i8" errorOrTruncationOperation="Conversion" errorRowDisposition="RedirectRow" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[usedpages]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[usedpages]" name="usedpages" truncationRowDisposition="RedirectRow"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[pages]" dataType="i8" errorOrTruncationOperation="Conversion" errorRowDisposition="RedirectRow" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pages]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[pages]" name="pages" truncationRowDisposition="RedirectRow"/>
+                              </outputColumns>
+                              <externalMetadataColumns isUsed="True">
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dbsize]" dataType="i8" name="dbsize"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[logsize]" dataType="i8" name="logsize"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ftsize]" dataType="i8" name="ftsize"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[reservedpages]" dataType="i8" name="reservedpages"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[usedpages]" dataType="i8" name="usedpages"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pages]" dataType="i8" name="pages"/>
+                              </externalMetadataColumns>
+                            </output>
+                            <output refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output]" isErrorOut="true" name="OLE DB Source Error Output">
+                              <outputColumns>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dbsize]" dataType="i8" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dbsize]" name="dbsize"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[logsize]" dataType="i8" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[logsize]" name="logsize"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ftsize]" dataType="i8" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ftsize]" name="ftsize"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reservedpages]" dataType="i8" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[reservedpages]" name="reservedpages"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[usedpages]" dataType="i8" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[usedpages]" name="usedpages"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pages]" dataType="i8" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pages]" name="pages"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]" dataType="i4" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]" name="ErrorCode" specialFlags="1"/>
+                                <outputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]" dataType="i4" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]" name="ErrorColumn" specialFlags="2"/>
+                              </outputColumns>
+                              <externalMetadataColumns/>
+                            </output>
+                          </outputs>
+                        </component>
+                        <component refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination" componentClassID="Microsoft.RawDestination" contactInfo="Writes raw data that will not require parsing or translation. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers.;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2" description="Writes raw data that will not require parsing or translation. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers." name="Raw File Destination" validateExternalMetadata="False" version="2">
+                          <properties>
+                            <property dataType="System.Int32" description="Specifies the mode used to access the file." name="AccessMode" typeConverter="AccessMode">1</property>
+                            <property dataType="System.String" description="Output file name" name="FileName" UITypeEditor="Microsoft.DataTransformationServices.Controls.NonValidatingFileNameEditor"></property>
+                            <property dataType="System.String" description="Name of the variable that contains the file name" name="FileNameVariable">User::CachePath0</property>
+                            <property dataType="System.Int32" description="Indicates what option is used to write to the file." name="WriteOption" typeConverter="WriteOption">2</property>
+                          </properties>
+                          <inputs>
+                            <input refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input]" hasSideEffects="true" name="Raw File Destination Input">
+                              <inputColumns>
+                                <inputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].Columns[dbsize]" cachedDataType="i8" cachedName="dbsize" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[dbsize]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[dbsize]"/>
+                                <inputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].Columns[logsize]" cachedDataType="i8" cachedName="logsize" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[logsize]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[logsize]"/>
+                                <inputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].Columns[ftsize]" cachedDataType="i8" cachedName="ftsize" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[ftsize]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[ftsize]"/>
+                                <inputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].Columns[reservedpages]" cachedDataType="i8" cachedName="reservedpages" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[reservedpages]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[reservedpages]"/>
+                                <inputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].Columns[usedpages]" cachedDataType="i8" cachedName="usedpages" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[usedpages]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[usedpages]"/>
+                                <inputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].Columns[pages]" cachedDataType="i8" cachedName="pages" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[pages]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output].Columns[pages]"/>
+                                <inputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].Columns[database_name]" cachedDataType="wstr" cachedLength="128" cachedName="database_name" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[database_name]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Output].Columns[database_name]"/>
+                                <inputColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].Columns[collection_time]" cachedDataType="dbTimeStampOffset" cachedName="collection_time" cachedScale="7" externalMetadataColumnId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[collection_time]" lineageId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Output].Columns[collection_time]"/>
+                              </inputColumns>
+                              <externalMetadataColumns isUsed="True">
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[dbsize]" dataType="i8" name="dbsize"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[logsize]" dataType="i8" name="logsize"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[ftsize]" dataType="i8" name="ftsize"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[reservedpages]" dataType="i8" name="reservedpages"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[usedpages]" dataType="i8" name="usedpages"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[pages]" dataType="i8" name="pages"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[database_name]" dataType="wstr" length="128" name="database_name"/>
+                                <externalMetadataColumn refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input].ExternalColumns[collection_time]" dataType="dbTimeStampOffset" name="collection_time" scale="7"/>
+                              </externalMetadataColumns>
+                            </input>
+                          </inputs>
+                        </component>
+                        <component refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Error Output Rows" componentClassID="Microsoft.RowCount" contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0" description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status." name="RC - Count Error Output Rows">
+                          <properties>
+                            <property dataType="System.String" description="Specifies the variable to hold the row count." name="VariableName">User::RowCountErrorLocal</property>
+                          </properties>
+                          <inputs>
+                            <input refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Error Output Rows.Inputs[Row Count Input 1]" hasSideEffects="true" name="Row Count Input 1">
+                              <externalMetadataColumns/>
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Error Output Rows.Outputs[Row Count Output 1]" name="Row Count Output 1" synchronousInputId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Error Output Rows.Inputs[Row Count Input 1]">
+                              <externalMetadataColumns/>
+                            </output>
+                          </outputs>
+                        </component>
+                        <component refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Input Rows" componentClassID="Microsoft.RowCount" contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0" description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status." name="RC - Count Input Rows">
+                          <properties>
+                            <property dataType="System.String" description="Specifies the variable to hold the row count." name="VariableName">User::RowCountInLocal</property>
+                          </properties>
+                          <inputs>
+                            <input refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Input Rows.Inputs[Row Count Input 1]" name="Row Count Input 1">
+                              <externalMetadataColumns/>
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Input Rows.Outputs[Row Count Output 1]" name="Row Count Output 1" synchronousInputId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Input Rows.Inputs[Row Count Input 1]">
+                              <externalMetadataColumns/>
+                            </output>
+                          </outputs>
+                        </component>
+                      </components>
+                      <paths>
+                        <path refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0.Paths[Derived Column Output]" endId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Raw File Destination.Inputs[Raw File Destination Input]" name="Derived Column Output" startId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Outputs[Derived Column Output]"/>
+                        <path refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0.Paths[OLE DB Source Error Output]" endId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Error Output Rows.Inputs[Row Count Input 1]" name="OLE DB Source Error Output" startId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Error Output]"/>
+                        <path refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0.Paths[OLE DB Source Output]" endId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Input Rows.Inputs[Row Count Input 1]" name="OLE DB Source Output" startId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\OLE DB Source.Outputs[OLE DB Source Output]"/>
+                        <path refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0.Paths[Row Count Output 1]" endId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\Derived Column.Inputs[Derived Column Input]" name="Row Count Output 1" startId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0\RC - Count Input Rows.Outputs[Row Count Output 1]"/>
+                      </paths>
+                    </pipeline>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable DTS:refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\RC - Update Row Counts 0" DTS:CreationName="Microsoft.UpdateRowCountsTask" DTS:DelayValidation="True" DTS:DTSID="{F87BD470-E01B-4517-A117-705B148427F6}" DTS:ExecutableType="Microsoft.UpdateRowCountsTask" DTS:FailParentOnFailure="True" DTS:LocaleID="-1" DTS:MaxErrorCount="0" DTS:ObjectName="RC - Update Row Counts 0" DTS:TaskContact="Update Row Counts;Microsoft Corporation; Microsoft SQL Server 2014; (C) 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables/>
+                  <DTS:LoggingOptions DTS:LoggingMode="2"/>
+                  <DTS:ObjectData>
+                    <UpdateRowCountsTask>
+                      <RowCountIndex>0</RowCountIndex>
+                    </UpdateRowCountsTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable DTS:refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\SQL - Get UTC Time" DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DelayValidation="True" DTS:DTSID="{FACEC171-0528-4AE0-8158-9F449BEA0E6D}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:FailParentOnFailure="True" DTS:LocaleID="-1" DTS:MaxErrorCount="0" DTS:ObjectName="SQL - Get UTC Time" DTS:ThreadHint="0">
+                  <DTS:Variables/>
+                  <DTS:LoggingOptions DTS:FilterKind="0" DTS:LoggingMode="1">
+                    <DTS:Property DTS:DataType="8" DTS:Name="EventFilter">5,7,OnError,9,OnWarning,12,OnPreExecute,13,OnPostExecute,24,ExecuteSQLExecutingQuery</DTS:Property>
+                  </DTS:LoggingOptions>
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData SQLTask:Connection="{11A5F9EA-EBDB-4428-8EDE-FBD7912E9C86}" SQLTask:SqlStatementSource="SELECT GETUTCDATE() AS CurrentUtcDate" SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ResultBinding SQLTask:ResultName="CurrentUtcDate" SQLTask:DtsVariableName="CollectionTimeUtc"/>
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint DTS:refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop.PrecedenceConstraints[{0AE45152-88FA-4DAC-971D-56D40AB17397\}]" DTS:CreationName="" DTS:DTSID="{0AE45152-88FA-4DAC-971D-56D40AB17397}" DTS:From="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\SQL - Get UTC Time" DTS:LogicalAnd="True" DTS:ObjectName="{0AE45152-88FA-4DAC-971D-56D40AB17397}" DTS:To="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0"/>
+                <DTS:PrecedenceConstraint DTS:refId="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop.PrecedenceConstraints[{36E99B77-6EC4-478C-B8B3-163253963A5E\}]" DTS:CreationName="" DTS:DTSID="{36E99B77-6EC4-478C-B8B3-163253963A5E}" DTS:From="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\DFT - Collect Query 0" DTS:LogicalAnd="True" DTS:ObjectName="{36E99B77-6EC4-478C-B8B3-163253963A5E}" DTS:To="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop\RC - Update Row Counts 0" DTS:Value="2"/>
+              </DTS:PrecedenceConstraints>
+              <DTS:ForEachVariableMappings>
+                <DTS:ForEachVariableMapping DTS:CreationName="" DTS:DTSID="{1A891EDF-7731-45AD-9501-80DDBBFDAC9F}" DTS:ObjectName="{1A891EDF-7731-45AD-9501-80DDBBFDAC9F}" DTS:ValueIndex="0" DTS:VariableName="SelectedDatabaseName"/>
+              </DTS:ForEachVariableMappings>
+            </DTS:Executable>
+            <DTS:Executable DTS:refId="Package\ForEach Collection Loop\SEQ - Lock\RC - Reset Row Counts 0" DTS:CreationName="Microsoft.ResetRowCountsTask" DTS:DelayValidation="True" DTS:DTSID="{D4AE8FF8-55D0-49D5-AE0A-8CF1F3EE9886}" DTS:ExecutableType="Microsoft.ResetRowCountsTask" DTS:FailParentOnFailure="True" DTS:LocaleID="-1" DTS:MaxErrorCount="0" DTS:ObjectName="RC - Reset Row Counts 0" DTS:TaskContact="Reset Row Counts;Microsoft Corporation; Microsoft SQL Server 2014; (C) 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables/>
+              <DTS:LoggingOptions DTS:LoggingMode="2"/>
+              <DTS:ObjectData>
+                <ResetRowCountsTask>
+                  <RowCountIndex>0</RowCountIndex>
+                </ResetRowCountsTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint DTS:refId="Package\ForEach Collection Loop\SEQ - Lock.PrecedenceConstraints[{9B8921D1-0673-4846-AFF5-CCA36C11EA34\}]" DTS:CreationName="" DTS:DTSID="{9B8921D1-0673-4846-AFF5-CCA36C11EA34}" DTS:From="Package\ForEach Collection Loop\SEQ - Lock\RC - Reset Row Counts 0" DTS:LogicalAnd="True" DTS:ObjectName="{9B8921D1-0673-4846-AFF5-CCA36C11EA34}" DTS:To="Package\ForEach Collection Loop\SEQ - Lock\ForEach Database Loop" DTS:Value="2"/>
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable DTS:refId="Package\ForEach Collection Loop\SQL - Log Package Iteration" DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DelayValidation="True" DTS:DTSID="{73EB2A06-A9E7-4EB3-9F18-15F0E065EF75}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:MaxErrorCount="0" DTS:ObjectName="SQL - Log Package Iteration" DTS:ThreadHint="0">
+          <DTS:Variables/>
+          <DTS:LoggingOptions DTS:FilterKind="0" DTS:LoggingMode="1">
+            <DTS:Property DTS:DataType="8" DTS:Name="EventFilter">5,7,OnError,9,OnWarning,12,OnPreExecute,13,OnPostExecute,24,ExecuteSQLExecutingQuery</DTS:Property>
+          </DTS:LoggingOptions>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData SQLTask:Connection="{11A5F9EA-EBDB-4428-8EDE-FBD7912E9C86}" SQLTask:SqlStatementSource="{call dbo.sp_syscollector_event_onpackageupdate (?)}" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding SQLTask:ParameterName="0" SQLTask:DtsVariableName="User::LogID" SQLTask:ParameterDirection="Input" SQLTask:DataType="20" SQLTask:ParameterSize="-1"/>
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable DTS:refId="Package\ForEach Collection Loop\SQL - Log Package Stats" DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DelayValidation="True" DTS:DTSID="{0FFE1BAA-092D-45D8-BD34-77568971FFD7}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:MaxErrorCount="0" DTS:ObjectName="SQL - Log Package Stats" DTS:ThreadHint="0">
+          <DTS:Variables/>
+          <DTS:LoggingOptions DTS:FilterKind="0" DTS:LoggingMode="1">
+            <DTS:Property DTS:DataType="8" DTS:Name="EventFilter">5,7,OnError,9,OnWarning,12,OnPreExecute,13,OnPostExecute,24,ExecuteSQLExecutingQuery</DTS:Property>
+          </DTS:LoggingOptions>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData SQLTask:Connection="{11A5F9EA-EBDB-4428-8EDE-FBD7912E9C86}" SQLTask:SqlStatementSource="{ call dbo.sp_syscollector_event_onstatsupdate (?, N'TSQLQueryCollect - Main Collect Loop', ?, ?, ?, ?) }" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding SQLTask:ParameterName="0" SQLTask:DtsVariableName="User::LogID" SQLTask:ParameterDirection="Input" SQLTask:DataType="20" SQLTask:ParameterSize="-1"/>
+              <SQLTask:ParameterBinding SQLTask:ParameterName="1" SQLTask:DtsVariableName="User::RowCount" SQLTask:ParameterDirection="Input" SQLTask:DataType="3" SQLTask:ParameterSize="-1"/>
+              <SQLTask:ParameterBinding SQLTask:ParameterName="2" SQLTask:DtsVariableName="User::RowCount" SQLTask:ParameterDirection="Input" SQLTask:DataType="3" SQLTask:ParameterSize="-1"/>
+              <SQLTask:ParameterBinding SQLTask:ParameterName="3" SQLTask:DtsVariableName="User::RowCountError" SQLTask:ParameterDirection="Input" SQLTask:DataType="3" SQLTask:ParameterSize="-1"/>
+              <SQLTask:ParameterBinding SQLTask:ParameterName="4" SQLTask:DtsVariableName="User::LoopDuration" SQLTask:ParameterDirection="Input" SQLTask:DataType="20" SQLTask:ParameterSize="-1"/>
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint DTS:refId="Package\ForEach Collection Loop.PrecedenceConstraints[{748BC02C-4D43-4752-ADEF-9D7FCD1492E5\}]" DTS:CreationName="" DTS:DTSID="{748BC02C-4D43-4752-ADEF-9D7FCD1492E5}" DTS:From="Package\ForEach Collection Loop\SQL - Log Package Iteration" DTS:LogicalAnd="True" DTS:ObjectName="{748BC02C-4D43-4752-ADEF-9D7FCD1492E5}" DTS:To="Package\ForEach Collection Loop\SQL - Log Package Stats" DTS:Value="2"/>
+        <DTS:PrecedenceConstraint DTS:refId="Package\ForEach Collection Loop.PrecedenceConstraints[{C4DE7447-DDB8-44FE-8150-AFDB294D30D6\}]" DTS:CreationName="" DTS:DTSID="{C4DE7447-DDB8-44FE-8150-AFDB294D30D6}" DTS:EvalOp="3" DTS:Expression="@[User::LoggingLevel] &gt;= 1" DTS:From="Package\ForEach Collection Loop\SEQ - Lock" DTS:LogicalAnd="True" DTS:ObjectName="{C4DE7447-DDB8-44FE-8150-AFDB294D30D6}" DTS:To="Package\ForEach Collection Loop\SQL - Log Package Iteration" DTS:Value="2"/>
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping DTS:CreationName="" DTS:DTSID="{BB9A83EE-3664-4A87-B664-C7F57CC6311C}" DTS:ObjectName="{BB9A83EE-3664-4A87-B664-C7F57CC6311C}" DTS:ValueIndex="0" DTS:VariableName="LoopDuration"/>
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>
