@@ -1,0 +1,61 @@
+﻿SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_bsstratplans_withaccess]') IS NULL EXEC('CREATE PROCEDURE [dbo].[ik_bsstratplans_withaccess] AS PRINT ''TEMPORARY OBJECT, DELETE AFTER ALL OBJECTS ARE CREATED''')
+GO
+ALTER PROCEDURE [dbo].[ik_bsstratplans_withaccess]
+(
+		@parameters varchar(8000) =  '', /*WHERE CONDITIONS WITHOUT WHERE CLAUSE*/
+		@sort nvarchar(100), /*WITHOUT CLAUSE ORDER BY*/
+		@BSPROCCAT int,
+		@IKCAT int,
+		@IKCDU int
+	)
+
+AS
+
+SET DATEFORMAT YMD
+
+DECLARE @strDOC varchar(4000), @where varchar(100)
+
+
+SELECT @strDOC =
+CASE	
+	WHEN  @IKCAT=0 OR @BSPROCCAT=2  THEN
+		'SELECT *, ''Images/bs_planestrateg.gif'' AS ICONOPLAN FROM BS_STRAT_PLANS WHERE 1=0' /*select nothing*/
+	WHEN @IKCAT=4 OR @BSPROCCAT=0 THEN
+		'SELECT *, ''Images/bs_planestrateg.gif'' AS ICONOPLAN FROM BS_STRAT_PLANS' /*select all*/
+	ELSE /*Select only allowed docs*/
+		
+		'SELECT *, ''Images/bs_planestrateg.gif'' AS ICONOPLAN FROM (
+		SELECT * FROM BS_STRAT_PLANS		
+		WHERE BS_STRAT_PLANSID IN (SELECT BS_STRAT_PLANSID FROM VISTA_BS_STRATPLANS_OPTIONS WHERE SEC_LEVEL>0 AND USERID='+ LTRIM(STR(@IKCDU)) +')
+		OR BS_STRAT_PLANSID IN (SELECT BS_STRAT_PLANSID FROM VISTA_BS_STRATPLANS_OPTIONS WHERE SEC_LEVEL>0 AND USERID IN (SELECT CODIGOGRUPO FROM WEBGROUPMEMBERS WHERE CODIGOUSUARIO='+ LTRIM(STR(@IKCDU)) +'))
+		) AS SEC
+		' 
+
+END		
+
+SET @where = ''
+IF NOT (@IKCAT=0 OR @BSPROCCAT=2)
+BEGIN
+	IF @parameters <> ''
+	BEGIN
+		SET @where = ' WHERE '
+	END
+
+	IF @sort <> ''
+	BEGIN
+		SET @sort = ' ORDER BY ' + @sort
+	END
+	ELSE
+	BEGIN
+		SET @sort = ' ORDER BY [DESCRIPTION]'
+	END
+END
+
+
+EXEC (@strDOC+@where+@parameters+@sort)
+
+RETURN
+GO

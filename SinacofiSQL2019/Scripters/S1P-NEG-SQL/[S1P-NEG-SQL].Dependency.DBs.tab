@@ -1,0 +1,14 @@
+Source DB	Target DB	Calls
+AdmDBA	AdmDBA	1
+AdmDBA	ft3	4
+intercajas	intercajas	11
+AdmDBA	master	5
+Monitor	master	8
+ft3	master	2
+intercajas	master	2
+Swsnew	master	2
+ValidacionTributaria	master	2
+Monitor	Monitor	6
+AdmDBA	msdb	27
+msdb	msdb	1
+Monitor	msdb	25

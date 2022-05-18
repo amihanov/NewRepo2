@@ -1,0 +1,89 @@
+﻿SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_search_terms_matches]') IS NULL EXEC('CREATE PROCEDURE [dbo].[ik_search_terms_matches] AS PRINT ''TEMPORARY OBJECT, DELETE AFTER ALL OBJECTS ARE CREATED''')
+GO
+ALTER PROCEDURE [dbo].[ik_search_terms_matches]
+@IKLANG nvarchar(10),
+	@STR2SEARCH nvarchar(2000),
+	@tmp_table nvarchar(500) = '#TMP_TERMS',
+	@L_RETURN_DATA int = 1
+AS
+
+
+DECLARE @LANG nvarchar(100)
+
+IF (@IKLANG = 'SP' OR @IKLANG = 'ES')
+BEGIN
+	SET @LANG='Spanish'
+END
+
+IF (@IKLANG = 'EN')
+BEGIN
+	SET @LANG='English'
+END
+
+IF (@IKLANG = 'PT')
+BEGIN
+	SET @LANG='Portuguese'
+END
+
+
+
+
+DECLARE @STR2SEARCH_CLEAN nvarchar(500)
+
+SET @STR2SEARCH_CLEAN = LTRIM(@STR2SEARCH)
+SET @STR2SEARCH_CLEAN = RTRIM(@STR2SEARCH_CLEAN)
+SET @STR2SEARCH_CLEAN = '"' + REPLACE(@STR2SEARCH_CLEAN,'"','') + '"'
+
+DECLARE @LCID int
+SELECT @LCID=LCID FROM sys.fulltext_languages WHERE [NAME]=@LANG
+
+
+CREATE TABLE #TMP_MATCHES(display_term nvarchar(max))
+
+BEGIN TRY	
+		IF ( OBJECT_ID('sys.dm_fts_parser') IS NOT NULL)
+		BEGIN
+			INSERT INTO #TMP_MATCHES
+			SELECT display_term FROM sys.dm_fts_parser (@STR2SEARCH_CLEAN, @LCID, 0, 0)	WHERE special_term = 'Exact Match'  AND NOT display_term like 'nn%'
+		END
+		ELSE
+		BEGIN
+			DECLARE @TMP_STR nvarchar(500)
+			SET @TMP_STR = REPLACE(@STR2SEARCH, ' ', '|')
+			INSERT INTO #TMP_MATCHES
+			SELECT [VALUE] FROM dbo.ik_SplitIntoTable(@TMP_STR,'|')
+		END
+END TRY
+BEGIN CATCH
+END CATCH
+
+
+
+
+BEGIN TRY
+	DECLARE @QUERY nvarchar(max)
+	SET @QUERY = 'TRUNCATE TABLE '+ @tmp_table +'; INSERT INTO ' + @tmp_table + 
+	' SELECT display_term FROM #TMP_MATCHES'
+	EXEC (@QUERY)
+END TRY
+BEGIN CATCH
+END CATCH
+
+IF @L_RETURN_DATA=1
+BEGIN	
+	BEGIN TRY	
+		SELECT display_term FROM #TMP_MATCHES
+	END TRY
+	BEGIN CATCH
+	END CATCH
+END
+
+
+
+
+
+RETURN
+GO

@@ -1,0 +1,1882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>S1P-INT-SQL\PWCSQL (10-may.-22)</title>
+    <style type="text/css">
+  body 
+        {
+            font-family:'Segoe UI', Verdana;
+        }
+
+        table
+        {
+            border: 0px solid black;
+            padding: 0px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
+            min-width:700px;
+            font-size: small;
+            border:1px solid #e4eaff;
+        }
+        
+        .details
+        {
+            min-width:400px;
+            width: 100%;
+        }
+        
+        td
+        {
+            min-width:50px;
+            border-left  : 0px solid #aaa;
+            padding: 2px 5px 5px 5px;
+            vertical-align:top;
+        }
+                        
+        th
+        {
+            padding: 0px 10px 0px 10px;
+            margin: 0px 0px 0px 0px;
+            color: #666;
+            text-align: center;
+            vertical-align:bottom;
+            font-weight:lighter;
+            border-bottom: 3px solid #6376b4;
+        }
+        tr
+        {
+            padding: 0px 10px 0px 2px;
+            margin: 0px 0px 0px 0px;
+            text-align: center;
+        }
+        
+        tr:hover td
+        {
+            background-color:#e4eaff;
+        }
+
+        .d0 td
+        {
+            border-bottom:1px dotted #e4eaff;
+        }
+        .d1 td
+        {
+            border-bottom:1px dotted #e4eaff;
+        }
+        .d0 th
+        {
+            border-bottom:1px dotted #e4eaff;
+            border-right:3px solid #6376b4;
+            text-align:right;
+        }
+        .d1 th
+        {
+            border-bottom:1px dotted #e4eaff;
+            border-right:3px solid #6376b4;
+            text-align:right;
+        }
+        
+        .Total
+        {
+            font-weight: bold;
+            border-bottom:0px solid #e4eaff;
+            border-top:3px solid #6376b4;
+            text-align:right;
+        }
+        
+        a
+        {
+            color: #000;
+            text-decoration: none;
+        }
+        .error
+        {
+            color:#ff0000;
+        }
+        .error a
+        {
+            color:#ff0000;
+        }
+        .highlight
+        {
+            background: #abd1ff;
+        }
+        .zero
+        {
+            color: #999;
+        }
+    </style>
+<!--    <script language="javascript" type="text/javascript">
+        function toggle_Visibility(id) {
+            var e = document.getElementById(id);
+            if (e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+    </script>-->
+</head>
+<body>
+<h1>S1P-INT-SQL\PWCSQL (10-may.-22)</h1>
+<h3><a href='#AgentJobs'> Agent Jobs(15) <a/> - <a href='#DtsPackages'> Dts Packages(8) <a/> - <a href='#SSISPackages'> SSIS Packages(17) <a/></h3>
+<h4>Executables</h4>
+<table cellspacing=0>
+<tr><th>Folder</th><th>Exe</th><th>Bat</th><th>Vbs</th><th>Cmd</th><th>Ps1</th><th>Dts</th><th>Dtsx</th></tr>
+<tr class="d1"><td align="left">C:\DownloadPackageLocation_WinX64</td><td align="left"><b><a title="7z.exe
+QInstaller.exe
+Setup.exe"><div style="text-align:right;">3</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\DownloadPackageLocation_WinX64\BinaryPayload</td><td align="left"><b><a title="LooseUpdates\InstallUpdates.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><b><a title="LooseUpdates\GUIUpdateInstaller.bat"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\DownloadPackageLocation_WinX64\ThirdParty</td><td align="left"><b><a title="AnacondaPython\Anaconda-2.0.1-Windows-x86_64.exe
+CVInstallThirdParty\CVInstallPrereqPackages.exe
+CVInstallThirdParty\CVInstallThirdParty.exe
+CVInstallThirdParty\GenProcessModuleInfo.exe
+CVInstallThirdParty\GenProcessModuleInfo32.exe
+CVInstallThirdParty\paexec.exe
+DotNetFramework\3.5\dotnetfx35.exe
+DotNetFramework\3.5\dotNetFx35setup.exe
+DotNetFramework\4.0\dotNetFx40_Full_x86_x64.exe
+DotNetFramework\4.5\dotnetfx45_full_x86_x64.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sql_engine_core_shared_loc_msi\PFiles\SqlServr\120\Shared\VS2008\1033\-ongsxnb.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sql2008support\pfiles\sqlservr\100\setup\release\setup.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sql2008support\pfiles\sqlservr\100\setup\release\x64\j1slftqz.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sql2008support\pfiles\sqlservr\100\setup\release\x64\jcsrc-oa.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sql2008support\pfiles\sqlservr\100\setup\release\x64\qj0limqa.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sql2008support\pfiles\sqlservr\100\setup\release\x64\setup100.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sql2008support\pfiles\sqlservr\100\setup\release\x64\setuparp.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sql2008support\pfiles\sqlservr\100\setup\release\x64\yyd2w-0e.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sqlsupport_msi\PFiles\SqlServr\120\Setup\1-l9bmi0\setup.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sqlsupport_msi\PFiles\SqlServr\120\Setup\1-l9bmi0\x64\ezp2pdki.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sqlsupport_msi\PFiles\SqlServr\120\Setup\1-l9bmi0\x64\j1slftqz.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sqlsupport_msi\PFiles\SqlServr\120\Setup\1-l9bmi0\x64\jcsrc-oa.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sqlsupport_msi\PFiles\SqlServr\120\Setup\1-l9bmi0\x64\qj0limqa.exe
+MSSQL\SQL_Standard_Edition\1033_ENU_LP\x64\Setup\sqlsupport_msi\PFiles\SqlServr\120\Setup\1-l9bmi0\x64\SetupARP.exe
+MSSQL\SQL_Standard_Edition\redist\DotNetFrameworks\dotNetFx40_Full_x86_x64.exe
+MSSQL\SQL_Standard_Edition\redist\DotNetFrameworks\dotNetFx40_Full_x86_x64_SC.exe
+MSSQL\SQL_Standard_Edition\redist\DotNetFrameworks\NDP40-KB2468871-v2.exe
+MSSQL\SQL_Standard_Edition\redist\DotNetFrameworks\NDP40-KB2544514.exe
+MSSQL\SQL_Standard_Edition\redist\DotNetFrameworks\x64\NDP40-KB2533523.exe
+MSSQL\SQL_Standard_Edition\redist\DotNetFrameworks\x86\NDP40-KB2533523.exe
+MSSQL\SQL_Standard_Edition\redist\VisualStudioShell\Help\x64\install.exe
+MSSQL\SQL_Standard_Edition\redist\VisualStudioShell\Help\x86\install.exe
+MSSQL\SQL_Standard_Edition\setup.exe
+MSSQL\SQL_Standard_Edition\x64\FixSqlRegistryKey_x64.exe
+MSSQL\SQL_Standard_Edition\x64\FixSqlRegistryKey_x86.exe
+MSSQL\SQL_Standard_Edition\x64\LandingPage.exe
+MSSQL\SQL_Standard_Edition\x64\ScenarioEngine.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_common_core_msi\PFiles\SqlServr\120\Shared\c468ra2c.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_common_core_msi\PFiles32\SqlServr\120\Shared\fvmws2l1.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\DCEXEC.EXE
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\llff-s5i.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\SQLAGENT.EXE
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\SQLIOSIM.EXE
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\sqlmaint.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\sqlservr.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\wdrk-bwe.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\xpadsi.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\Xtp\VC\bin\cl.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\Xtp\VC\bin\link.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Binn\y78wfzk6.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\COM\cv6gbaow.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\COM\DISTRIB.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\COM\logread.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\COM\qrdrsvc.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\COM\replmerg.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\COM\snapshot.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\DTS\Binn\DTExec.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\DTS\Binn\dtshost.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\DTS\Binn\dtutil.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\DTS\Binn\pcq8aryz.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\Shared\SqlWtsn.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\Tools\Binn\6duw_kla.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\Tools\Binn\OSQL.EXE
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\120\Tools\Binn\SQLdiag.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\ClnSDK\ODBC\110\Tools\Binn\bcp.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles\SqlServr\ClnSDK\ODBC\110\Tools\Binn\SQLCMD.EXE
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles32\SqlServr\120\Shared\SqlWtsn.exe
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles32\SqlServr\120\Tools\Binn\SQLPS.exe
+NSISUnicode\Bin\GenPat.exe
+NSISUnicode\Bin\LibraryLocal.exe
+NSISUnicode\Bin\MakeLangId.exe
+NSISUnicode\Bin\zip2exe.exe
+NSISUnicode\Contrib\UIs\default.exe
+NSISUnicode\Contrib\UIs\modern.exe
+NSISUnicode\Contrib\UIs\modern_headerbmp.exe
+NSISUnicode\Contrib\UIs\modern_headerbmpr.exe
+NSISUnicode\Contrib\UIs\modern_nodesc.exe
+NSISUnicode\Contrib\UIs\modern_smalldesc.exe
+NSISUnicode\Contrib\UIs\sdbarker_tiny.exe
+NSISUnicode\makensis.exe
+NSISUnicode\makensisw.exe
+NSISUnicode\NSIS.exe
+NSISUnicode\uninst-nsis.exe
+OLEDB2010\x64\AccessDatabaseEngine_x64.exe
+Python\x64\ms-sql\pyodbc-3.0.7.win-amd64-py2.7.exe
+Python\x64\python\pywin32-214.win-amd64-py2.6.exe
+Python\x64\python\pywin32-219.win-amd64-py2.7.exe
+VCRedist_2010SP1\amd64\vcredist_x64.exe
+VCRedist_2013\amd64\vcredist_x64.exe
+VCRedist_2013\x86\vcredist_x86.exe
+WIC\amd64\wic_x64_enu.exe
+WIC\x86\wic_x86_enu.exe"><div style="text-align:right;">92</div></a></b></td><td align="left"><b><a title="AnacondaPython\AnacondaPyInstaller.bat
+CVInstallThirdParty\disconnectfilehandles.bat"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles32\SqlServr\120\Tools\nqcxu13a\Modules\SQLPS\d3dc3hmf.ps1
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles32\SqlServr\120\Tools\nqcxu13a\Modules\SQLPS\pxc66p_f.ps1
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles32\SqlServr\120\Tools\nqcxu13a\Modules\SQLPS\SQLPS.PS1
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_shared_msi\PFiles32\SqlServr\120\Tools\nqcxu13a\Modules\SQLPS\tn6gq_xv.ps1"><div style="text-align:right;">4</div></a></b></td><td align="left"><b><a title="MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Install\0gzhjtmy.dts
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Install\2j-labie.dts
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Install\bbwwy268.dts
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Install\h13dwld1.dts
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Install\knrzqorg.dts
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Install\o2v-hfnd.dts
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Install\qfludf7y.dts
+MSSQL\SQL_Standard_Edition\x64\Setup\sql_engine_core_inst_msi\PFiles\SqlServr\MSSQL.X\MSSQL\Install\uqvadktq.dts"><div style="text-align:right;">8</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Package\Harvest</td><td align="left"><b><a title="S1P-INT-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportTools\MetadataCompare.exe
+S1P-INT-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportTools\SpCompare.exe
+S1P-INT-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportTools\SqlLogReader.exe
+S1P-INT-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportTools\SqlScripterCmd.exe
+S1P-INT-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportTools\TblCopy.exe
+S1P-INT-SQL-Package\ASTERIA-Package\Scripts\SupportTools\MetadataCompare.exe
+S1P-INT-SQL-Package\ASTERIA-Package\Scripts\SupportTools\SpCompare.exe
+S1P-INT-SQL-Package\ASTERIA-Package\Scripts\SupportTools\SqlLogReader.exe
+S1P-INT-SQL-Package\ASTERIA-Package\Scripts\SupportTools\SqlScripterCmd.exe
+S1P-INT-SQL-Package\ASTERIA-Package\Scripts\SupportTools\TblCopy.exe
+S1P-INT-SQL-Package\VULPECULA-Package\Scripts\SupportTools\MetadataCompare.exe
+S1P-INT-SQL-Package\VULPECULA-Package\Scripts\SupportTools\SpCompare.exe
+S1P-INT-SQL-Package\VULPECULA-Package\Scripts\SupportTools\SqlLogReader.exe
+S1P-INT-SQL-Package\VULPECULA-Package\Scripts\SupportTools\SqlScripterCmd.exe
+S1P-INT-SQL-Package\VULPECULA-Package\Scripts\SupportTools\TblCopy.exe
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportTools\MetadataCompare.exe
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportTools\SpCompare.exe
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportTools\SqlLogReader.exe
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportTools\SqlScripterCmd.exe
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportTools\TblCopy.exe
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\Scripts\SupportTools\MetadataCompare.exe
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\Scripts\SupportTools\SpCompare.exe
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\Scripts\SupportTools\SqlLogReader.exe
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\Scripts\SupportTools\SqlScripterCmd.exe
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\Scripts\SupportTools\TblCopy.exe"><div style="text-align:right;">25</div></a></b></td><td align="left"><b><a title="S1P-INT-SQL-Package\ajax_sqlprod01-Package\Check.bat
+S1P-INT-SQL-Package\ajax_sqlprod01-Package\Install.bat
+S1P-INT-SQL-Package\ajax_sqlprod01-Package\LoadData.bat
+S1P-INT-SQL-Package\ajax_sqlprod01-Package\PostLoad.bat
+S1P-INT-SQL-Package\ajax_sqlprod01-Package\PreLoad.bat
+S1P-INT-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportScripts\CopiaDLL2000.bat
+S1P-INT-SQL-Package\ajax_sqlprod01-Package\ValidateIndexFiles.bat
+S1P-INT-SQL-Package\ASTERIA-Package\Check.bat
+S1P-INT-SQL-Package\ASTERIA-Package\Install.bat
+S1P-INT-SQL-Package\ASTERIA-Package\LoadData.bat
+S1P-INT-SQL-Package\ASTERIA-Package\PostLoad.bat
+S1P-INT-SQL-Package\ASTERIA-Package\PreLoad.bat
+S1P-INT-SQL-Package\ASTERIA-Package\Scripts\SupportScripts\CopiaDLL2000.bat
+S1P-INT-SQL-Package\ASTERIA-Package\ValidateIndexFiles.bat
+S1P-INT-SQL-Package\VULPECULA-Package\Check.bat
+S1P-INT-SQL-Package\VULPECULA-Package\Install.bat
+S1P-INT-SQL-Package\VULPECULA-Package\LoadData.bat
+S1P-INT-SQL-Package\VULPECULA-Package\PostLoad.bat
+S1P-INT-SQL-Package\VULPECULA-Package\PreLoad.bat
+S1P-INT-SQL-Package\VULPECULA-Package\Scripts\SupportScripts\CopiaDLL2000.bat
+S1P-INT-SQL-Package\VULPECULA-Package\ValidateIndexFiles.bat
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\Check.bat
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\Install.bat
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\LoadData.bat
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\PostLoad.bat
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\PreLoad.bat
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\Scripts\SupportScripts\CopiaDLL2000.bat
+S1P-NEG-SQL-Package\ajax_sqlprod01-Package\ValidateIndexFiles.bat
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\Check.bat
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\Install.bat
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\LoadData.bat
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\PostLoad.bat
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\PreLoad.bat
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\Scripts\SupportScripts\CopiaDLL2000.bat
+S1P-NEG-SQL-Package\ajax_sqlprod02-Package\ValidateIndexFiles.bat"><div style="text-align:right;">35</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Package\HarvestPackage</td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Check.bat
+Install.bat
+LoadData.bat
+PostLoad.bat
+PreLoad.bat
+ValidateIndexFiles.bat"><div style="text-align:right;">6</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Package\S1P-INT-SQL-Package</td><td align="left"><b><a title="ajax_sqlprod01-Package\Scripts\SupportTools\MetadataCompare.exe
+ajax_sqlprod01-Package\Scripts\SupportTools\SpCompare.exe
+ajax_sqlprod01-Package\Scripts\SupportTools\SqlLogReader.exe
+ajax_sqlprod01-Package\Scripts\SupportTools\SqlScripterCmd.exe
+ajax_sqlprod01-Package\Scripts\SupportTools\TblCopy.exe
+ajax-Package\Scripts\SupportTools\MetadataCompare.exe
+ajax-Package\Scripts\SupportTools\SpCompare.exe
+ajax-Package\Scripts\SupportTools\SqlLogReader.exe
+ajax-Package\Scripts\SupportTools\SqlScripterCmd.exe
+ajax-Package\Scripts\SupportTools\TblCopy.exe
+ASTERIA-Package\Scripts\SupportTools\MetadataCompare.exe
+ASTERIA-Package\Scripts\SupportTools\SpCompare.exe
+ASTERIA-Package\Scripts\SupportTools\SqlLogReader.exe
+ASTERIA-Package\Scripts\SupportTools\SqlScripterCmd.exe
+ASTERIA-Package\Scripts\SupportTools\TblCopy.exe
+VULPECULA-Package\Scripts\SupportTools\MetadataCompare.exe
+VULPECULA-Package\Scripts\SupportTools\SpCompare.exe
+VULPECULA-Package\Scripts\SupportTools\SqlLogReader.exe
+VULPECULA-Package\Scripts\SupportTools\SqlScripterCmd.exe
+VULPECULA-Package\Scripts\SupportTools\TblCopy.exe"><div style="text-align:right;">20</div></a></b></td><td align="left"><b><a title="ajax_sqlprod01-Package\Check.bat
+ajax_sqlprod01-Package\Install.bat
+ajax_sqlprod01-Package\LoadData.bat
+ajax_sqlprod01-Package\PostLoad.bat
+ajax_sqlprod01-Package\PreLoad.bat
+ajax_sqlprod01-Package\Scripts\SupportScripts\CopiaDLL2000.bat
+ajax_sqlprod01-Package\ValidateIndexFiles.bat
+ajax-Package\Check.bat
+ajax-Package\Install.bat
+ajax-Package\LoadData.bat
+ajax-Package\PostLoad.bat
+ajax-Package\PreLoad.bat
+ajax-Package\Scripts\SupportScripts\CopiaDLL2000.bat
+ajax-Package\ValidateIndexFiles.bat
+ASTERIA-Package\Check.bat
+ASTERIA-Package\Install.bat
+ASTERIA-Package\LoadData.bat
+ASTERIA-Package\PostLoad.bat
+ASTERIA-Package\PreLoad.bat
+ASTERIA-Package\Scripts\SupportScripts\CopiaDLL2000.bat
+ASTERIA-Package\ValidateIndexFiles.bat
+VULPECULA-Package\Check.bat
+VULPECULA-Package\Install.bat
+VULPECULA-Package\LoadData.bat
+VULPECULA-Package\PostLoad.bat
+VULPECULA-Package\PreLoad.bat
+VULPECULA-Package\Scripts\SupportScripts\CopiaDLL2000.bat
+VULPECULA-Package\ValidateIndexFiles.bat"><div style="text-align:right;">28</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Package\SqlScripter20</td><td align="left"><b><a title="SqlScripter.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Package\SqlScripter45</td><td align="left"><b><a title="SqlScripter45.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\PortQryUI</td><td align="left"><b><a title="PortQry.exe
+portqueryui.exe"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files (x86)\Common Files</td><td align="left"><b><a title="Microsoft Shared\ink\pipanel.exe
+Microsoft Shared\ink\TabTip32.exe
+Microsoft Shared\MSEnv\VSLauncher.exe
+Microsoft Shared\MSEnv\VSWebLauncher.exe
+Microsoft Shared\MSInfo\msinfo32.exe
+Microsoft Shared\TextTemplating\14.0\TextTransform.exe
+Microsoft Shared\VsHub\1.0.0.0\Microsoft.VsHub.Server.HttpHost.exe
+Microsoft Shared\VsHub\1.0.0.0\Microsoft.VsHub.Server.HttpHostx64.exe
+Microsoft Shared\VsHub\1.0.0.0\Microsoft.VsHub.Server.ServiceModuleHost.exe
+Microsoft Shared\VsHub\1.0.0.0\Microsoft.VsHub.Server.ServiceModuleHostx64.exe
+Microsoft Shared\VsHub\1.0.0.0\VsHub.exe"><div style="text-align:right;">11</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files (x86)\Imperva</td><td align="left"><b><a title="AgentInstallationManager\AgentInstallerCli.exe
+AgentInstallationManager\InstallerUpgrader.exe
+AgentInstallationManager\RemoteAgentInstaller.exe
+AgentInstallationManager\RemoteAgentInstallMngrUpgrd.exe
+AgentInstallationManager\RemoteAgentUpgrade.exe
+AgentInstallationManager\RemoteAgentWd.exe
+AgentInstallationManager\RemoteAgentZip.exe
+AgentInstallationManager\WinInstallerLite.exe
+RemoteAgent\DB2ShmInjector.exe
+RemoteAgent\DB2ShmInjector64.exe
+RemoteAgent\InjectionValidation.exe
+RemoteAgent\Injector32.exe
+RemoteAgent\Injector64.exe
+RemoteAgent\IpcInjector.exe
+RemoteAgent\IpcInjector64.exe
+RemoteAgent\KragentDebug.exe
+RemoteAgent\MssqlHeuristics.exe
+RemoteAgent\ProcessInfo32.exe
+RemoteAgent\ProcessInfo64.exe
+RemoteAgent\RemoteAgent.exe
+RemoteAgent\RemoteAgentCli.exe
+RemoteAgent\RemoteAgentCtrl.exe
+RemoteAgent\RemoteAgentUpgrade.exe
+RemoteAgent\RemoteAgentWd.exe
+RemoteAgent\RemoteAgentZip.exe
+RemoteAgent\SharePoint\2007\RemoteAgentSPH.exe
+RemoteAgent\SharePoint\2010\RemoteAgentSPH.exe
+RemoteAgent\SharePoint\2013\RemoteAgentSPH.exe
+RemoteAgent\SymbolDownloader32.exe
+RemoteAgent\SymbolDownloader64.exe
+RemoteAgent\WinInstaller.exe"><div style="text-align:right;">31</div></a></b></td><td align="left"><b><a title="AgentInstallationManager\get-tech-info.bat
+AgentInstallationManager\pack-logs.bat
+AgentInstallationManager\StartCli.bat
+AgentInstallationManager\var\imp_env.bat
+RemoteAgent\get-capping-info.bat
+RemoteAgent\get-rss-info.bat
+RemoteAgent\get-tech-info.bat
+RemoteAgent\pack-logs.bat
+RemoteAgent\StartCli.bat
+RemoteAgent\var\imp_env.bat"><div style="text-align:right;">10</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="RemoteAgent\GTI_Extensions\get-tech-info.IIS.ps1
+RemoteAgent\GTI_Extensions\get-tech-info.SP.ps1
+RemoteAgent\GTI_Extensions\get-tech-info.Utils.ps1"><div style="text-align:right;">3</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files (x86)\Internet Explorer</td><td align="left"><b><a title="ExtExport.exe
+ieinstal.exe
+ielowutil.exe
+iexplore.exe"><div style="text-align:right;">4</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files (x86)\Microsoft Analysis Services</td><td align="left"><b><a title="AS OLEDB\140\SQLDumper.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files (x86)\Microsoft Help Viewer</td><td align="left"><b><a title="v2.2\HlpCtntMgr.exe
+v2.2\HlpViewer.exe"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files (x86)\Microsoft SQL Server</td><td align="left"><b><a title="140\DAC\bin\DacUnpack.exe
+140\DAC\bin\SqlPackage.exe
+140\DTS\Binn\DataProfileViewer.exe
+140\DTS\Binn\DTExec.exe
+140\DTS\Binn\DtsDebugHost.exe
+140\DTS\Binn\dtshost.exe
+140\DTS\Binn\dtsinstall.exe
+140\DTS\Binn\DTSWizard.exe
+140\DTS\Binn\dtutil.exe
+140\DTS\Binn\ISDataFeedPublishingWizard.exe
+140\DTS\Binn\ISDBUpgradeWizard.exe
+140\DTS\Binn\ISDeploymentWizard.exe
+140\DTS\Binn\ISProjectWizard.exe
+140\DTS\Binn\ISServerExec.exe
+140\DTS\Binn\Management\ISManager.exe
+140\DTS\Binn\SSISUpgrade.exe
+140\Shared\SqlDumper.exe
+140\Shared\SqlWtsn.exe
+140\Tools\Binn\DReplay.exe
+140\Tools\Binn\DTA.EXE
+140\Tools\Binn\dtadbxfer.exe
+140\Tools\Binn\dtaengine.exe
+140\Tools\Binn\DTASHELL.EXE
+140\Tools\Binn\ManagementStudio\ASInstanceRename.exe
+140\Tools\Binn\ManagementStudio\ConflictViewer.exe
+140\Tools\Binn\ManagementStudio\ControlService.exe
+140\Tools\Binn\ManagementStudio\CopyDatabaseWizard.exe
+140\Tools\Binn\ManagementStudio\DatabaseMailWizard.exe
+140\Tools\Binn\ManagementStudio\DTExecUI.exe
+140\Tools\Binn\ManagementStudio\Mashup\Microsoft.Mashup.Container.exe
+140\Tools\Binn\ManagementStudio\Mashup\Microsoft.Mashup.Container.NetFX40.exe
+140\Tools\Binn\ManagementStudio\Mashup\Microsoft.Mashup.Container.NetFX45.exe
+140\Tools\Binn\ManagementStudio\Mashup\ODBC Drivers\Simba Spark ODBC Driver\DriverConfiguration32.exe
+140\Tools\Binn\ManagementStudio\Microsoft.AnalysisServices.Deployment.exe
+140\Tools\Binn\ManagementStudio\Ssms.exe
+140\Tools\Binn\OSQL.EXE
+140\Tools\Binn\PROFILER.EXE
+140\Tools\Binn\rs.exe
+140\Tools\Binn\rsconfig.exe
+140\Tools\Binn\RSConfigTool.exe
+140\Tools\Binn\RSKeyMgmt.exe
+140\Tools\Binn\SQLdiag.exe
+140\Tools\Binn\sqlmonitor.exe
+140\Tools\Binn\SQLPS.exe
+140\Tools\Binn\SSBDiagnose.exe
+90\Shared\sqlbrowser.exe
+Client SDK\ODBC\130\Tools\Binn\bcp.exe
+Client SDK\ODBC\130\Tools\Binn\SQLCMD.EXE"><div style="text-align:right;">48</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="140\Tools\PowerShell\Modules\SQLPS\SqlPsPostScript.PS1"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files (x86)\Microsoft Visual Studio 14.0</td><td align="left"><b><a title="Common7\IDE\DDConfigCA.exe
+Common7\IDE\Extensions\Microsoft\SSIS\140\Binn\DtsDebugHost.exe
+Common7\IDE\Microsoft.VisualStudio.Web.Host.exe
+Common7\IDE\PerfWatson2.exe
+Common7\IDE\StorePID.exe
+Common7\IDE\T4VSHostProcess.exe
+Common7\IDE\UserControlTestContainer.exe
+Common7\IDE\vb7to8.exe
+Common7\IDE\VsDebugWERHelper.exe
+Common7\IDE\vsdiag_regwcf.exe
+Common7\IDE\vshost.exe
+Common7\IDE\vshost32.exe
+Common7\IDE\vshost32-clr2.exe
+Common7\IDE\vshost-clr2.exe
+Common7\IDE\VSIXInstaller.exe
+Common7\IDE\VSLaunchBrowser.exe
+Common7\IDE\vsn.exe
+Common7\IDE\VSWebHandler.exe
+Common7\IDE\XDesProc.exe
+Common7\IDE\Xml\Microsoft.XslDebugger.Host.exe
+Common7\Packages\Debugger\VsDebugLaunchNotify.exe
+Common7\Packages\Debugger\X64\msvsmon.exe
+Common7\Packages\Debugger\X64\TailoredDeploy.exe
+Common7\Packages\Debugger\X64\VsDebugWERHelper.exe"><div style="text-align:right;">24</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files (x86)\MSBuild</td><td align="left"><b><a title="14.0\Bin\amd64\csc.exe
+14.0\Bin\amd64\MSBuild.exe
+14.0\Bin\amd64\MSBuildTaskHost.exe
+14.0\Bin\amd64\Tracker.exe
+14.0\Bin\amd64\vbc.exe
+14.0\Bin\amd64\VBCSCompiler.exe
+14.0\Bin\csc.exe
+14.0\Bin\MSBuild.exe
+14.0\Bin\MSBuildTaskHost.exe
+14.0\Bin\Tracker.exe
+14.0\Bin\vbc.exe
+14.0\Bin\VBCSCompiler.exe"><div style="text-align:right;">12</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files (x86)\Symantec</td><td align="left"><b><a title="Symantec Endpoint Protection\14.3.1169.0100.105\Bin\AutoExcl.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\CATClean.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\ccSvcHst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\Checksum.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\ControlAP.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\DevViewer.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\DoScan.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\DWHWizrd.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\EFAInst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\elaminst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\FixExtend.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\MigrateUserScans.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\PatchWrap.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\roru.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\SavUI.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\SepLiveUpdate.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\SepStub.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\SETDAD.Collector.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\setiCollect.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\SISStatusDlg.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\Smc.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\SmcGui.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\SRTSP_CA.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\SylinkDrop.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\SymCorpUI.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\symerr.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\WFPUnins.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin\WSCSAvNotifier.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\ccSvcHst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\DevManStub.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\dot1xtray64.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\installTeefer.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\RegSSHelper.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\SEFInst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\SEPModuleList.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\sepWscSvc64.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\Sevntx64.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\sisnat.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\smcinst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\snac64.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Bin64\ToastUI.exe
+Symantec Endpoint Protection\AutoExcl.exe
+Symantec Endpoint Protection\Checksum.exe
+Symantec Endpoint Protection\DoScan.exe
+Symantec Endpoint Protection\SepLiveUpdate.exe
+Symantec Endpoint Protection\Smc.exe"><div style="text-align:right;">46</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Symantec Endpoint Protection\14.3.1169.0100.105\Bin\Confirm-AzureVM.ps1"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files (x86)\Windows Mail</td><td align="left"><b><a title="wab.exe
+wabmig.exe
+WinMail.exe"><div style="text-align:right;">3</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files (x86)\Windows Media Player</td><td align="left"><b><a title="setup_wm.exe
+wmlaunch.exe
+wmpconfig.exe
+wmplayer.exe
+wmprph.exe
+wmpshare.exe"><div style="text-align:right;">6</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files (x86)\Windows Photo Viewer</td><td align="left"><b><a title="ImagingDevices.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files (x86)\WindowsPowerShell</td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Modules\Pester\3.4.0\bin\Pester.bat
+Modules\Pester\3.4.0\Build.bat"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Diagnostics\Comprehensive\Comprehensive.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Diagnostics\Simple\Simple.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Test\Microsoft.PowerShell.Operation.Validation.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Test\Modules\Example1.Diagnostics\Diagnostics\Simple\Example1.Diagnostics.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Test\Modules\Example2.Diagnostics\1.0.1\Diagnostics\Simple\Example2.Diagnostics.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Test\Modules\Example3.Diagnostics\1.1.1\Diagnostics\Simple\Example3A.Diagnostics.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Test\Modules\Example3.Diagnostics\2.0.1\Diagnostics\Simple\Example3B.Diagnostics.Tests.ps1
+Modules\Pester\3.4.0\build.psake.ps1
+Modules\Pester\3.4.0\chocolateyInstall.ps1
+Modules\Pester\3.4.0\Examples\Calculator\Add-Numbers.ps1
+Modules\Pester\3.4.0\Examples\Calculator\Add-Numbers.Tests.ps1
+Modules\Pester\3.4.0\Examples\Validator\Validator.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Be.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Be.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeGreaterThan.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeGreaterThan.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLessThan.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLessThan.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLike.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLike.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLikeExactly.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLikeExactly.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeNullOrEmpty.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeNullOrEmpty.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeOfType.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeOfType.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Contain.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Contain.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\ContainExactly.ps1
+Modules\Pester\3.4.0\Functions\Assertions\ContainExactly.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Exist.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Exist.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Match.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Match.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\MatchExactly.ps1
+Modules\Pester\3.4.0\Functions\Assertions\MatchExactly.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\PesterThrow.ps1
+Modules\Pester\3.4.0\Functions\Assertions\PesterThrow.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Set-TestInconclusive.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Should.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Should.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Test-Assertion.ps1
+Modules\Pester\3.4.0\Functions\BreakAndContinue.Tests.ps1
+Modules\Pester\3.4.0\Functions\Context.ps1
+Modules\Pester\3.4.0\Functions\Context.Tests.ps1
+Modules\Pester\3.4.0\Functions\Coverage.ps1
+Modules\Pester\3.4.0\Functions\Coverage.Tests.ps1
+Modules\Pester\3.4.0\Functions\Describe.ps1
+Modules\Pester\3.4.0\Functions\Describe.Tests.ps1
+Modules\Pester\3.4.0\Functions\GlobalMock-A.Tests.ps1
+Modules\Pester\3.4.0\Functions\GlobalMock-B.Tests.ps1
+Modules\Pester\3.4.0\Functions\In.ps1
+Modules\Pester\3.4.0\Functions\In.Tests.ps1
+Modules\Pester\3.4.0\Functions\InModuleScope.ps1
+Modules\Pester\3.4.0\Functions\InModuleScope.Tests.ps1
+Modules\Pester\3.4.0\Functions\It.ps1
+Modules\Pester\3.4.0\Functions\It.Tests.ps1
+Modules\Pester\3.4.0\Functions\Mock.ps1
+Modules\Pester\3.4.0\Functions\Mock.Tests.ps1
+Modules\Pester\3.4.0\Functions\New-Fixture.ps1
+Modules\Pester\3.4.0\Functions\New-Fixture.Tests.ps1
+Modules\Pester\3.4.0\Functions\PesterState.ps1
+Modules\Pester\3.4.0\Functions\PesterState.Tests.ps1
+Modules\Pester\3.4.0\Functions\SetupTeardown.ps1
+Modules\Pester\3.4.0\Functions\SetupTeardown.Tests.ps1
+Modules\Pester\3.4.0\Functions\TestDrive.ps1
+Modules\Pester\3.4.0\Functions\TestDrive.Tests.ps1
+Modules\Pester\3.4.0\Functions\TestResults.ps1
+Modules\Pester\3.4.0\Functions\TestResults.Tests.ps1
+Modules\Pester\3.4.0\Functions\TestsRunningInCleanRunspace.Tests.ps1
+Modules\Pester\3.4.0\Pester.Tests.ps1"><div style="text-align:right;">71</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files\HDS</td><td align="left"><b><a title="Backup and Recovery\Base\adLdapTool.exe
+Backup and Recovery\Base\AuditQiNetix.exe
+Backup and Recovery\Base\AuthorUtil.exe
+Backup and Recovery\Base\BLKWinSetup.exe
+Backup and Recovery\Base\BlockRestore.exe
+Backup and Recovery\Base\CLAFRestore.exe
+Backup and Recovery\Base\CLBackup.exe
+Backup and Recovery\Base\clBackupXP.exe
+Backup and Recovery\Base\CLDBengine.exe
+Backup and Recovery\Base\ClDctmFTIBackup.exe
+Backup and Recovery\Base\ClDctmScan.exe
+Backup and Recovery\Base\CLIFRestore.exe
+Backup and Recovery\Base\ClMgrS.exe
+Backup and Recovery\Base\CLReboot.exe
+Backup and Recovery\Base\CLRestore.exe
+Backup and Recovery\Base\ConfigureClientTool.exe
+Backup and Recovery\Base\cv7z.exe
+Backup and Recovery\Base\CVBlkLevelBackup.exe
+Backup and Recovery\Base\CVCacheSet.exe
+Backup and Recovery\Base\cvcl_test.exe
+Backup and Recovery\Base\cvcl_ver.exe
+Backup and Recovery\Base\CVClusterNotify.exe
+Backup and Recovery\Base\CVConvertUnicode.exe
+Backup and Recovery\Base\cvd.exe
+Backup and Recovery\Base\CvDiagnostics.exe
+Backup and Recovery\Base\CVDiskPerf.exe
+Backup and Recovery\Base\CVDistributor.exe
+Backup and Recovery\Base\CvEdgeMonitor.exe
+Backup and Recovery\Base\CVExpPluginRegSvr.exe
+Backup and Recovery\Base\CVFileScan.exe
+Backup and Recovery\Base\CVForeignHandler.exe
+Backup and Recovery\Base\CVFSSnap.exe
+Backup and Recovery\Base\cvfwCLI.exe
+Backup and Recovery\Base\cvfwd.exe
+Backup and Recovery\Base\CVGACUtil.exe
+Backup and Recovery\Base\CVGACUtil40.exe
+Backup and Recovery\Base\CVIPInfo.exe
+Backup and Recovery\Base\CVMapDrive.exe
+Backup and Recovery\Base\CVMountImage.exe
+Backup and Recovery\Base\CVNetChk.exe
+Backup and Recovery\Base\CVNetworkTestTool.exe
+Backup and Recovery\Base\CVNRDS.exe
+Backup and Recovery\Base\CVODS.exe
+Backup and Recovery\Base\CvPerfLogAnalyze.exe
+Backup and Recovery\Base\CVPing.exe
+Backup and Recovery\Base\CVPLink.exe
+Backup and Recovery\Base\CvPostOps.exe
+Backup and Recovery\Base\CVPSCP.exe
+Backup and Recovery\Base\CVRenameDirChange.exe
+Backup and Recovery\Base\CVRestart.exe
+Backup and Recovery\Base\CVRetrieveResults.exe
+Backup and Recovery\Base\CVRolesManager.exe
+Backup and Recovery\Base\CVSegyTool.exe
+Backup and Recovery\Base\CVSegyValidationTool.exe
+Backup and Recovery\Base\cvsleep.exe
+Backup and Recovery\Base\CVSPBackup.exe
+Backup and Recovery\Base\CVSPBackup2013.exe
+Backup and Recovery\Base\CVSPWebPartInstallerLauncher.exe
+Backup and Recovery\Base\CvSQLAddInConfig.exe
+Backup and Recovery\Base\CvSQLBackup.exe
+Backup and Recovery\Base\CvSQLBackupProxy.exe
+Backup and Recovery\Base\CvSQLBackupUtility.exe
+Backup and Recovery\Base\CVSQLDBArchive.exe
+Backup and Recovery\Base\CVSQLDBBackup.exe
+Backup and Recovery\Base\CvSqlLogBackupUtility.exe
+Backup and Recovery\Base\CvSQLRestore.exe
+Backup and Recovery\Base\CvSQLRestoreProxy.exe
+Backup and Recovery\Base\CvSQLStudioConfig.exe
+Backup and Recovery\Base\CVSVCStat.exe
+Backup and Recovery\Base\CvSyncProxy.exe
+Backup and Recovery\Base\CVSystemTray.exe
+Backup and Recovery\Base\CVVDTool.exe
+Backup and Recovery\Base\CVVersion.exe
+Backup and Recovery\Base\CVVICleanup.exe
+Backup and Recovery\Base\CVVIRestore.exe
+Backup and Recovery\Base\CVVSSnap.exe
+Backup and Recovery\Base\DlpRecaller.exe
+Backup and Recovery\Base\DM2ExMBRestore.exe
+Backup and Recovery\Base\DM2SPDocRestore.exe
+Backup and Recovery\Base\DM2ZipFiles.exe
+Backup and Recovery\Base\DriverInstaller.exe
+Backup and Recovery\Base\EdgeDriveUploader\EdgeUploader.exe
+Backup and Recovery\Base\ExIntegCheck.exe
+Backup and Recovery\Base\FailOverSetup.exe
+Backup and Recovery\Base\FSVSSRestore.exe
+Backup and Recovery\Base\gacutil.exe
+Backup and Recovery\Base\getBackupList.exe
+Backup and Recovery\Base\GxAdmin.exe
+Backup and Recovery\Base\GXHSMPopup.exe
+Backup and Recovery\Base\GXHSMSelDel.exe
+Backup and Recovery\Base\GXHSMStub.exe
+Backup and Recovery\Base\GXHSMUtility.exe
+Backup and Recovery\Base\GxKill.exe
+Backup and Recovery\Base\GxSplash.exe
+Backup and Recovery\Base\GxTail.exe
+Backup and Recovery\Base\GxWinClusterPlugin.exe
+Backup and Recovery\Base\IFind.exe
+Backup and Recovery\Base\ImgFileLvlRestore.exe
+Backup and Recovery\Base\InstallUpdates.exe
+Backup and Recovery\Base\Laptop2Taskbaricon.exe
+Backup and Recovery\Base\ListFilesForJob.exe
+Backup and Recovery\Base\LogMonitoring.exe
+Backup and Recovery\Base\MigrationAssistant.exe
+Backup and Recovery\Base\MoveDDBClientCacheClient.exe
+Backup and Recovery\Base\MoveDir.exe
+Backup and Recovery\Base\MSIRemoveOrphanedRegKeys.exe
+Backup and Recovery\Base\OneTchUtl.exe
+Backup and Recovery\Base\OneTouch.exe
+Backup and Recovery\Base\PassPhraseTool.exe
+Backup and Recovery\Base\PseudoMountClient.exe
+Backup and Recovery\Base\QCreate.exe
+Backup and Recovery\Base\QCURL.exe
+Backup and Recovery\Base\QDelete.exe
+Backup and Recovery\Base\QDrive.exe
+Backup and Recovery\Base\QGetErrorString.exe
+Backup and Recovery\Base\QInfo.exe
+Backup and Recovery\Base\QLibrary.exe
+Backup and Recovery\Base\QList.exe
+Backup and Recovery\Base\QLogin.exe
+Backup and Recovery\Base\QLogout.exe
+Backup and Recovery\Base\QMedia.exe
+Backup and Recovery\Base\QModify.exe
+Backup and Recovery\Base\QOperation.exe
+Backup and Recovery\Base\QST2.exe
+Backup and Recovery\Base\QUninstallAll.exe
+Backup and Recovery\Base\QUninstaller.exe
+Backup and Recovery\Base\RemoveUpdates.exe
+Backup and Recovery\Base\restoreClusterDb.exe
+Backup and Recovery\Base\SetPreImagedNames.exe
+Backup and Recovery\Base\SIMCallWrapper.exe
+Backup and Recovery\Base\SQLBackup.exe
+Backup and Recovery\Base\SQLBackupMaster.exe
+Backup and Recovery\Base\SQLVSSRestore.exe
+Backup and Recovery\Base\StubRecaller.exe
+Backup and Recovery\Base\unzip.exe
+Backup and Recovery\Base\UpdateNotificationCenter.exe
+Backup and Recovery\Base\VMWareSnapRestore.exe
+Backup and Recovery\Base\VSAApplicationBackupCopy.exe
+Backup and Recovery\Base\VSAAppNotifier.exe
+Backup and Recovery\Base\WinSysMonSetupTool.exe
+Backup and Recovery\Base\zip.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\BinaryPayload\LooseUpdates\InstallUpdates.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\cv7z.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\LaunchInstaller.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\QInstaller.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\Setup.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\CVInstallThirdParty\CVInstallPrereqPackages.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\CVInstallThirdParty\CVInstallThirdParty.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\CVInstallThirdParty\CVRestart.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\CVInstallThirdParty\GenProcessModuleInfo.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\CVInstallThirdParty\GenProcessModuleInfo32.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\CVInstallThirdParty\paexec.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\DotNetFramework\4.0\dotNetFx40_Full_x86_x64.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\VCRedist_2017\amd64\vc_redist.x64.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\WIC\amd64\wic_x64_enu.exe
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\WIC\x86\wic_x86_enu.exe
+Backup and Recovery\Drivers\wimserv.exe
+Backup and Recovery\jre\bin\jabswitch.exe
+Backup and Recovery\jre\bin\jaccessinspector.exe
+Backup and Recovery\jre\bin\jaccesswalker.exe
+Backup and Recovery\jre\bin\jaotc.exe
+Backup and Recovery\jre\bin\java.exe
+Backup and Recovery\jre\bin\javaw.exe
+Backup and Recovery\jre\bin\jjs.exe
+Backup and Recovery\jre\bin\jrunscript.exe
+Backup and Recovery\jre\bin\keytool.exe
+Backup and Recovery\jre\bin\kinit.exe
+Backup and Recovery\jre\bin\klist.exe
+Backup and Recovery\jre\bin\ktab.exe
+Backup and Recovery\jre\bin\pack200.exe
+Backup and Recovery\jre\bin\rmid.exe
+Backup and Recovery\jre\bin\rmiregistry.exe
+Backup and Recovery\jre\bin\unpack200.exe
+Backup and Recovery\Updates\CVRestart.exe
+Backup and Recovery\Updates\RemoveUpdates.exe"><div style="text-align:right;">175</div></a></b></td><td align="left"><b><a title="Backup and Recovery\Base\AddFWExclusions.bat
+Backup and Recovery\Base\CVSQLCmdUtility.bat
+Backup and Recovery\CVMedia\11.0.0\Windows\BinaryPayload\LooseUpdates\GUIUpdateInstaller.bat
+Backup and Recovery\CVMedia\11.0.0\Windows\ThirdParty\CVInstallThirdParty\disconnectfilehandles.bat"><div style="text-align:right;">4</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Backup and Recovery\Base\cvfti_shutdown.cmd
+Backup and Recovery\Base\cvfti_startup.cmd
+Backup and Recovery\Base\cvxplore_resume.cmd
+Backup and Recovery\Base\cvxplore_suspend.cmd"><div style="text-align:right;">4</div></a></b></td><td align="left"><b><a title="Backup and Recovery\Base\AutoDetectApp.ps1"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files\Microsoft</td><td align="left"><b><a title="Kerberos Configuration Manager for SQL Server\KerberosConfigMgr.exe
+Kerberos Configuration Manager for SQL Server\PsExec.exe"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files\Microsoft Analysis Services</td><td align="left"><b><a title="AS OLEDB\140\SQLDumper.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files\Microsoft SQL Server</td><td align="left"><b><a title="140\DTS\Binn\DTExec.exe
+140\DTS\Binn\DtsDebugHost.exe
+140\DTS\Binn\dtshost.exe
+140\DTS\Binn\dtsinstall.exe
+140\DTS\Binn\DTSWizard.exe
+140\DTS\Binn\dtutil.exe
+140\DTS\Binn\ISDataFeedPublishingWizard.exe
+140\DTS\Binn\ISDBUpgradeWizard.exe
+140\DTS\Binn\ISDeploymentWizard.exe
+140\DTS\Binn\ISProjectWizard.exe
+140\DTS\Binn\ISServerExec.exe
+140\DTS\Binn\MsDtsSrvr.exe
+140\DTS\Binn\sqlceip.exe
+140\DTS\Binn\SSISUpgrade.exe
+140\Setup Bootstrap\SQL2017\setup.exe
+140\Setup Bootstrap\SQL2017\x64\FixSqlRegistryKey_x64.exe
+140\Setup Bootstrap\SQL2017\x64\FixSqlRegistryKey_x86.exe
+140\Setup Bootstrap\SQL2017\x64\LandingPage.exe
+140\Setup Bootstrap\SQL2017\x64\RSetup.exe
+140\Setup Bootstrap\SQL2017\x64\ScenarioEngine.exe
+140\Setup Bootstrap\SQL2017\x64\SetupARP.exe
+140\Setup Bootstrap\Update Cache\KB4498951\QFE\setup.exe
+140\Setup Bootstrap\Update Cache\KB4498951\QFE\x64\fixsqlregistrykey_x64.exe
+140\Setup Bootstrap\Update Cache\KB4498951\QFE\x64\fixsqlregistrykey_x86.exe
+140\Setup Bootstrap\Update Cache\KB4498951\QFE\x64\landingpage.exe
+140\Setup Bootstrap\Update Cache\KB4498951\QFE\x64\rsetup.exe
+140\Setup Bootstrap\Update Cache\KB4498951\QFE\x64\scenarioengine.exe
+140\Setup Bootstrap\Update Cache\KB4535007\QFE\setup.exe
+140\Setup Bootstrap\Update Cache\KB4535007\QFE\x64\fixsqlregistrykey_x64.exe
+140\Setup Bootstrap\Update Cache\KB4535007\QFE\x64\fixsqlregistrykey_x86.exe
+140\Setup Bootstrap\Update Cache\KB4535007\QFE\x64\landingpage.exe
+140\Setup Bootstrap\Update Cache\KB4535007\QFE\x64\rsetup.exe
+140\Setup Bootstrap\Update Cache\KB4535007\QFE\x64\scenarioengine.exe
+140\Setup Bootstrap\Update Cache\KB4535007\QFE\x64\setup\msmpisetup.exe
+140\Setup Bootstrap\Update Cache\KB4557397\QFE\setup.exe
+140\Setup Bootstrap\Update Cache\KB4557397\QFE\x64\fixsqlregistrykey_x64.exe
+140\Setup Bootstrap\Update Cache\KB4557397\QFE\x64\fixsqlregistrykey_x86.exe
+140\Setup Bootstrap\Update Cache\KB4557397\QFE\x64\landingpage.exe
+140\Setup Bootstrap\Update Cache\KB4557397\QFE\x64\rsetup.exe
+140\Setup Bootstrap\Update Cache\KB4557397\QFE\x64\scenarioengine.exe
+140\Setup Bootstrap\Update Cache\KB4557397\QFE\x64\setup\msmpisetup.exe
+140\Setup Bootstrap\Update Cache\KB4577467\QFE\setup.exe
+140\Setup Bootstrap\Update Cache\KB4577467\QFE\x64\fixsqlregistrykey_x64.exe
+140\Setup Bootstrap\Update Cache\KB4577467\QFE\x64\fixsqlregistrykey_x86.exe
+140\Setup Bootstrap\Update Cache\KB4577467\QFE\x64\landingpage.exe
+140\Setup Bootstrap\Update Cache\KB4577467\QFE\x64\rsetup.exe
+140\Setup Bootstrap\Update Cache\KB4577467\QFE\x64\scenarioengine.exe
+140\Setup Bootstrap\Update Cache\KB4577467\QFE\x64\setup\msmpisetup.exe
+140\Setup Bootstrap\Update Cache\KB5003830\QFE\setup.exe
+140\Setup Bootstrap\Update Cache\KB5003830\QFE\x64\fixsqlregistrykey_x64.exe
+140\Setup Bootstrap\Update Cache\KB5003830\QFE\x64\fixsqlregistrykey_x86.exe
+140\Setup Bootstrap\Update Cache\KB5003830\QFE\x64\landingpage.exe
+140\Setup Bootstrap\Update Cache\KB5003830\QFE\x64\rsetup.exe
+140\Setup Bootstrap\Update Cache\KB5003830\QFE\x64\scenarioengine.exe
+140\Setup Bootstrap\Update Cache\KB5003830\QFE\x64\setup\msmpisetup.exe
+140\Shared\SqlDumper.exe
+140\Shared\SqlWtsn.exe
+140\Shared\VS2008\1033\rdbgsetup.exe
+140\Tools\Binn\OSQL.EXE
+140\Tools\Binn\SQLdiag.exe
+140\Tools\Binn\SqlLogShip.exe
+90\Shared\sqlwriter.exe
+Client SDK\ODBC\130\Tools\Binn\bcp.exe
+Client SDK\ODBC\130\Tools\Binn\SQLCMD.EXE
+MSSQL14.MSSQLSERVER\MSSQL\Binn\BackupToUrl.exe
+MSSQL14.MSSQLSERVER\MSSQL\Binn\DatabaseMail.exe
+MSSQL14.MSSQLSERVER\MSSQL\Binn\DCEXEC.EXE
+MSSQL14.MSSQLSERVER\MSSQL\Binn\SQLAGENT.EXE
+MSSQL14.MSSQLSERVER\MSSQL\Binn\sqlceip.exe
+MSSQL14.MSSQLSERVER\MSSQL\Binn\SQLIOSIM.EXE
+MSSQL14.MSSQLSERVER\MSSQL\Binn\sqlservr.exe
+MSSQL14.MSSQLSERVER\MSSQL\Binn\StretchCodeGen.exe
+MSSQL14.MSSQLSERVER\MSSQL\Binn\xpadsi.exe
+MSSQL14.PWCSQL\MSSQL\Binn\BackupToUrl.exe
+MSSQL14.PWCSQL\MSSQL\Binn\DatabaseMail.exe
+MSSQL14.PWCSQL\MSSQL\Binn\DCEXEC.EXE
+MSSQL14.PWCSQL\MSSQL\Binn\SQLAGENT.EXE
+MSSQL14.PWCSQL\MSSQL\Binn\sqlceip.exe
+MSSQL14.PWCSQL\MSSQL\Binn\SQLIOSIM.EXE
+MSSQL14.PWCSQL\MSSQL\Binn\sqlservr.exe
+MSSQL14.PWCSQL\MSSQL\Binn\StretchCodeGen.exe
+MSSQL14.PWCSQL\MSSQL\Binn\xpadsi.exe"><div style="text-align:right;">82</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="MSSQL14.MSSQLSERVER\MSSQL\Install\PerfCountersCollect.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\PerfCountersCollect.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\PerfCountersUpload.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\PerfCountersUpload.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\QueryActivityCollect.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\QueryActivityCollect.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\QueryActivityUpload.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\QueryActivityUpload.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\SqlTraceCollect.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\SqlTraceCollect.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\SqlTraceUpload.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\SqlTraceUpload.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\TSQLQueryCollect.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\TSQLQueryCollect.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\TSQLQueryUpload.dtsx
+MSSQL14.MSSQLSERVER\MSSQL\Install\TSQLQueryUpload.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\PerfCountersCollect.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\PerfCountersCollect.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\PerfCountersUpload.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\PerfCountersUpload.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\QueryActivityCollect.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\QueryActivityCollect.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\QueryActivityUpload.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\QueryActivityUpload.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\SqlTraceCollect.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\SqlTraceCollect.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\SqlTraceUpload.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\SqlTraceUpload.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\TSQLQueryCollect.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\TSQLQueryCollect.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\TSQLQueryUpload.dtsx
+MSSQL14.PWCSQL\MSSQL\Install\TSQLQueryUpload.dtsx"><div style="text-align:right;">32</div></a></b></td></tr>
+<tr class="d1"><td align="left">C:\Program Files\Microsoft Visual Studio 14.0</td><td align="left"><b><a title="Common7\IDE\Extensions\Microsoft\SSIS\140\Binn\DtsDebugHost.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files\NSClient++</td><td align="left"><b><a title="check_nrpe.exe
+nscp.exe
+reporter.exe"><div style="text-align:right;">3</div></a></b></td><td align="left"><b><a title="scripts\check_60s.bat
+scripts\check_long.bat
+scripts\check_no_rdp.bat
+scripts\check_ok.bat
+scripts\check_ping.bat
+scripts\check_test.bat
+scripts\custom\my_custom_script.bat"><div style="text-align:right;">7</div></a></b></td><td align="left"><b><a title="scripts\check_battery.vbs
+scripts\check_files.vbs
+scripts\check_printer.vbs
+scripts\check_test.vbs
+scripts\check_updates.vbs
+scripts\lib\NagiosPlugins.vbs
+scripts\lib\wrapper.vbs
+scripts\op5\check_ad.vbs
+scripts\op5\check_time.vbs
+scripts\op5\services.vbs"><div style="text-align:right;">10</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="scripts\check_test.ps1
+scripts\op5\restart_service.ps1
+scripts\powershell.ps1"><div style="text-align:right;">3</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files\VMware</td><td align="left"><b><a title="VMware Tools\7za.exe
+VMware Tools\rpctool.exe
+VMware Tools\vmtoolsd.exe
+VMware Tools\VMToolsHookProc.exe
+VMware Tools\VMware VGAuth\VGAuthCLI.exe
+VMware Tools\VMware VGAuth\VGAuthService.exe
+VMware Tools\VMware VGAuth\VMwareAliasImport.exe
+VMware Tools\VMwareNamespaceCmd.exe
+VMware Tools\VMwareResolutionSet.exe
+VMware Tools\VMwareToolboxCmd.exe
+VMware Tools\VMwareXferlogs.exe"><div style="text-align:right;">11</div></a></b></td><td align="left"><b><a title="VMware Tools\poweroff-vm-default.bat
+VMware Tools\poweron-vm-default.bat
+VMware Tools\resume-vm-default.bat
+VMware Tools\suspend-vm-default.bat
+VMware Tools\VmUpgradeHelper.bat"><div style="text-align:right;">5</div></a></b></td><td align="left"><b><a title="VMware Tools\vm-support.vbs"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files\Windows Defender</td><td align="left"><b><a title="ConfigSecurityPolicy.exe
+MpCmdRun.exe
+MpUXSrv.exe
+MSASCui.exe
+MSASCuiL.exe
+MsMpEng.exe
+NisSrv.exe"><div style="text-align:right;">7</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files\Windows Mail</td><td align="left"><b><a title="wab.exe
+wabmig.exe
+WinMail.exe"><div style="text-align:right;">3</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Program Files\Windows Photo Viewer</td><td align="left"><b><a title="ImagingDevices.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Program Files\WindowsPowerShell</td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Modules\Pester\3.4.0\bin\Pester.bat
+Modules\Pester\3.4.0\Build.bat"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Diagnostics\Comprehensive\Comprehensive.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Diagnostics\Simple\Simple.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Test\Microsoft.PowerShell.Operation.Validation.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Test\Modules\Example1.Diagnostics\Diagnostics\Simple\Example1.Diagnostics.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Test\Modules\Example2.Diagnostics\1.0.1\Diagnostics\Simple\Example2.Diagnostics.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Test\Modules\Example3.Diagnostics\1.1.1\Diagnostics\Simple\Example3A.Diagnostics.Tests.ps1
+Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\Test\Modules\Example3.Diagnostics\2.0.1\Diagnostics\Simple\Example3B.Diagnostics.Tests.ps1
+Modules\Pester\3.4.0\build.psake.ps1
+Modules\Pester\3.4.0\chocolateyInstall.ps1
+Modules\Pester\3.4.0\Examples\Calculator\Add-Numbers.ps1
+Modules\Pester\3.4.0\Examples\Calculator\Add-Numbers.Tests.ps1
+Modules\Pester\3.4.0\Examples\Validator\Validator.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Be.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Be.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeGreaterThan.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeGreaterThan.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLessThan.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLessThan.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLike.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLike.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLikeExactly.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeLikeExactly.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeNullOrEmpty.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeNullOrEmpty.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeOfType.ps1
+Modules\Pester\3.4.0\Functions\Assertions\BeOfType.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Contain.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Contain.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\ContainExactly.ps1
+Modules\Pester\3.4.0\Functions\Assertions\ContainExactly.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Exist.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Exist.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Match.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Match.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\MatchExactly.ps1
+Modules\Pester\3.4.0\Functions\Assertions\MatchExactly.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\PesterThrow.ps1
+Modules\Pester\3.4.0\Functions\Assertions\PesterThrow.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Set-TestInconclusive.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Should.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Should.Tests.ps1
+Modules\Pester\3.4.0\Functions\Assertions\Test-Assertion.ps1
+Modules\Pester\3.4.0\Functions\BreakAndContinue.Tests.ps1
+Modules\Pester\3.4.0\Functions\Context.ps1
+Modules\Pester\3.4.0\Functions\Context.Tests.ps1
+Modules\Pester\3.4.0\Functions\Coverage.ps1
+Modules\Pester\3.4.0\Functions\Coverage.Tests.ps1
+Modules\Pester\3.4.0\Functions\Describe.ps1
+Modules\Pester\3.4.0\Functions\Describe.Tests.ps1
+Modules\Pester\3.4.0\Functions\GlobalMock-A.Tests.ps1
+Modules\Pester\3.4.0\Functions\GlobalMock-B.Tests.ps1
+Modules\Pester\3.4.0\Functions\In.ps1
+Modules\Pester\3.4.0\Functions\In.Tests.ps1
+Modules\Pester\3.4.0\Functions\InModuleScope.ps1
+Modules\Pester\3.4.0\Functions\InModuleScope.Tests.ps1
+Modules\Pester\3.4.0\Functions\It.ps1
+Modules\Pester\3.4.0\Functions\It.Tests.ps1
+Modules\Pester\3.4.0\Functions\Mock.ps1
+Modules\Pester\3.4.0\Functions\Mock.Tests.ps1
+Modules\Pester\3.4.0\Functions\New-Fixture.ps1
+Modules\Pester\3.4.0\Functions\New-Fixture.Tests.ps1
+Modules\Pester\3.4.0\Functions\PesterState.ps1
+Modules\Pester\3.4.0\Functions\PesterState.Tests.ps1
+Modules\Pester\3.4.0\Functions\SetupTeardown.ps1
+Modules\Pester\3.4.0\Functions\SetupTeardown.Tests.ps1
+Modules\Pester\3.4.0\Functions\TestDrive.ps1
+Modules\Pester\3.4.0\Functions\TestDrive.Tests.ps1
+Modules\Pester\3.4.0\Functions\TestResults.ps1
+Modules\Pester\3.4.0\Functions\TestResults.Tests.ps1
+Modules\Pester\3.4.0\Functions\TestsRunningInCleanRunspace.Tests.ps1
+Modules\Pester\3.4.0\Pester.Tests.ps1"><div style="text-align:right;">71</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\ProgramData\Commvault Systems</td><td align="left"><b><a title="Galaxy\Temp\Removeupdates\RemoveUpdates.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\ProgramData\Microsoft</td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="AppV\Setup\OfficeIntegrator.ps1"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\ProgramData\Symantec</td><td align="left"><b><a title="Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\AutoExcl.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\CATClean.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\ccSvcHst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Checksum.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\ControlAP.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DevViewer.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DoScan.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DWHWizrd.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\EFAInst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\elaminst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\FixExtend.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\MigrateUserScans.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\PatchWrap.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\roru.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SavUI.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SepLiveUpdate.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SepStub.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SETDAD.Collector.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\setiCollect.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SISStatusDlg.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Smc.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SmcGui.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SRTSP_CA.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SylinkDrop.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SymCorpUI.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\symerr.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\WFPUnins.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\WSCSAvNotifier.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\ccSvcHst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\DevManStub.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\dot1xtray64.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\installTeefer.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\RegSSHelper.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\SEFInst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\SEPModuleList.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\sepWscSvc64.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\Sevntx64.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\sisnat.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\smcinst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\snac64.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\ToastUI.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Setup.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\smcinst.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Definitions\EDRDefs\20220419.004\SymRemote.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Definitions\NTRDefs\20220407.006\ntrproxy.exe
+Symantec Endpoint Protection\14.3.1169.0100.105\Data\Definitions\NTRDefs\20220407.006\wssad.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\AutoExcl.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\CATClean.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\ccSvcHst.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Checksum.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\ControlAP.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DevViewer.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DoScan.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DWHWizrd.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\EFAInst.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\elaminst.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\FixExtend.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\MigrateUserScans.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\PatchWrap.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\roru.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SavUI.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SepLiveUpdate.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SepStub.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SETDAD.Collector.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\setiCollect.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SISStatusDlg.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Smc.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SmcGui.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SRTSP_CA.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SylinkDrop.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SymCorpUI.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\symerr.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\WFPUnins.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\WSCSAvNotifier.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\ccSvcHst.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\DevManStub.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\dot1xtray64.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\installTeefer.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\RegSSHelper.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\SEFInst.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\SEPModuleList.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\sepWscSvc64.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\Sevntx64.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\sisnat.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\smcinst.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\snac64.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\ToastUI.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Setup.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\smcinst.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Definitions\EDRDefs\20220419.004\SymRemote.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Definitions\NTRDefs\20220407.006\ntrproxy.exe
+Symantec Endpoint Protection\CurrentVersion\Data\Definitions\NTRDefs\20220407.006\wssad.exe"><div style="text-align:right;">92</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Confirm-AzureVM.ps1
+Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Confirm-AzureVM.ps1"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Users\All Users</td><td align="left"><b><a title="Commvault Systems\Galaxy\Temp\Removeupdates\RemoveUpdates.exe
+Package Cache\{2e13383e-8f68-4bb5-959e-9fddd8cb8789}\VS14-KB3095681.exe
+Package Cache\{7b178cda-9740-4701-a92a-f168d213b343}\VC_redist.x64.exe
+Package Cache\{7f51bdb9-ee21-49ee-94d6-90afc321780e}\vcredist_x64.exe
+Package Cache\{8c3f057e-d6a6-4338-ac6a-f1c795a6577b}\VC_redist.x86.exe
+Package Cache\{91a1b895-c621-4038-b34a-01e7affbcb6b}\SSMS-Setup-ENU.exe
+Package Cache\{ab213ab7-4792-4c6f-a3fa-8485d06c3475}\vsta_setup.exe
+Package Cache\{bd4ef7af-dfb1-472e-8fa4-1b97f360a3e7}\vsta_ls.exe
+Package Cache\{ce085a78-074e-4823-8dc1-8a721b94b76d}\vcredist_x86.exe
+Package Cache\{d2981c27-a434-4c9a-96c7-0209e97c4eac}\vs_isoshell.exe
+Package Cache\{fc97456b-8915-45ed-bcad-bc2bad65e6b8}\Setup.exe
+Package Cache\02A26E554FBB4232ACD36E70D09F2C7893D399CD\redist\VS14-KB3095681.exe
+Package Cache\28EA65CA-2BDA-3E91-87C3-F292283EB015\packages\vcRedistD12\1033\vcredist_x86.exe
+Package Cache\4F812BBB2BE7E30CED293F8A229A5410D70DE6DB\redist\vsta_ls.exe
+Package Cache\58CB058F-946C-320D-BEF9-61263521788F\packages\vcRedistD12\1033\vcredist_x64.exe
+Package Cache\5E6157D16EC044A823B2FD2C030ED6DECD2E997E\redist\vsta_setup.exe
+Package Cache\D4CD0B36-3F1C-39C3-9E3A-35687B5C24CF\packages\vcRedistD14\VC_redist.x64.exe
+Package Cache\D4CD0B36-3F1C-39C3-9E3A-35687B5C24CF\packages\vcRedistD14\VC_redist.x86.exe
+Package Cache\DF957404-ABBC-38D3-8467-54248FA47E12\packages\patch_KB3095681\Preparation.exe
+Package Cache\EF07A417-EA7D-3CCC-BA19-35DF3938C259\packages\patch_KB3095681\Preparation.exe
+Package Cache\FE948F0DAB52EB8CB5A740A77D8934B9E1A8E301\redist\vs_isoshell.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\AutoExcl.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\CATClean.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\ccSvcHst.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Checksum.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\ControlAP.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DevViewer.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DoScan.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DWHWizrd.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\EFAInst.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\elaminst.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\FixExtend.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\MigrateUserScans.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\PatchWrap.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\roru.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SavUI.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SepLiveUpdate.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SepStub.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SETDAD.Collector.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\setiCollect.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SISStatusDlg.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Smc.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SmcGui.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SRTSP_CA.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SylinkDrop.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SymCorpUI.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\symerr.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\WFPUnins.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\WSCSAvNotifier.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\ccSvcHst.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\DevManStub.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\dot1xtray64.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\installTeefer.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\RegSSHelper.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\SEFInst.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\SEPModuleList.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\sepWscSvc64.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\Sevntx64.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\sisnat.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\smcinst.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\snac64.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\ToastUI.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Setup.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\smcinst.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Definitions\EDRDefs\20220419.004\SymRemote.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Definitions\NTRDefs\20220407.006\ntrproxy.exe
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Definitions\NTRDefs\20220407.006\wssad.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\AutoExcl.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\CATClean.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\ccSvcHst.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Checksum.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\ControlAP.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DevViewer.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DoScan.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\DWHWizrd.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\EFAInst.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\elaminst.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\FixExtend.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\MigrateUserScans.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\PatchWrap.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\roru.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SavUI.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SepLiveUpdate.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SepStub.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SETDAD.Collector.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\setiCollect.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SISStatusDlg.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Smc.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SmcGui.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SRTSP_CA.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SylinkDrop.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\SymCorpUI.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\symerr.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\WFPUnins.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\WSCSAvNotifier.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\ccSvcHst.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\DevManStub.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\dot1xtray64.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\installTeefer.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\RegSSHelper.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\SEFInst.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\SEPModuleList.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\sepWscSvc64.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\Sevntx64.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\sisnat.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\smcinst.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\snac64.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin64\ToastUI.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Setup.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\smcinst.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Definitions\EDRDefs\20220419.004\SymRemote.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Definitions\NTRDefs\20220407.006\ntrproxy.exe
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Definitions\NTRDefs\20220407.006\wssad.exe"><div style="text-align:right;">113</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Microsoft\AppV\Setup\OfficeIntegrator.ps1
+Symantec\Symantec Endpoint Protection\14.3.1169.0100.105\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Confirm-AzureVM.ps1
+Symantec\Symantec Endpoint Protection\CurrentVersion\Data\Cached Installs\Program Files\Symantec\Name\Version\Bin\Confirm-AzureVM.ps1"><div style="text-align:right;">3</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Users\rperez</td><td align="left"><b><a title="Desktop\Scripter\Scripter\SqlScripter.exe
+Desktop\Scripter\Scripter\SqlScripter20.exe"><div style="text-align:right;">2</div></a></b></td><td align="left"><b><a title="Desktop\Scripter\Scripter\SqlScripter.bat"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Windows</td><td align="left"><b><a title="DfsrAdmin.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><b><a title="cmd.bat"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Windows\FireEye</td><td align="left"><b><a title="AppUIMonitor.exe
+uncontain.exe
+xagtnotif.exe"><div style="text-align:right;">3</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Windows\MiracastView</td><td align="left"><b><a title="MiracastView.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Windows\NetworkController</td><td align="left"><b><a title="SDNBR\SDNBR.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Windows\PrintDialog</td><td align="left"><b><a title="PrintDialog.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">C:\Windows\System32</td><td align="left"><b><a title="appidtel.exe
+bcastdvr.exe
+CloudNotifications.exe
+CloudStorageWizard.exe
+diskshadow.exe
+dtdump.exe
+edpnotify.exe
+evntcmd.exe
+evntwin.exe
+explorer.exe
+F12\F12Chooser.exe
+fontdrvhost.exe
+GameBarPresenceWriter.exe
+GamePanel.exe
+hh.exe
+iashost.exe
+InstallAgent.exe
+InstallAgentUserBroker.exe
+InstallShield\_isdel.exe
+InstallShield\setup.exe
+instnm.exe
+ktpass.exe
+LaunchWinApp.exe
+LockAppHost.exe
+mavinject.exe
+NetCfgNotifyObjectHost.exe
+netdom.exe
+PackagedCWALauncher.exe
+perfhost.exe
+RdpSa.exe
+RdpSaProxy.exe
+RdpSaUacHelper.exe
+regedit.exe
+rhs.exe
+setup16.exe
+snmp.exe
+Speech_OneCore\Common\SpeechModelDownload.exe
+tdlrecover.exe
+TokenBrokerCookies.exe
+verifiergui.exe
+VSSUIRUN.exe
+win32calc.exe
+Windows.Media.BackgroundPlayback.exe"><div style="text-align:right;">43</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Printing_Admin_Scripts\en-US\prncnfg.vbs
+Printing_Admin_Scripts\en-US\prndrvr.vbs
+Printing_Admin_Scripts\en-US\prnjobs.vbs
+Printing_Admin_Scripts\en-US\prnmngr.vbs
+Printing_Admin_Scripts\en-US\prnport.vbs
+Printing_Admin_Scripts\en-US\prnqctl.vbs
+Printing_Admin_Scripts\en-US\pubprn.vbs
+slmgr.vbs
+winrm.vbs"><div style="text-align:right;">9</div></a></b></td><td align="left"><b><a title="winrm.cmd"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">C:\Windows\SystemApps</td><td align="left"><b><a title="Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\Microsoft.AAD.BrokerPlugin.exe
+Microsoft.AccountsControl_cw5n1h2txyewy\AccountsControlHost.exe
+Microsoft.BioEnrollment_cw5n1h2txyewy\BioEnrollmentHost.exe
+Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe
+Microsoft.Windows.AppRep.ChxApp_cw5n1h2txyewy\CHXSmartScreen.exe
+Microsoft.Windows.AssignedAccessLockApp_cw5n1h2txyewy\AssignedAccessLockApp.exe
+Microsoft.Windows.Cortana_cw5n1h2txyewy\ActionUriServer.exe
+Microsoft.Windows.Cortana_cw5n1h2txyewy\PlacesServer.exe
+Microsoft.Windows.Cortana_cw5n1h2txyewy\RemindersServer.exe
+Microsoft.Windows.Cortana_cw5n1h2txyewy\RemindersShareTargetApp.exe
+Microsoft.Windows.Cortana_cw5n1h2txyewy\SearchUI.exe
+Microsoft.Windows.SecondaryTileExperience_cw5n1h2txyewy\SecondaryTileExperience.exe
+Microsoft.XboxGameCallableUI_cw5n1h2txyewy\XBox.TCUI.exe
+ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe"><div style="text-align:right;">14</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">E:\ADMDBA\CU</td><td align="left"><b><a title="SQLServer2017-KB4535007-x64.exe
+SQLServer2017-KB4557397-x64.exe"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">E:\ADMDBA\LoginFailed</td><td align="left"><b><a title="ObtieneLoginFallido.bkp.exe
+ObtieneLoginFallido.exe"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">I:\AdmDBA</td><td align="left"><b><a title="SSMS-Setup-ENU.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">I:\AdmDBA\nhuenul</td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="PlanBackupFull.dtsx
+PlanBackupLog.dtsx
+PlanCheckIntegrityDB.dtsx
+PlanLimpiaLog.dtsx
+PlanReindex&amp;Statistics.dtsx"><div style="text-align:right;">5</div></a></b></td></tr>
+<tr class="d0"><td align="left">I:\AdmDBA\Parche</td><td align="left"><b><a title="SQLServer2017-KB4541283-x64.exe
+SQLServer2017-KB4577467-x64.exe"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d1"><td align="left">I:\AdmDBA\Parche BD SQL Xemantics</td><td align="left"><b><a title="SQLServer2017-KB4498951-x64.exe"><div style="text-align:right;">1</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr class="d0"><td align="left">I:\AdmDBA\Security</td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><b><a title="Respaldo.20190722\LoginFailedFTP.bat
+SAS_70.bat"><div style="text-align:right;">2</div></a></b></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td><td align="left"><span class="zero"><div style="text-align:right;">0</div></span></td></tr>
+<tr><th class="Total"><span style="text-align: right;">52</span></th><th class="Total"><span style="text-align: right;">900</span></th><th class="Total"><span style="text-align: right;">106</span></th><th class="Total"><span style="text-align: right;">20</span></th><th class="Total"><span style="text-align: right;">5</span></th><th class="Total"><span style="text-align: right;">161</span></th><th class="Total"><span style="text-align: right;">8</span></th><th class="Total"><span style="text-align: right;">37</span></th></tr>
+</table><br/>
+<a name="AgentJobs"></a><h2>Agent Jobs</h2>
+<a name="[SqlAgent]_JobMonitorSesiones"></a><h3>JobMonitorSesiones</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>JobMonitorSesiones</h3>
+<div style='padding-left: 50px;'><b>EjecutaSP</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: spMonitorSesiones</div>
+</div>
+</div>
+
+<a name="[SqlAgent]_JobMonitorJobFallido"></a><h3>JobMonitorJobFallido</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>JobMonitorJobFallido</h3>
+<div style='padding-left: 50px;'><b>EjecutSP</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: spMonitorJobFallido</div>
+</div>
+</div>
+
+<a name="[SqlAgent]_JobAvisoCambioPassword"></a><h3>JobAvisoCambioPassword</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>JobAvisoCambioPassword</h3>
+<div style='padding-left: 50px;'><b>EjecutaSp</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: spAvisoCambioPassword</div>
+</div>
+</div>
+
+<a name="[SqlAgent]_syspolicy_purge_history"></a><h3>syspolicy_purge_history</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>syspolicy_purge_history</h3>
+<div style='padding-left: 50px;'><b>Verify that automation is enabled.</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>:
+<div style='padding-left: 50px;'><code>
+IF (msdb.dbo.fn_syspolicy_is_automation_enabled() != 1)
+        BEGIN
+            RAISERROR(34022, 16, 1)
+        END<br/>
+</code></div></div>
+</div>
+<div style='padding-left: 50px;'><b>Purge history.</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: EXEC msdb.dbo.sp_syspolicy_purge_history</div>
+</div>
+<div style='padding-left: 50px;'><b>Erase Phantom System Health Records.</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: PowerShell</div>
+<div style='padding-left: 50px;'><b>Command</b>:
+<div style='padding-left: 50px;'><code>
+$SQLServerConnection = New-Object System.Data.SqlClient.SqlConnection
+$SQLServerConnection.ConnectionString = &amp;quot;Data Source=$(ESCAPE_NONE(SRVR));Initial Catalog=master;Integrated Security=SSPI;Application Name=$applicationName&amp;quot;
+$PolicyStoreConnection = New-Object Microsoft.SqlServer.Management.Sdk.Sfc.SqlStoreConnection($SQLServerConnection)
+$PolicyStore = New-Object Microsoft.SqlServer.Management.Dmf.PolicyStore ($PolicyStoreConnection)
+$PolicyStore.EraseSystemHealthPhantomRecords()<br/>
+</code></div></div>
+</div>
+</div>
+
+<a name="[SqlAgent]_JobPurgeMail"></a><h3>JobPurgeMail</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>JobPurgeMail</h3>
+<div style='padding-left: 50px;'><b>EjecutaSP</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: spPurgeMail</div>
+</div>
+</div>
+
+<a name="[SqlAgent]_JobMonitorErrorLog"></a><h3>JobMonitorErrorLog</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>JobMonitorErrorLog</h3>
+<div style='padding-left: 50px;'><b>EjecutaSP</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: spMonitorErrorLog</div>
+</div>
+</div>
+
+<a name="[SqlAgent]_JobCycleErrorLog"></a><h3>JobCycleErrorLog</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>JobCycleErrorLog</h3>
+<div style='padding-left: 50px;'><b>Create Error Log</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: exec sp_cycle_errorlog
+</div>
+</div>
+</div>
+
+<a name="[SqlAgent]_JobMonitorEspacioBD"></a><h3>JobMonitorEspacioBD</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>JobMonitorEspacioBD</h3>
+<div style='padding-left: 50px;'><b>EjecutaSP</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: spMonitorEspacioBD</div>
+</div>
+<div style='padding-left: 50px;'><b>EjecutaSpLog</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: spMonitorEspacioBDLog</div>
+</div>
+</div>
+
+<a name="[SqlAgent]_jobSpaceDisc"></a><h3>jobSpaceDisc</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>jobSpaceDisc</h3>
+<div style='padding-left: 50px;'><b>JobSpaceDisc</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: exec spSpaceDisc</div>
+</div>
+</div>
+
+<a name="[SqlAgent]_JobMonitorAuditoria"></a><h3>JobMonitorAuditoria</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>JobMonitorAuditoria</h3>
+<div style='padding-left: 50px;'><b>EjecutaSP</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: spMonitorAuditoria</div>
+</div>
+</div>
+
+<a name="[SqlAgent]_JobMonitorLoginFail"></a><h3>JobMonitorLoginFail</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>JobMonitorLoginFail</h3>
+<div style='padding-left: 50px;'><b>EjecutaSP</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: TSQL</div>
+<div style='padding-left: 50px;'><b>Command</b>: spMonitorLoginFail</div>
+</div>
+</div>
+
+<a name="[SqlAgent]_PlanLimpiaLog"></a><h3>PlanLimpiaLog</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>PlanLimpiaLog</h3>
+<div style='padding-left: 50px;'><b>Subplan_1</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: SSIS</div>
+<div style='padding-left: 50px;'><b>Command</b>:
+<div style='padding-left: 50px;'><code>
+/Server &amp;quot;$(ESCAPE_NONE(SRVR))&amp;quot; /SQL &amp;quot;Maintenance Plans\PlanLimpiaLog&amp;quot; /set &amp;quot;\Package\Subplan_1.Disable;false&amp;quot;<br/>
+</code></div></div>
+</div>
+</div>
+
+<a name="[SqlAgent]_PlanCheckIntegrityDB"></a><h3>PlanCheckIntegrityDB</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>PlanCheckIntegrityDB</h3>
+<div style='padding-left: 50px;'><b>Subplan_1</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: SSIS</div>
+<div style='padding-left: 50px;'><b>Command</b>:
+<div style='padding-left: 50px;'><code>
+/Server &amp;quot;$(ESCAPE_NONE(SRVR))&amp;quot; /SQL &amp;quot;Maintenance Plans\PlanCheckIntegrityDB&amp;quot; /set &amp;quot;\Package\Subplan_1.Disable;false&amp;quot;<br/>
+</code></div></div>
+</div>
+</div>
+
+<a name="[SqlAgent]_PlanBackupFull"></a><h3>PlanBackupFull</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>PlanBackupFull</h3>
+<div style='padding-left: 50px;'><b>Subplan_1</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: SSIS</div>
+<div style='padding-left: 50px;'><b>Command</b>:
+<div style='padding-left: 50px;'><code>
+/Server &amp;quot;$(ESCAPE_NONE(SRVR))&amp;quot; /SQL &amp;quot;Maintenance Plans\PlanBackupFull&amp;quot; /set &amp;quot;\Package\Subplan_1.Disable;false&amp;quot;<br/>
+</code></div></div>
+</div>
+</div>
+
+<a name="[SqlAgent]_PlanBackupLog"></a><h3>PlanBackupLog</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>PlanBackupLog</h3>
+<div style='padding-left: 50px;'><b>Subplan_1</b>
+<div style='padding-left: 50px;'><b>Subsystem</b>: SSIS</div>
+<div style='padding-left: 50px;'><b>Command</b>:
+<div style='padding-left: 50px;'><code>
+/Server &amp;quot;$(ESCAPE_NONE(SRVR))&amp;quot; /SQL &amp;quot;Maintenance Plans\PlanBackupLog&amp;quot; /set &amp;quot;\Package\Subplan_1.Disable;false&amp;quot;<br/>
+</code></div></div>
+</div>
+</div>
+
+<a name="DtsPackages"></a><h2>Dts Packages</h2>
+<a name="[DTS]_0gzhjtmy"></a><h3>0gzhjtmy (DTS)</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+
+Retrieving the COM class factory for component with CLSID {10020202-EB1C-11CF-AE6E-00AA004A34D5} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).
+
+<a name="[DTS]_2j-labie"></a><h3>2j-labie (DTS)</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+
+Retrieving the COM class factory for component with CLSID {10020202-EB1C-11CF-AE6E-00AA004A34D5} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).
+
+<a name="[DTS]_bbwwy268"></a><h3>bbwwy268 (DTS)</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+
+Retrieving the COM class factory for component with CLSID {10020202-EB1C-11CF-AE6E-00AA004A34D5} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).
+
+<a name="[DTS]_h13dwld1"></a><h3>h13dwld1 (DTS)</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+
+Retrieving the COM class factory for component with CLSID {10020202-EB1C-11CF-AE6E-00AA004A34D5} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).
+
+<a name="[DTS]_knrzqorg"></a><h3>knrzqorg (DTS)</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+
+Retrieving the COM class factory for component with CLSID {10020202-EB1C-11CF-AE6E-00AA004A34D5} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).
+
+<a name="[DTS]_o2v-hfnd"></a><h3>o2v-hfnd (DTS)</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+
+Retrieving the COM class factory for component with CLSID {10020202-EB1C-11CF-AE6E-00AA004A34D5} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).
+
+<a name="[DTS]_qfludf7y"></a><h3>qfludf7y (DTS)</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+
+Retrieving the COM class factory for component with CLSID {10020202-EB1C-11CF-AE6E-00AA004A34D5} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).
+
+<a name="[DTS]_uqvadktq"></a><h3>uqvadktq (DTS)</h3>
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+
+Retrieving the COM class factory for component with CLSID {10020202-EB1C-11CF-AE6E-00AA004A34D5} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).
+
+<a name="SSISPackages"></a><h2>SSIS Packages</h2>
+<a name="[SSIS]_PlanBackupFull"></a><h3>PlanBackupFull (SSIS)</h3>
+I:\AdmDBA\nhuenul\PlanBackupFull.dtsx
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>Connections</h3>
+<div style='padding-left: 50px;'><b>Local server connection</b>:
+<div style='padding-left: 50px;'><code>
+ADO.NET: Data Source=S1P-NEG-SQL;Integrated Security=True;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Packet Size=4096;Application Name=&quot;Microsoft SQL Server Management Studio&quot;;<br/>
+</code></div></div>
+</div>
+<div style='padding-left: 50px;'><h3>Global Variables</h3>
+<div style='padding-left: 50px;'><b>EmailReportToOperator</b>: S1P-NEG-SQL</div>
+<div style='padding-left: 50px;'><b>ExtendedLogging</b>: -1</div>
+<div style='padding-left: 50px;'><b>GenerateEmailReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>GenerateTextReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>LocalConnectionForReportingAndLogging</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>LogRemote</b>: 0</div>
+<div style='padding-left: 50px;'><b>MaintenanceDesignerVersion</b>: 14.0.1000.169 ((SQLServer).170822-2340)</div>
+<div style='padding-left: 50px;'><b>ProxyAccount</b>: </div>
+<div style='padding-left: 50px;'><b>RemoteConnectionName</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>RunId</b>: </div>
+<div style='padding-left: 50px;'><b>TextReportInNewFile</b>: -1</div>
+<div style='padding-left: 50px;'><b>TextReportPath</b>: E:\ROOT\MSSQL14.MSSQLSERVER\MSSQL\Log</div>
+</div>
+<div style='padding-left: 50px;'><h3>Tasks</h3>
+<div style='padding-left: 50px;'><b>Microsoft.Package - PlanBackupFull</b>
+</div>
+<div style='padding-left: 50px;'><b>Microsoft.ReportingTask - Reporting Task for subplan-{23D0E650-5F09-4FD1-86E3-9407DB18B447}</b>
+
+Object reference not set to an instance of an object.
+
+<a name="[SSIS]_PlanBackupLog"></a><h3>PlanBackupLog (SSIS)</h3>
+I:\AdmDBA\nhuenul\PlanBackupLog.dtsx
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>Connections</h3>
+<div style='padding-left: 50px;'><b>Local server connection</b>:
+<div style='padding-left: 50px;'><code>
+ADO.NET: Data Source=S1P-NEG-SQL;Integrated Security=True;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Packet Size=4096;Application Name=&quot;Microsoft SQL Server Management Studio&quot;;<br/>
+</code></div></div>
+</div>
+<div style='padding-left: 50px;'><h3>Global Variables</h3>
+<div style='padding-left: 50px;'><b>EmailReportToOperator</b>: </div>
+<div style='padding-left: 50px;'><b>ExtendedLogging</b>: 0</div>
+<div style='padding-left: 50px;'><b>GenerateEmailReport</b>: 0</div>
+<div style='padding-left: 50px;'><b>GenerateTextReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>LocalConnectionForReportingAndLogging</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>LogRemote</b>: 0</div>
+<div style='padding-left: 50px;'><b>MaintenanceDesignerVersion</b>: 14.0.1000.169 ((SQLServer).170822-2340)</div>
+<div style='padding-left: 50px;'><b>ProxyAccount</b>: </div>
+<div style='padding-left: 50px;'><b>RemoteConnectionName</b>: </div>
+<div style='padding-left: 50px;'><b>RunId</b>: </div>
+<div style='padding-left: 50px;'><b>TextReportInNewFile</b>: -1</div>
+<div style='padding-left: 50px;'><b>TextReportPath</b>: E:\ROOT\MSSQL14.MSSQLSERVER\MSSQL\Log</div>
+</div>
+<div style='padding-left: 50px;'><h3>Tasks</h3>
+<div style='padding-left: 50px;'><b>Microsoft.Package - PlanBackupLog</b>
+</div>
+<div style='padding-left: 50px;'><b>Microsoft.ReportingTask - Reporting Task for subplan-{8277360E-435B-4BF7-93FB-4E705FF5583B}</b>
+
+Object reference not set to an instance of an object.
+
+<a name="[SSIS]_PlanCheckIntegrityDB"></a><h3>PlanCheckIntegrityDB (SSIS)</h3>
+I:\AdmDBA\nhuenul\PlanCheckIntegrityDB.dtsx
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>Connections</h3>
+<div style='padding-left: 50px;'><b>Local server connection</b>:
+<div style='padding-left: 50px;'><code>
+ADO.NET: Data Source=S1P-NEG-SQL;Integrated Security=True;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Packet Size=4096;Application Name=&quot;Microsoft SQL Server Management Studio&quot;;<br/>
+</code></div></div>
+</div>
+<div style='padding-left: 50px;'><h3>Global Variables</h3>
+<div style='padding-left: 50px;'><b>EmailReportToOperator</b>: S1P-NEG-SQL</div>
+<div style='padding-left: 50px;'><b>ExtendedLogging</b>: -1</div>
+<div style='padding-left: 50px;'><b>GenerateEmailReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>GenerateTextReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>LocalConnectionForReportingAndLogging</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>LogRemote</b>: 0</div>
+<div style='padding-left: 50px;'><b>MaintenanceDesignerVersion</b>: 14.0.1000.169 ((SQLServer).170822-2340)</div>
+<div style='padding-left: 50px;'><b>ProxyAccount</b>: </div>
+<div style='padding-left: 50px;'><b>RemoteConnectionName</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>RunId</b>: </div>
+<div style='padding-left: 50px;'><b>TextReportInNewFile</b>: -1</div>
+<div style='padding-left: 50px;'><b>TextReportPath</b>: E:\ROOT\MSSQL14.MSSQLSERVER\MSSQL\Log</div>
+</div>
+<div style='padding-left: 50px;'><h3>Tasks</h3>
+<div style='padding-left: 50px;'><b>Microsoft.Package - PlanCheckIntegrityDB</b>
+</div>
+<div style='padding-left: 50px;'><b>Microsoft.ReportingTask - Reporting Task for subplan-{50AA14E4-E254-4896-ACB2-474D80E1CDBD}</b>
+
+Object reference not set to an instance of an object.
+
+<a name="[SSIS]_PlanLimpiaLog"></a><h3>PlanLimpiaLog (SSIS)</h3>
+I:\AdmDBA\nhuenul\PlanLimpiaLog.dtsx
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>Connections</h3>
+<div style='padding-left: 50px;'><b>Local server connection</b>:
+<div style='padding-left: 50px;'><code>
+ADO.NET: Data Source=S1P-NEG-SQL;Integrated Security=True;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Packet Size=4096;Application Name=&quot;Microsoft SQL Server Management Studio&quot;;<br/>
+</code></div></div>
+</div>
+<div style='padding-left: 50px;'><h3>Global Variables</h3>
+<div style='padding-left: 50px;'><b>EmailReportToOperator</b>: </div>
+<div style='padding-left: 50px;'><b>ExtendedLogging</b>: 0</div>
+<div style='padding-left: 50px;'><b>GenerateEmailReport</b>: 0</div>
+<div style='padding-left: 50px;'><b>GenerateTextReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>LocalConnectionForReportingAndLogging</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>LogRemote</b>: 0</div>
+<div style='padding-left: 50px;'><b>MaintenanceDesignerVersion</b>: 14.0.1000.169 ((SQLServer).170822-2340)</div>
+<div style='padding-left: 50px;'><b>ProxyAccount</b>: </div>
+<div style='padding-left: 50px;'><b>RemoteConnectionName</b>: </div>
+<div style='padding-left: 50px;'><b>RunId</b>: </div>
+<div style='padding-left: 50px;'><b>TextReportInNewFile</b>: -1</div>
+<div style='padding-left: 50px;'><b>TextReportPath</b>: E:\ROOT\MSSQL14.MSSQLSERVER\MSSQL\Log</div>
+</div>
+<div style='padding-left: 50px;'><h3>Tasks</h3>
+<div style='padding-left: 50px;'><b>Microsoft.Package - PlanLimpiaLog</b>
+</div>
+<div style='padding-left: 50px;'><b>Microsoft.ReportingTask - Reporting Task for subplan-{0160C557-6B4F-410F-9E4A-FC555691C7CD}</b>
+
+Object reference not set to an instance of an object.
+
+<a name="[SSIS]_PlanReindex&Statistics"></a><h3>PlanReindex&amp;Statistics (SSIS)</h3>
+I:\AdmDBA\nhuenul\PlanReindex&Statistics.dtsx
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>Connections</h3>
+<div style='padding-left: 50px;'><b>Local server connection</b>:
+<div style='padding-left: 50px;'><code>
+ADO.NET: Data Source=S1P-NEG-SQL;Integrated Security=True;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Packet Size=4096;Application Name=&quot;Microsoft SQL Server Management Studio&quot;;<br/>
+</code></div></div>
+</div>
+<div style='padding-left: 50px;'><h3>Global Variables</h3>
+<div style='padding-left: 50px;'><b>EmailReportToOperator</b>: </div>
+<div style='padding-left: 50px;'><b>ExtendedLogging</b>: 0</div>
+<div style='padding-left: 50px;'><b>GenerateEmailReport</b>: 0</div>
+<div style='padding-left: 50px;'><b>GenerateTextReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>LocalConnectionForReportingAndLogging</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>LogRemote</b>: 0</div>
+<div style='padding-left: 50px;'><b>MaintenanceDesignerVersion</b>: 14.0.1000.169 ((SQLServer).170822-2340)</div>
+<div style='padding-left: 50px;'><b>ProxyAccount</b>: </div>
+<div style='padding-left: 50px;'><b>RemoteConnectionName</b>: </div>
+<div style='padding-left: 50px;'><b>RunId</b>: </div>
+<div style='padding-left: 50px;'><b>TextReportInNewFile</b>: -1</div>
+<div style='padding-left: 50px;'><b>TextReportPath</b>: E:\ROOT\MSSQL14.MSSQLSERVER\MSSQL\Log</div>
+</div>
+<div style='padding-left: 50px;'><h3>Tasks</h3>
+<div style='padding-left: 50px;'><b>Microsoft.Package - PlanReindex&amp;Statistics</b>
+</div>
+<div style='padding-left: 50px;'><b>Microsoft.ReportingTask - Reporting Task for subplan-{FC16BAA3-C756-444F-96FA-17F72EDD27EB}</b>
+
+Object reference not set to an instance of an object.
+
+<a name="[SSIS]_PlanBackupFull"></a><h3>PlanBackupFull (SSIS)</h3>
+m:\db\Maintenance Plans\[PlanBackupFull].dtsx
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>Connections</h3>
+<div style='padding-left: 50px;'><b>Local server connection</b>:
+<div style='padding-left: 50px;'><code>
+ADO.NET: Data Source=s1p-int-sql,1818;Initial Catalog=master;Integrated Security=True;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Packet Size=4096;Application Name=&quot;Microsoft SQL Server Management Studio&quot;;<br/>
+</code></div></div>
+</div>
+<div style='padding-left: 50px;'><h3>Global Variables</h3>
+<div style='padding-left: 50px;'><b>EmailReportToOperator</b>: </div>
+<div style='padding-left: 50px;'><b>ExtendedLogging</b>: -1</div>
+<div style='padding-left: 50px;'><b>GenerateEmailReport</b>: 0</div>
+<div style='padding-left: 50px;'><b>GenerateTextReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>LocalConnectionForReportingAndLogging</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>LogRemote</b>: 0</div>
+<div style='padding-left: 50px;'><b>MaintenanceDesignerVersion</b>: 14.0.3281.6 ((SQL17_RTM_QFE-CU).200124-0352)</div>
+<div style='padding-left: 50px;'><b>RemoteConnectionName</b>: </div>
+<div style='padding-left: 50px;'><b>RunId</b>: </div>
+<div style='padding-left: 50px;'><b>TextReportInNewFile</b>: -1</div>
+<div style='padding-left: 50px;'><b>TextReportPath</b>: J:\ROOT\MSSQL14.PWCSQL\MSSQL\Log</div>
+</div>
+<div style='padding-left: 50px;'><h3>Tasks</h3>
+<div style='padding-left: 50px;'><b>Microsoft.Package - PlanBackupFull</b>
+</div>
+<div style='padding-left: 50px;'><b>Microsoft.ReportingTask - Reporting Task for subplan-{E9D9546A-7296-42A6-BBBE-3A78224EC7D4}</b>
+
+Object reference not set to an instance of an object.
+
+<a name="[SSIS]_PlanBackupLog"></a><h3>PlanBackupLog (SSIS)</h3>
+m:\db\Maintenance Plans\[PlanBackupLog].dtsx
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>Connections</h3>
+<div style='padding-left: 50px;'><b>Local server connection</b>:
+<div style='padding-left: 50px;'><code>
+ADO.NET: Data Source=s1p-int-sql,1818;Initial Catalog=master;Integrated Security=True;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Packet Size=4096;Application Name=&quot;Microsoft SQL Server Management Studio&quot;;<br/>
+</code></div></div>
+</div>
+<div style='padding-left: 50px;'><h3>Global Variables</h3>
+<div style='padding-left: 50px;'><b>EmailReportToOperator</b>: </div>
+<div style='padding-left: 50px;'><b>ExtendedLogging</b>: -1</div>
+<div style='padding-left: 50px;'><b>GenerateEmailReport</b>: 0</div>
+<div style='padding-left: 50px;'><b>GenerateTextReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>LocalConnectionForReportingAndLogging</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>LogRemote</b>: 0</div>
+<div style='padding-left: 50px;'><b>MaintenanceDesignerVersion</b>: 14.0.3281.6 ((SQL17_RTM_QFE-CU).200124-0352)</div>
+<div style='padding-left: 50px;'><b>RemoteConnectionName</b>: </div>
+<div style='padding-left: 50px;'><b>RunId</b>: </div>
+<div style='padding-left: 50px;'><b>TextReportInNewFile</b>: -1</div>
+<div style='padding-left: 50px;'><b>TextReportPath</b>: J:\ROOT\MSSQL14.PWCSQL\MSSQL\Log</div>
+</div>
+<div style='padding-left: 50px;'><h3>Tasks</h3>
+<div style='padding-left: 50px;'><b>Microsoft.Package - PlanBackupLog</b>
+</div>
+<div style='padding-left: 50px;'><b>Microsoft.ReportingTask - Reporting Task for subplan-{E7F773C5-4B4A-4648-98E6-3BD888DFEFBB}</b>
+
+Object reference not set to an instance of an object.
+
+<a name="[SSIS]_PlanCheckIntegrityDB"></a><h3>PlanCheckIntegrityDB (SSIS)</h3>
+m:\db\Maintenance Plans\[PlanCheckIntegrityDB].dtsx
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>Connections</h3>
+<div style='padding-left: 50px;'><b>Local server connection</b>:
+<div style='padding-left: 50px;'><code>
+ADO.NET: Data Source=s1p-int-sql,1818;Initial Catalog=master;Integrated Security=True;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Packet Size=4096;Application Name=&quot;Microsoft SQL Server Management Studio&quot;;<br/>
+</code></div></div>
+</div>
+<div style='padding-left: 50px;'><h3>Global Variables</h3>
+<div style='padding-left: 50px;'><b>EmailReportToOperator</b>: </div>
+<div style='padding-left: 50px;'><b>ExtendedLogging</b>: -1</div>
+<div style='padding-left: 50px;'><b>GenerateEmailReport</b>: 0</div>
+<div style='padding-left: 50px;'><b>GenerateTextReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>LocalConnectionForReportingAndLogging</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>LogRemote</b>: 0</div>
+<div style='padding-left: 50px;'><b>MaintenanceDesignerVersion</b>: 15.0.1301.438</div>
+<div style='padding-left: 50px;'><b>RemoteConnectionName</b>: </div>
+<div style='padding-left: 50px;'><b>RunId</b>: </div>
+<div style='padding-left: 50px;'><b>TextReportInNewFile</b>: -1</div>
+<div style='padding-left: 50px;'><b>TextReportPath</b>: J:\ROOT\MSSQL14.PWCSQL\MSSQL\Log</div>
+</div>
+<div style='padding-left: 50px;'><h3>Tasks</h3>
+<div style='padding-left: 50px;'><b>Microsoft.Package - PlanCheckIntegrityDB</b>
+</div>
+<div style='padding-left: 50px;'><b>Microsoft.ReportingTask - Reporting Task for subplan-{5615A8BB-4D41-4532-B8C1-B32D2C697088}</b>
+
+Object reference not set to an instance of an object.
+
+<a name="[SSIS]_PlanLimpiaLog"></a><h3>PlanLimpiaLog (SSIS)</h3>
+m:\db\Maintenance Plans\[PlanLimpiaLog].dtsx
+<table cellspacing=0>
+<tr><th>Type</th><th>Description</th><th>Code</th></tr>
+</table><br/>
+<div style='padding-left: 50px;'><h3>Connections</h3>
+<div style='padding-left: 50px;'><b>Local server connection</b>:
+<div style='padding-left: 50px;'><code>
+ADO.NET: Data Source=s1p-int-sql,1818;Initial Catalog=master;Integrated Security=True;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;Packet Size=4096;Application Name=&quot;Microsoft SQL Server Management Studio&quot;;<br/>
+</code></div></div>
+</div>
+<div style='padding-left: 50px;'><h3>Global Variables</h3>
+<div style='padding-left: 50px;'><b>EmailReportToOperator</b>: </div>
+<div style='padding-left: 50px;'><b>ExtendedLogging</b>: -1</div>
+<div style='padding-left: 50px;'><b>GenerateEmailReport</b>: 0</div>
+<div style='padding-left: 50px;'><b>GenerateTextReport</b>: -1</div>
+<div style='padding-left: 50px;'><b>LocalConnectionForReportingAndLogging</b>: Local server connection</div>
+<div style='padding-left: 50px;'><b>LogRemote</b>: 0</div>
+<div style='padding-left: 50px;'><b>MaintenanceDesignerVersion</b>: 14.0.3281.6 ((SQL17_RTM_QFE-CU).200124-0352)</div>
+<div style='padding-left: 50px;'><b>RemoteConnectionName</b>: </div>
+<div style='padding-left: 50px;'><b>RunId</b>: </div>
+<div style='padding-left: 50px;'><b>TextReportInNewFile</b>: -1</div>
+<div style='padding-left: 50px;'><b>TextReportPath</b>: J:\ROOT\MSSQL14.PWCSQL\MSSQL\Log</div>
+</div>
+<div style='padding-left: 50px;'><h3>Tasks</h3>
+<div style='padding-left: 50px;'><b>Microsoft.Package - PlanLimpiaLog</b>
+</div>
+<div style='padding-left: 50px;'><b>Microsoft.ReportingTask - Reporting Task for subplan-{FB47D6F0-80D2-414E-A1C8-775C77941A87}</b>
+
+Object reference not set to an instance of an object.
+
+</body></html>

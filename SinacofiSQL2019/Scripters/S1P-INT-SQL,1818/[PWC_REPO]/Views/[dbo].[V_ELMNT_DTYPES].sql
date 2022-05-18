@@ -1,0 +1,24 @@
+﻿SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER OFF
+GO
+IF OBJECT_ID('[dbo].[V_ELMNT_DTYPES]') IS NULL EXEC('CREATE VIEW [dbo].[V_ELMNT_DTYPES] AS /*TEMPORARY OBJECT, DELETE AFTER ALL OBJECTS ARE CREATED*/ SELECT 0 C1')
+GO
+ALTER VIEW [dbo].[V_ELMNT_DTYPES]
+AS
+	select  ' ' "REPOSITORY_ID", 
+	'org.omg.cwm.resource.xml.ElementType' "CLASS_ID", 
+	'org.omg.cwm.resource.xml.ElementType'  + '_' +  ltrim(str(DTYPE_NUM)) "ELEMENT_ID", 
+   	'1' "VERSION_NUM",
+	   dtype.DTYPE_NAME "ELEMENT_NAME", dtype.DTYPE_NAME "ELEMENT_LABEL",
+	   '' "ELEMENT_ALIAS",  dtype.DTYPE_DATABASE + '_' + dtype.DTYPE_NAME "ELEMENT_DESC", 
+	   '' "ELEMENT_USAGE", 'Application' "ELEMENT_TYPE", 
+	   'DATA_TYPE' "ELEMENT_SUBTYPE", 
+	   '' "ELEMENT_ATTR1", '' "ELEMENT_VALUE1",
+	   '' "ELEMENT_ATTR2", '' "ELEMENT_VALUE2", 
+	   '' "ELEMENT_ATTR3", '' "ELEMENT_VALUE3",
+           'Y' "VALID_FLAG",   'N' "DISABLED_FLAG",
+	   '' "SRC_CREATE_DT", ''  "SRC_UPDATE_DT",
+	   '' "EFF_FROM_DT",  '' "EFF_TO_DT",
+	   CAST(NULL AS INT) "SUBJECT_ID"
+         from REP_FLD_DATATYPE dtype
+GO
