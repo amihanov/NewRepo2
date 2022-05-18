@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<StepConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PreLoad">
-	<step name="Copia Tabla Historica" type="commandline" logOutput="false"
-		  params="tblCopy.exe &quot;/SData Source=%source%;Initial Catalog=%sourceDb%;%sourceUserPassConnString%;Packet Size=32764;&quot; &quot;/TData Source=%target%;Initial Catalog=%targetDb%;%targetUserPassConnString%&quot; /Fscripts\LoadData_TablesHist.xml &quot;/P%db%&quot; &quot;/Llogs\PreLoad\TblCopyHist_%db%.txt&quot;"
-        flags="!migrarSoloEsquema" />
-</StepConfiguration>

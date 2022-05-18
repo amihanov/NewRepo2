@@ -1,4 +1,0 @@
-Script de Migración SQL Server
-
-Servidor: <ServerName>
-Fecha   : <Date>

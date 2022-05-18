@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<StepConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PostLoad">
-
-	<step name="Dejar Bases de dato de Origen Offline" type="sql" params="Scripts\SupportScripts\Source_OfflineTrue.sql" flags="!noEsSysAdmin and !noDejarDbOffline"/>
-	<!--Habiliar Monitoreo-->
-	<!--Habiliar replicación-->
-</StepConfiguration>
