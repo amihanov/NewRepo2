@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+	<Nodes>
+		<Node Id="S1P-NEG-SQL" Category="Trace Server" Label="S1P-NEG-SQL&#xA;Windows Server 2016 Datacenter 10.0 X64   Hypervisor - SQL 2017 (RTM-CU25) (KB5003830)&#xA;&#xA;C (119GB, 74GB Data, 0GB Log, 0GB Free)&#xA;E (199GB, 102GB Data, 62GB Log, 1GB Free)&#xA;F (79GB, 25GB Data, 0GB Log, 54GB Free)&#xA;G (199GB, 78GB Data, 0GB Log, 0GB Free)&#xA;H (49GB, 47GB Data, 2GB Log, 0GB Free)&#xA;I (49GB, 28GB Data, 0GB Log, 0GB Free)"/>
+		<Node Id="ft3" Category="Database" Label="ft3&#xA;720,0MB" />
+		<Node Id="Unused Dbs" Category="Database" Label="AdmDBA 0,0MB&#xA;intercajas 15.000,0MB&#xA;Monitor 0,0MB&#xA;Swsnew 30,0MB&#xA;ValidacionTributaria 45.056,0MB&#xA;" />
+	</Nodes>
+	<Links>
+		<Link Source="Unused Dbs" Target="S1P-NEG-SQL" />
+		<Link Source="ft3" Target="S1P-NEG-SQL" />
+	</Links>
+	<Categories>
+		<Category Id="Database Server" />
+		<Category Id="Application Server" />
+		<Category Id="Database" />
+		<Category Id="Trace Server" />
+		<Category Id="Web Server" />
+		<Category Id="Workstation" />
+		<Category Id="Application" />
+	</Categories>
+	<Properties>
+		<Property Id="ApplicationNames" Label="Application Names" Description="Application Names" DataType="System.String" />
+		<Property Id="CPU" Label="Total CPU" Description="Total processor used" DataType="System.Int64" />
+		<Property Id="Calls" Label="Number of Calls" Description="Number of calls" DataType="System.Int64" />
+		<Property Id="Connections" Label="Number of Connections" Description="Number of connections" DataType="System.Int64" />
+		<Property Id="CrossDatabaseCalls" Label="Cross Database References" Description="Number of references from other databases" DataType="System.Int64" />
+		<Property Id="Duration" Label="Total Duration" Description="Total duration" DataType="System.Int64" />
+		<Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Progression.Layout.GraphDirection" />
+		<Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+		<Property Id="Layout" DataType="System.String" />
+		<Property Id="ReadsKB" Label="Total KB Read" Description="Total Kb read" DataType="System.Int64" />
+		<Property Id="WritesKB" Label="Total KB Writen" Description="Total Kb writen" DataType="System.Int64" />
+		<Property Id="Linked Server" Label="Linked Server" Description="Linked Server" DataType="System.Boolean" />
+	</Properties>
+	<Styles>
+		<Style TargetType="Node" GroupLabel="Trace Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Trace Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Stroke" Value="#FF0000FF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Database.png" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Application" ValueLabel="True">
+			<Condition Expression="HasCategory('Application')" />
+			<Setter Property="Background" Value="#10FFFFFF" />
+			<Setter Property="Stroke" Value="ff000000" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Generic_Application.png" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Database Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Database Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Database.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Web Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Web Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Globe.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Application Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Application Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Server.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Workstation" ValueLabel="True">
+			<Condition Expression="HasCategory('Workstation')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Monitor.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Database" ValueLabel="True">
+			<Condition Expression="HasCategory('Database')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Table.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="RPC" ValueLabel="True">
+			<Condition Expression="RPC = 'True'" />
+			<Setter Property="Stroke" Value="#FF008000" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Replication" ValueLabel="True">
+			<Condition Expression="Replication = 'True'" />
+			<Setter Property="Stroke" Value="#FF808080" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="AdHoc" ValueLabel="True">
+			<Condition Expression="AdHoc = 'True'" />
+			<Setter Property="Stroke" Value="#FFFF0000" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Inactive" ValueLabel="Function" IsEnabled="true">
+			<Condition Expression="Calls=0" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Cross Database" ValueLabel="True">
+			<Condition Expression="HasCategory('Cross Database')" />
+			<Setter Property="Stroke" Value="#FF008000" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Calls" ValueLabel="Function" IsEnabled="true">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Calls/1)" />
+		</Style>
+	</Styles>
+</DirectedGraph>

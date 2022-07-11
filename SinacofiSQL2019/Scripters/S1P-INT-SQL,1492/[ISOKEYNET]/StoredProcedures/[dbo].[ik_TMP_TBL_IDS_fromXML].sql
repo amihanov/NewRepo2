@@ -1,0 +1,42 @@
+﻿SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_TMP_TBL_IDS_fromXML]') IS NULL EXEC('CREATE PROCEDURE [dbo].[ik_TMP_TBL_IDS_fromXML] AS PRINT ''TEMPORARY OBJECT, DELETE AFTER ALL OBJECTS ARE CREATED''')
+GO
+ALTER PROCEDURE [dbo].[ik_TMP_TBL_IDS_fromXML]
+(
+	@ValidXMLInput XML, 	
+	@tmp_table nvarchar(500) = '#TMP_OXML_TMP_TBL_IDS',
+	@L_RETURN_DATA int = 0
+)
+
+AS BEGIN
+       
+       SELECT Col.value('@ID','INT') AS RecordId INTO #TMP_TBL_IDS_FRON_XML 
+       FROM @ValidXMLInput.nodes('//records/record') Tab(Col)
+
+
+	   
+	   BEGIN TRY
+		   DECLARE @QUERY nvarchar(3000)
+		   SET @QUERY = '
+		   INSERT INTO ' + @tmp_table + ' 
+		   SELECT * FROM #TMP_TBL_IDS_FRON_XML'
+		   EXEC (@QUERY) 
+		END TRY
+	   BEGIN CATCH
+	   END CATCH
+	   
+
+
+	   IF @L_RETURN_DATA=1
+	   BEGIN
+		SELECT * FROM #TMP_TBL_IDS_FRON_XML 
+	   END
+
+	   DROP TABLE #TMP_TBL_IDS_FRON_XML
+	   
+ 
+
+END
+GO

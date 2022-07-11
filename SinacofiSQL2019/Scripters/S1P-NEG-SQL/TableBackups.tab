@@ -1,0 +1,3 @@
+DbName	Table	Rows	Size MB	Clustered Indexes	Non Cluestered Indexes	Reference Count	Is Backup
+Monitor	[dbo].[LoginFailed20080722]	2	0,0703125	1	0	0	False
+Monitor	[dbo].[tblLoginFailed20080722]	78	0,203125	1	0	0	False

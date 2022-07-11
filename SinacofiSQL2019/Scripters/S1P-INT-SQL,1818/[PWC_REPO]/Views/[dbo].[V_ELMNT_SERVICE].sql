@@ -1,0 +1,25 @@
+﻿SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER OFF
+GO
+IF OBJECT_ID('[dbo].[V_ELMNT_SERVICE]') IS NULL EXEC('CREATE VIEW [dbo].[V_ELMNT_SERVICE] AS /*TEMPORARY OBJECT, DELETE AFTER ALL OBJECTS ARE CREATED*/ SELECT 0 C1')
+GO
+ALTER VIEW [dbo].[V_ELMNT_SERVICE]
+AS
+select  ' ' "REPOSITORY_ID", 
+'com.informatica.powercenter.deployment.IntegrationService' "CLASS_ID", 
+'Integration Service_' + ltrim(str(server.SERVER_ID)) "ELEMENT_ID", 
+server.SERVER_ID "SERVER_ID",
+   '1' "VERSION_NUM",
+	   server.SERVER_NAME "ELEMENT_NAME", server.SERVER_NAME "ELEMENT_LABEL",
+	   '' "ELEMENT_ALIAS", '' "ELEMENT_DESC", 
+	   '' "ELEMENT_USAGE", 'Integration Service' "ELEMENT_TYPE", 
+	   '' "ELEMENT_SUBTYPE", 
+	   'domainName' "ELEMENT_ATTR1", server.DOMAIN_NAME "ELEMENT_VALUE1",
+	   '' "ELEMENT_ATTR2", '' "ELEMENT_VALUE2", 
+	   '' "ELEMENT_ATTR3", '' "ELEMENT_VALUE3",
+           'Y' "VALID_FLAG", 'N' "DISABLED_FLAG", 
+	   '' "SRC_CREATE_DT", LAST_SAVED "SRC_UPDATE_DT",
+	   '' "EFF_FROM_DT",  '' "EFF_TO_DT",
+	   CAST(NULL AS INT) "SUBJECT_ID"
+    from OPB_SERVER_INFO server
+GO

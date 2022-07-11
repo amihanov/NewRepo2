@@ -1,0 +1,199 @@
+﻿SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_trig_DOCUMENTOS_Validate_Id]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[ik_trig_DOCUMENTOS_Validate_Id]')
+GO
+CREATE TRIGGER [dbo].[ik_trig_DOCUMENTOS_Validate_Id]
+ON [dbo].[DOCUMENTOS]
+FOR  INSERT,UPDATE
+AS
+IF (@@ROWCOUNT=1)
+BEGIN
+	IF UPDATE(CODIGOISO)
+	BEGIN
+		DECLARE @ERRORDESC VARCHAR(200)
+
+		DECLARE @CODIGOISO varchar(50)
+		SET @CODIGOISO = (SELECT CODIGOISO FROM inserted)
+
+		IF (LEFT(@CODIGOISO,1)=' ')
+		BEGIN
+			SET @ERRORDESC = 'El cÃ³digo de un documento no puede comenzar con un espacio'
+			RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+			RETURN
+		END
+		IF (RIGHT(@CODIGOISO,1)=' ')
+		BEGIN
+			SET @ERRORDESC = 'El cÃ³digo de un documento no puede terminar con un espacio'
+			RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+			RETURN
+		END
+
+		SET @CODIGOISO = (SELECT RTRIM(LTRIM(CODIGOISO)) FROM inserted)
+
+
+		DECLARE @REVISION int
+		SET @REVISION = (SELECT ISNULL(REVISION,0) FROM inserted)
+
+		DECLARE @CODIGO INT
+		SET @CODIGO = (SELECT ISNULL(CODIGO,-1) FROM inserted)
+
+		DECLARE @CODIGOBASADOEN INT
+		SET @CODIGOBASADOEN = (SELECT ISNULL(CODIGOBASADOEN,0) FROM inserted)
+		IF (@CODIGOBASADOEN=0)
+		BEGIN
+			SET @CODIGOBASADOEN = (SELECT ISNULL(CODIGOBASADOEN,0) FROM DOCUMENTOS WHERE CODIGO=@CODIGO)			
+		END
+
+		
+		IF (SELECT COUNT(*) FROM deleted WHERE CODIGO=@CODIGO AND RTRIM(LTRIM(CODIGOISO))= RTRIM(LTRIM(@CODIGOISO)) AND REVISION=@REVISION ) = 1 --No cambio ni el el codigo ni la revision, se estan editando otras propiedades. No hay que validar nada mas.
+		BEGIN
+			RETURN
+		END
+		
+		CREATE TABLE #AUX_KEY (VALUE NVARCHAR(50), DATA INT)
+
+		IF (SELECT ISNULL(PROCESO,0) FROM DOCUMENTOS WHERE CODIGO=@CODIGO) != 0 --Se esta modificando el codigo iso de un doc que ya iniciÃ³ los tramites
+		BEGIN			
+			DECLARE @AllowISOIdChangeAfterRevision INT
+			
+			INSERT INTO #AUX_KEY VALUES('DOC.AllowISOIdChangeAfterRevision', 1)--DEF VALUE=DISABLED
+			BEGIN TRY
+				INSERT INTO #AUX_KEY
+				exec master.dbo.xp_regread 'HKEY_LOCAL_MACHINE','%IKREGINSTANCE_NLS%CommonSettings','DOC.AllowISOIdChangeAfterRevision'
+			END TRY
+			BEGIN CATCH
+			END CATCH
+			SELECT @AllowISOIdChangeAfterRevision=MAX(ISNULL([DATA],0)) FROM #AUX_KEY WHERE [VALUE]='DOC.AllowISOIdChangeAfterRevision'
+
+			IF @AllowISOIdChangeAfterRevision=0
+			BEGIN
+				--ROLLBACK TRAN
+				SET @ERRORDESC = 'No se puede modificar el cÃ³digo de un documento luego de iniciada su aprobaciÃ³n'
+				RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+				RETURN
+			END
+		END
+
+		IF (SELECT ESTADO FROM DOCUMENTOS WHERE CODIGO=@CODIGO) != 1 --Se esta modificando el codigo iso de un doc vigente u obsoleto
+		BEGIN			
+			DECLARE @AllowISOIdChangeOnCurrent INT
+			
+			INSERT INTO #AUX_KEY VALUES('DOC.AllowISOIdChangeOnCurrent', 1)--DEF VALUE=DISABLED
+			BEGIN TRY
+				INSERT INTO #AUX_KEY
+				exec master.dbo.xp_regread 'HKEY_LOCAL_MACHINE','%IKREGINSTANCE_NLS%CommonSettings','DOC.AllowISOIdChangeOnCurrent'
+			END TRY
+			BEGIN CATCH
+			END CATCH
+			SELECT @AllowISOIdChangeOnCurrent=MAX(ISNULL([DATA],0)) FROM #AUX_KEY WHERE [VALUE]='DOC.AllowISOIdChangeOnCurrent'
+
+			IF @AllowISOIdChangeOnCurrent=0
+			BEGIN
+				--ROLLBACK TRAN
+				SET @ERRORDESC = 'No se puede modificar el cÃ³digo de un documento luego de que entrÃ³ en vigencia'
+				RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+				RETURN
+			END
+		END
+		
+		
+		
+		IF (SELECT COUNT(*) FROM DOCUMENTOS WHERE CODIGOISO LIKE @CODIGOISO AND CODIGO != @CODIGO)>0 --Es valido que modifique el cÃ³digo o la config. permite que se modifique el cÃ³digo. Veirifico validez del cambio
+		BEGIN
+			IF (@CODIGOBASADOEN > 0 )
+			--es nueva version de otro doc
+			BEGIN	
+				DECLARE @CODIGOISO_BASADOEN varchar(50)
+				SELECT @CODIGOISO_BASADOEN=RTRIM(LTRIM(CODIGOISO)) FROM DOCUMENTOS WHERE CODIGO=@CODIGOBASADOEN
+				IF @CODIGOISO_BASADOEN = @CODIGOISO
+				--la version anterior tiene el mismo cÃ³digo
+				BEGIN
+					IF (SELECT COUNT(*) FROM DOCUMENTOS WHERE CODIGOISO LIKE @CODIGOISO AND CODIGO != @CODIGO AND REVISION>=@REVISION)>0
+					BEGIN							
+						SET @ERRORDESC = '{@LOC Loc_Id_Exists_GraterOrEqualRevisionNumber}: ' + @CODIGOISO + ' Rev. ' + LTRIM(STR(@REVISION))
+						RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+						RETURN
+					END		
+					ELSE
+					BEGIN
+						IF (SELECT ESTADO FROM DOCUMENTOS WHERE CODIGO=@CODIGO) != 1 --Se esta modificando la revision (el codigo sigue siendo el mismo) de un doc vigente u obsoleto
+						BEGIN							
+							IF (SELECT COUNT(*) FROM DOCUMENTOS WHERE CODIGOISO LIKE @CODIGOISO AND CODIGO != @CODIGO AND ESTADO=1)>0 --tiene version en desarrollo
+							BEGIN							
+								SET @ERRORDESC = 'No se puede cambiar la revisiÃ³n de un documento vigente que ya tiene una nueva versiÃ³n' 
+								RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+								RETURN
+							END
+						END
+						RETURN --ESTA OK
+					END
+				END				
+			END
+
+
+
+
+			DECLARE @CODIGO_TIPO_DOC INT
+			SET @CODIGO_TIPO_DOC = (SELECT CODIGOTIPO FROM inserted)
+
+			DECLARE @L_AUTOCOD INT
+			SET @L_AUTOCOD = (SELECT L_AUTOCOD FROM TIPOSDOCUMENTOS WHERE CODIGO=@CODIGO_TIPO_DOC )
+				
+			IF @L_AUTOCOD=1 
+			BEGIN
+				DECLARE @MAX_TRIES INT 
+				SET @MAX_TRIES= 256
+				DECLARE @TRY_COUNT INT --CONTADOR, POR SI SE INGRESO UNA MASCARA QUE GENERE SIEMPRE EL MISMO RESULTADO
+				SET @TRY_COUNT= 0
+				WHILE ((@TRY_COUNT<@MAX_TRIES) AND (SELECT COUNT(*) FROM DOCUMENTOS WHERE CODIGOISO LIKE @CODIGOISO AND REVISION>= @REVISION AND CODIGO != ISNULL(@CODIGO,-1))>0)
+				BEGIN
+					UPDATE TIPOSDOCUMENTOS SET CANT=CANT+1 WHERE CODIGO=@CODIGO_TIPO_DOC
+					SET @CODIGOISO=(SELECT dbo.[ik_doc_getIsoIdFromMask](@CODIGO_TIPO_DOC))		
+					SET @TRY_COUNT=@TRY_COUNT+1
+				END
+				UPDATE DOCUMENTOS SET CODIGOISO=@CODIGOISO WHERE CODIGO=@CODIGO
+			END
+			ELSE
+			BEGIN
+				DECLARE @AllowISOIdRecycle INT
+					
+				INSERT INTO #AUX_KEY VALUES('DOC.AllowISOIdRecycle', 1)--DEF VALUE=DISABLED
+				BEGIN TRY
+					INSERT INTO #AUX_KEY
+					exec master.dbo.xp_regread 'HKEY_LOCAL_MACHINE','%IKREGINSTANCE_NLS%CommonSettings','DOC.AllowISOIdRecycle'
+				END TRY
+				BEGIN CATCH
+				END CATCH
+				SELECT @AllowISOIdRecycle=MAX(ISNULL([DATA],0)) FROM #AUX_KEY WHERE [VALUE]='DOC.AllowISOIdRecycle'
+
+				IF @AllowISOIdRecycle=0
+				BEGIN
+					--ROLLBACK TRAN
+					SET @ERRORDESC = '{@LOC Loc_Id_Exists}: ' + @CODIGOISO 
+					RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+					RETURN
+				END
+				ELSE
+				BEGIN
+					--CHEQUEO SI HAY VERSIONES EN DESA O VIG.
+					IF (SELECT COUNT(*) FROM DOCUMENTOS WHERE  ESTADO !=3 AND CODIGOISO LIKE @CODIGOISO AND CODIGO != @CODIGO)>0 
+					BEGIN
+						SET @ERRORDESC = '{@LOC Loc_Id_Exists}: ' + @CODIGOISO 
+						RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+						RETURN
+					END
+					
+					IF (SELECT COUNT(*) FROM DOCUMENTOS WHERE CODIGOISO LIKE @CODIGOISO AND CODIGO != @CODIGO AND REVISION>=@REVISION)>0
+					BEGIN				
+						SET @ERRORDESC = '{@LOC Loc_Id_Exists_GraterOrEqualRevisionNumber}: ' + @CODIGOISO + ' Rev. ' + LTRIM(STR(@REVISION))
+						RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+						RETURN
+					END
+
+				END
+			END
+		END
+	END
+END
+GO

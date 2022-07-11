@@ -1,0 +1,116 @@
+﻿SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER OFF
+GO
+IF OBJECT_ID('[dbo].[V_PC8x_MASTER_EXPRESSION]') IS NULL EXEC('CREATE VIEW [dbo].[V_PC8x_MASTER_EXPRESSION] AS /*TEMPORARY OBJECT, DELETE AFTER ALL OBJECTS ARE CREATED*/ SELECT 0 C1')
+GO
+ALTER VIEW [dbo].[V_PC8x_MASTER_EXPRESSION]
+AS
+SELECT 
+' ' "REPOSITORY_ID", 
+'com.informatica.powercenter.map.MapExpression'  "CLASS_ID", 
+otype.OBJECT_TYPE_NAME+'_Field_'+ ltrim(str(wdgtfld.WIDGET_ID))+'_'+ ltrim(str(wdgtfld.FIELD_ID))  "EXPRESSION_ID", 
+'SQL' "LANGUAGE", 
+cast(expr.EXPRESSION as varchar(4000))  "EXPRESSION_TEXT", 
+'' "EXPRESSION_TEXT1", 
+'' "EXPRESSION_TEXT2", 
+'' "EXPRESSION_TEXT3", 
+CAST(NULL as datetime) "SRC_CREATE_DT", 
+CAST(LAST_SAVED as datetime) "SRC_UPDATE_DT", 
+CAST(NULL as datetime) "EFF_FROM_DT", 
+CAST(NULL as datetime) "EFF_TO_DT" ,
+wdgt.SUBJECT_ID "SUBJECT_ID"
+FROM 
+OPB_REPOSIT repo, 
+OPB_OBJECT_TYPE otype, 
+OPB_EXPRESSION expr,
+OPB_WIDGET_EXPR wexpr,
+OPB_WIDGET_FIELD wdgtfld, 
+OPB_WIDGET wdgt 
+WHERE 
+repo.RECID = 1 AND 
+wdgt.WIDGET_TYPE IN (9,26,5) AND 
+wdgt.WIDGET_TYPE = otype.OBJECT_TYPE_ID AND 
+wdgt.WIDGET_ID =   wdgtfld.WIDGET_ID AND 
+wdgt.VERSION_NUMBER =   wdgtfld.VERSION_NUMBER AND 
+wdgtfld.WIDGET_ID = wexpr.WIDGET_ID AND 
+wdgtfld.VERSION_NUMBER = wexpr.VERSION_NUMBER AND 
+wdgtfld.FIELD_ID = wexpr.OUTPUT_FIELD_ID AND 
+wexpr.EXPR_ID = expr.EXPR_ID and 
+wexpr.VERSION_NUMBER = expr.VERSION_NUMBER and 
+expr.LINE_NO = 1 and 
+wdgtfld.PORTTYPE IN ( 2, 32)and
+wdgt.IS_VISIBLE = 1
+UNION ALL 
+SELECT 
+' ' "REPOSITORY_ID", 
+'com.informatica.powercenter.map.MapExpression' "CLASS_ID", 
+otype.OBJECT_TYPE_NAME+'_'+ltrim(str(map.MAPPING_ID))+'_'+ltrim(str(wdgtinst.INSTANCE_ID)) "EXPRESSION_ID", 
+'SQL' "LANGUAGE", 
+'LOOKUP CONDITION:'+cast(wdgtattr.ATTR_VALUE as varchar(4000)) "EXPRESSION_TEXT", 
+'' "EXPRESSION_TEXT1", 
+'' "EXPRESSION_TEXT2", 
+'' "EXPRESSION_TEXT3", 
+CAST(NULL as datetime) "SRC_CREATE_DT", 
+CAST(wdgt.LAST_SAVED as datetime) "SRC_UPDATE_DT", 
+CAST(NULL as datetime) "EFF_FROM_DT", 
+CAST(NULL as datetime) "EFF_TO_DT", 
+wdgt.SUBJECT_ID "SUBJECT_ID" 
+FROM 
+OPB_OBJECT_TYPE otype, 
+OPB_WIDGET wdgt, 
+OPB_WIDGET_ATTR wdgtattr, 
+OPB_WIDGET_INST wdgtinst, 
+OPB_MAPPING map 
+WHERE 
+wdgt.WIDGET_ID = wdgtattr.WIDGET_ID AND 
+wdgt.IS_VISIBLE = 1 AND 
+map.IS_VISIBLE=1 AND
+wdgtinst.VERSION_NUMBER = wdgtattr.VERSION_NUMBER AND 
+wdgtinst.VERSION_NUMBER = map.VERSION_NUMBER AND 
+wdgt.WIDGET_TYPE=11 AND 
+wdgt.WIDGET_TYPE = otype.OBJECT_TYPE_ID AND 
+wdgt.WIDGET_TYPE = wdgtattr.WIDGET_TYPE AND
+wdgtattr.MAPPING_ID = map.MAPPING_ID AND 
+wdgtinst.MAPPING_ID = wdgtattr.MAPPING_ID AND 
+wdgtinst.INSTANCE_ID = wdgtattr.INSTANCE_ID AND 
+wdgtattr.ATTR_ID = 5 AND
+wdgtattr.LINE_NO = 1
+UNION ALL 
+SELECT 
+' ' "REPOSITORY_ID", 
+'com.informatica.powercenter.map.MapExpression' "CLASS_ID", 
+otype.OBJECT_TYPE_NAME+'_'+ltrim(str(map.MAPPING_ID))+'_'+ltrim(str(wdgtinst.INSTANCE_ID)) "EXPRESSION_ID", 
+'SQL' "LANGUAGE", 
+'LOOKUP CONDITION:'+cast(wdgtattr.ATTR_VALUE as varchar(4000)) "EXPRESSION_TEXT", 
+'' "EXPRESSION_TEXT1", 
+'' "EXPRESSION_TEXT2", 
+'' "EXPRESSION_TEXT3", 
+CAST(NULL as datetime) "SRC_CREATE_DT", 
+CAST(wdgt.LAST_SAVED as datetime) "SRC_UPDATE_DT", 
+CAST(NULL as datetime) "EFF_FROM_DT", 
+CAST(NULL as datetime) "EFF_TO_DT", 
+wdgt.SUBJECT_ID "SUBJECT_ID" 
+FROM 
+OPB_OBJECT_TYPE otype, 
+OPB_WIDGET wdgt, 
+OPB_WIDGET_ATTR wdgtattr, 
+OPB_WIDGET_INST wdgtinst, 
+OPB_MAPPING map 
+WHERE 
+wdgt.WIDGET_ID = wdgtattr.WIDGET_ID AND 
+wdgt.WIDGET_ID = wdgtinst.WIDGET_ID AND 
+wdgtinst.MAPPING_ID = map.MAPPING_ID AND 
+wdgt.IS_VISIBLE = 1 AND 
+map.IS_VISIBLE =1 AND
+wdgt.VERSION_NUMBER = wdgtattr.VERSION_NUMBER AND 
+wdgtinst.VERSION_NUMBER = map.VERSION_NUMBER AND 
+wdgt.WIDGET_TYPE=11 AND 
+wdgt.WIDGET_TYPE = otype.OBJECT_TYPE_ID AND 
+wdgt.WIDGET_TYPE = wdgtattr.WIDGET_TYPE AND
+wdgtattr.ATTR_ID=5 AND 
+wdgtattr.MAPPING_ID = 0 AND 
+wdgtattr.LINE_NO = 1 AND
+NOT EXISTS 
+(SELECT 'X' FROM OPB_WIDGET_ATTR wdgtattr1 WHERE wdgtattr1.INSTANCE_ID = wdgtinst.INSTANCE_ID AND 
+wdgtattr1.MAPPING_ID=map.MAPPING_ID AND wdgtattr1.ATTR_ID = wdgtattr.ATTR_ID)
+GO

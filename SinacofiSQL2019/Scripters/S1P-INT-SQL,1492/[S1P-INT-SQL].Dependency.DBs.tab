@@ -1,0 +1,17 @@
+Source DB	Target DB	Calls
+Snman2000	master	2
+facture	master	4
+DataCollector	master	12
+AdmDBA	master	4
+Monitor	master	5
+harvest	master	5
+docrel	master	2
+ISOKEYNET	master	5
+ERP_V12	master	2
+AdmDBA	Monitor	7
+Monitor	Monitor	3
+DataCollector	msdb	25
+AdmDBA	msdb	27
+msdb	msdb	1
+Monitor	msdb	26
+harvest	tempdb	1

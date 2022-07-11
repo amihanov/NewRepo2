@@ -1,0 +1,32 @@
+﻿SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER OFF
+GO
+IF OBJECT_ID('[dbo].[V_IME_CONNECTION]') IS NULL EXEC('CREATE VIEW [dbo].[V_IME_CONNECTION] AS /*TEMPORARY OBJECT, DELETE AFTER ALL OBJECTS ARE CREATED*/ SELECT 0 C1')
+GO
+ALTER VIEW [dbo].[V_IME_CONNECTION]
+AS
+select  ' ' "REPOSITORY_ID", 
+		'com.informatica.powercenter.deployment.'+REPLACE(otype.OBJECT_TYPE_NAME,' ','') "CLASS_ID", 
+        otype.OBJECT_TYPE_NAME + '_' + ltrim(str(cnx.OBJECT_ID)) "CONNECTION_ID", 
+	'' "CATALOG_ID",
+	'' "DATA_MGR_CLASS_ID",
+	'' "DATA_MANAGER_ID",
+	'' "SCHEMA_CLASS_ID",
+	'' "SCHEMA_ID",
+	otype.OBJECT_TYPE_NAME "CONNECTION_TYPE", 
+	cnx.OBJECT_NAME "CONNECTION_NAME", 
+	cnx.COMMENTS "CONNECTION_DESC", 
+	mmd_cnx.CNX_SUBTYPE_NAME "CONNECTION_SUBTYPE", 
+	cnx.CONNECT_STRING "HOST_NAME", '' "SCHEMA_NAME",
+        cnx.USER_NAME "USER_NAME", '' "ADDRESS",
+        '' "CONNECTION_TEXT1", '' "CONNECTION_TEXT2",
+        '' "CONNECTION_TEXT3", '1' "VERSION_NUM",
+        '' "SRC_CREATE_DT", '' "SRC_UPDATE_DT",
+        '' "EFF_FROM_DT", '' "EFF_TO_DT"
+    from OPB_CNX cnx, OPB_OBJECT_TYPE otype, OPB_REPOSIT repo, OPB_MMD_CNX mmd_cnx
+	where otype.OBJECT_TYPE_ID in (73, 74, 75, 76, 77) and repo.RECID = 1 and
+              otype.OBJECT_TYPE_ID = cnx.OBJECT_TYPE and
+              cnx.OBJECT_TYPE = mmd_cnx.CNX_OBJECT_TYPE and
+              cnx.OBJECT_SUBTYPE = mmd_cnx.CNX_OBJECT_SUBTYPE and
+              repo.RECID = 1
+GO

@@ -1,0 +1,30 @@
+﻿SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER OFF
+GO
+IF OBJECT_ID('[dbo].[V_ELMNT_SRCWDGFLD]') IS NULL EXEC('CREATE VIEW [dbo].[V_ELMNT_SRCWDGFLD] AS /*TEMPORARY OBJECT, DELETE AFTER ALL OBJECTS ARE CREATED*/ SELECT 0 C1')
+GO
+ALTER VIEW [dbo].[V_ELMNT_SRCWDGFLD]
+AS 
+select ' ' "REPOSITORY_ID", 
+'com.informatica.powercenter.map.SourceDefinitionPort' "CLASS_ID", 
+'Source Definition_' + 'Field_' + ltrim(str(src.SRC_ID)) + '_' + ltrim(str(fld.FLDID)) "ELEMENT_ID" , 
+     src.VERSION_NUMBER "VERSION_NUM",
+	   fld.SRC_NAME "ELEMENT_NAME", fld.SRC_NAME "ELEMENT_LABEL",
+	   '' "ELEMENT_ALIAS", fld.SRC_DESC "ELEMENT_DESC",
+	   '' "ELEMENT_USAGE",
+     'Source Definition Field' "ELEMENT_TYPE",
+	   '' "ELEMENT_SUBTYPE", 
+	   'BUSINESS_NAME' "ELEMENT_ATTR1", fld.BUSINESS_NAME "ELEMENT_VALUE1",
+	   'REDEFINED NAME' "ELEMENT_ATTR2", fld.REDFNAME "ELEMENT_VALUE2", 
+	   'SQL_NAME' "ELEMENT_ATTR3", fld.SQLNAME "ELEMENT_VALUE3",
+     'Y' "VALID_FLAG", str(fld.IS_HIDDEN) "DISABLED_FLAG", 
+	   '' "SRC_CREATE_DT", src.LAST_SAVED "SRC_UPDATE_DT",
+	   '' "EFF_FROM_DT",  '' "EFF_TO_DT",
+	   src.SUBJ_ID	"SUBJECT_ID"
+    from OPB_SRC src, OPB_SRC_FLD fld, OPB_DBD dbd
+	where 
+	      dbd.DBDID = src.DBDID and
+              fld.SRC_ID = src.SRC_ID and src.VERSION_NUMBER = dbd.VERSION_NUMBER
+and src.VERSION_NUMBER = fld.VERSION_NUMBER
+and src.IS_VISIBLE = 1
+GO
