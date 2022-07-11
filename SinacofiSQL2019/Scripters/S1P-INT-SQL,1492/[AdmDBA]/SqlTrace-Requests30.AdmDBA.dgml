@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+	<Nodes>
+		<Node Id="S1P-INT-SQL" Category="Database Server" Label="S1P-INT-SQL&#xA;Windows Server 2016 Datacenter 10.0 X64   Hypervisor - SQL 2017 (RTM-CU25) (KB5003830)&#xA;&#xA;C (119GB, 63GB Data, 0GB Log, 0GB Free)&#xA;E (199GB, 31GB Data, 159GB Log, 0GB Free)&#xA;F (59GB, 19GB Data, 0GB Log, 39GB Free)&#xA;G (99GB, 39GB Data, 0GB Log, 0GB Free)&#xA;H (59GB, 57GB Data, 0GB Log, 1GB Free)&#xA;I (59GB, 48GB Data, 0GB Log, 0GB Free)&#xA;J (99GB, 91GB Data, 0GB Log, 0GB Free)&#xA;K (49GB, 39GB Data, 0GB Log, 0GB Free)&#xA;L (49GB, 47GB Data, 0GB Log, 0GB Free)&#xA;M (24GB, 24GB Data, 0GB Log, 0GB Free)"/>
+		<Node Id="VDI-59" Category="Workstation" Label="VDI-59&#xA;- Always On Operations Dashboard&#xA;- MS SQL Server Management Studio"/>
+		<Node Id="AdmDBA" Category="Database" Label="AdmDBA&#xA;0,0MB Total&#xA;0,0MB Data" CPU="122114" Calls="3334" Connections="3476" Duration="11573756" ReadsKB="22758288" WritesKB="105704" CrossDatabaseCalls="0" />
+		<Node Id="master" Category="Database" Label="master&#xA;20,0MB Total&#xA;0,0MB Data" CPU="617354" Calls="13985" Connections="13969" Duration="1240065872" ReadsKB="39377478496" WritesKB="11955656" CrossDatabaseCalls="9" />
+		<Node Id="msdb" Category="Database" Label="msdb&#xA;0,0MB Total&#xA;0,0MB Data" CPU="1844" Calls="224" Connections="210" Duration="21229314" ReadsKB="879544" WritesKB="1304" CrossDatabaseCalls="4" />
+		<Node Id="tempdb" Category="Database" Label="tempdb&#xA;0,0MB Total&#xA;0,0MB Data" CPU="517057" Calls="1" Connections="0" Duration="453748993" ReadsKB="334504488" WritesKB="993784" CrossDatabaseCalls="1" />
+	</Nodes>
+	<Links>
+		<Link Source="S1P-INT-SQL" Target="S1P-INT-SQL" CPU="15753739" Calls="2671905" Connections="2671955" Duration="21759542855" ReadsKB="28351926760" WritesKB="2129744" Label="SQL Server&#xA;UI Queries&#xA;Batch&#xA;8 DTS packages&#xA;30 Agent Jobs" />
+		<Link Source="VDI-59" Target="master" CPU="302597" Calls="3778" Connections="3788" Duration="539678567" ReadsKB="29028025168" WritesKB="9037560" Label="" />
+		<Link Source="VDI-59" Target="msdb" CPU="62" Calls="7" Connections="3" Duration="500240" ReadsKB="10856" WritesKB="32" Label="" />
+		<Link Source="VDI-59" Target="AdmDBA" CPU="16" Calls="1" Connections="1" Duration="20" ReadsKB="424" WritesKB="0" Label="" />
+		<Link Source="AdmDBA" Target="S1P-INT-SQL" CPU="122114" Calls="3334" Connections="3476" Duration="11573756" ReadsKB="22758288" WritesKB="105704" CrossDatabaseCalls="0"/>
+		<Link Source="master" Target="S1P-INT-SQL" CPU="617354" Calls="13985" Connections="13969" Duration="1240065872" ReadsKB="39377478496" WritesKB="11955656" CrossDatabaseCalls="9"/>
+		<Link Source="msdb" Target="S1P-INT-SQL" CPU="1844" Calls="224" Connections="210" Duration="21229314" ReadsKB="879544" WritesKB="1304" CrossDatabaseCalls="4"/>
+		<Link Source="tempdb" Target="S1P-INT-SQL" CPU="517057" Calls="1" Connections="0" Duration="453748993" ReadsKB="334504488" WritesKB="993784" CrossDatabaseCalls="1"/>
+	</Links>
+	<Categories>
+		<Category Id="Database Server" />
+		<Category Id="Application Server" />
+		<Category Id="Database" />
+		<Category Id="Trace Server" />
+		<Category Id="Web Server" />
+		<Category Id="Workstation" />
+	</Categories>
+	<Properties>
+		<Property Id="ApplicationNames" Label="Application Names" Description="Application Names" DataType="System.String" />
+		<Property Id="CPU" Label="Total CPU" Description="Total processor used" DataType="System.Int64" />
+		<Property Id="Calls" Label="Number of Calls" Description="Number of calls" DataType="System.Int64" />
+		<Property Id="Connections" Label="Number of Connections" Description="Number of connections" DataType="System.Int64" />
+		<Property Id="CrossDatabaseCalls" Label="Cross Database References" Description="Number of references from other databases" DataType="System.Int64" />
+		<Property Id="Duration" Label="Total Duration" Description="Total duration" DataType="System.Int64" />
+		<Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Progression.Layout.GraphDirection" />
+		<Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+		<Property Id="Layout" DataType="System.String" />
+		<Property Id="ReadsKB" Label="Total KB Read" Description="Total Kb read" DataType="System.Int64" />
+		<Property Id="WritesKB" Label="Total KB Writen" Description="Total Kb writen" DataType="System.Int64" />
+		<Property Id="AdHoc" Label="AdHoc" Description="AdHoc Queries" DataType="System.Boolean" />
+		<Property Id="Replication" Label="Push Replication Queries" Description="Push Replication Queries" DataType="System.Boolean" />
+		<Property Id="RPC" Label="RPC Queries" Description="RPC Queries" DataType="System.Boolean" />
+		<Property Id="Linked Server" Label="Linked Server" Description="Linked Server" DataType="System.Boolean" />
+	</Properties>
+	<Styles>
+		<Style TargetType="Node" GroupLabel="Trace Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Trace Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Stroke" Value="#FF0000FF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Database.png" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Database Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Database Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Database.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Web Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Web Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Globe.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Application Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Application Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Server.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Workstation" ValueLabel="True">
+			<Condition Expression="HasCategory('Workstation')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Monitor.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Database" ValueLabel="True">
+			<Condition Expression="HasCategory('Database')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Table.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="RPC" ValueLabel="True">
+			<Condition Expression="RPC = 'True'" />
+			<Setter Property="Stroke" Value="#FF008000" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Replication" ValueLabel="True">
+			<Condition Expression="Replication = 'True'" />
+			<Setter Property="Stroke" Value="#FF808080" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="AdHoc" ValueLabel="True">
+			<Condition Expression="AdHoc = 'True'" />
+			<Setter Property="Stroke" Value="#FFFF0000" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Inactive" ValueLabel="Function" IsEnabled="true">
+			<Condition Expression="Calls=0" />
+			<Setter Property="StrokeDashArray" Expression="3,6" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Calls" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Calls/267190)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Duration" ValueLabel="Function" IsEnabled="true">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Duration/2175954285)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Reads" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,ReadsKB/35968802044)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Writes" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,WritesKB/3699928)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Connections" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Connections/267195)" />
+		</Style>
+	</Styles>
+</DirectedGraph>

@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>S1P-INT-SQL\PWCSQL</title>
+    <style type="text/css">
+  body 
+        {
+            font-family:'Segoe UI', Verdana;
+        }
+
+        table
+        {
+            border: 0px solid black;
+            padding: 0px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
+            min-width:700px;
+            font-size: small;
+            border:1px solid #e4eaff;
+        }
+        
+        .details
+        {
+            min-width:400px;
+            width: 100%;
+        }
+        
+        td
+        {
+            min-width:50px;
+            border-left  : 0px solid #aaa;
+            padding: 2px 5px 5px 5px;
+            vertical-align:top;
+        }
+                        
+        th
+        {
+            padding: 0px 10px 0px 10px;
+            margin: 0px 0px 0px 0px;
+            color: #666;
+            text-align: center;
+            vertical-align:bottom;
+            font-weight:lighter;
+            border-bottom: 3px solid #6376b4;
+        }
+        tr
+        {
+            padding: 0px 10px 0px 2px;
+            margin: 0px 0px 0px 0px;
+            text-align: center;
+        }
+        
+        tr:hover td
+        {
+            background-color:#e4eaff;
+        }
+
+        .d0 td
+        {
+            border-bottom:1px dotted #e4eaff;
+        }
+        .d1 td
+        {
+            border-bottom:1px dotted #e4eaff;
+        }
+        .d0 th
+        {
+            border-bottom:1px dotted #e4eaff;
+            border-right:3px solid #6376b4;
+            text-align:right;
+        }
+        .d1 th
+        {
+            border-bottom:1px dotted #e4eaff;
+            border-right:3px solid #6376b4;
+            text-align:right;
+        }
+        
+        .Total
+        {
+            font-weight: bold;
+            border-bottom:0px solid #e4eaff;
+            border-top:3px solid #6376b4;
+            text-align:right;
+        }
+        
+        a
+        {
+            color: #000;
+            text-decoration: none;
+        }
+        .error
+        {
+            color:#ff0000;
+        }
+        .error a
+        {
+            color:#ff0000;
+        }
+        .highlight
+        {
+            background: #abd1ff;
+        }
+        .zero
+        {
+            color: #999;
+        }
+    </style>
+<!--    <script language="javascript" type="text/javascript">
+        function toggle_Visibility(id) {
+            var e = document.getElementById(id);
+            if (e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+    </script>-->
+</head>
+<body>
+<h1>S1P-INT-SQL\PWCSQL</h1>
+<h4>Windows Server 2016 Datacenter 10.0 &lt;X64&gt;  - SQL 2017 RTM+ - Standard Edition (64-bit)</h4>
+<h2>Top 20 Queries by Total CPU</h2>
+<table cellspacing=0>
+<tr><th>Query</th><th>Db</th><th>Min / Avg / Max CPU (ms)</th><th>Total CPU</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h2>Top 20 Queries by Total Duration</h2>
+<table cellspacing=0>
+<tr><th>Query</th><th>Db</th><th>Min / Avg / Max Duration (ms)</th><th>Total Duration</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h2>Top 20 Queries by Total Reads</h2>
+<table cellspacing=0>
+<tr><th>Query</th><th>Db</th><th>Min / Avg / Max Reads</th><th>Total Reads</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>Top 20 Queries by Total Writes</h2>
+<table cellspacing=0>
+<tr><th>Query</th><th>Db</th><th>Min / Avg / Max Writes</th><th>Total Writes</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>AdmDBA</h2>
+<h3>Top 10 Queries by Total CPU in AdmDBA</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max CPU (ms)</th><th>Total CPU</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Duration in AdmDBA</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Duration (ms)</th><th>Total Duration</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Reads in AdmDBA</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Reads</th><th>Total Reads</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Writes in AdmDBA</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Writes</th><th>Total Writes</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>master</h2>
+<h3>Top 10 Queries by Total CPU in master</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max CPU (ms)</th><th>Total CPU</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Duration in master</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Duration (ms)</th><th>Total Duration</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Reads in master</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Reads</th><th>Total Reads</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Writes in master</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Writes</th><th>Total Writes</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>model</h2>
+<h3>Top 10 Queries by Total CPU in model</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max CPU (ms)</th><th>Total CPU</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Duration in model</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Duration (ms)</th><th>Total Duration</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Reads in model</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Reads</th><th>Total Reads</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Writes in model</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Writes</th><th>Total Writes</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>msdb</h2>
+<h3>Top 10 Queries by Total CPU in msdb</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max CPU (ms)</th><th>Total CPU</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Duration in msdb</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Duration (ms)</th><th>Total Duration</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Reads in msdb</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Reads</th><th>Total Reads</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Writes in msdb</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Writes</th><th>Total Writes</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>PWC_DOMAIN</h2>
+<h3>Top 10 Queries by Total CPU in PWC_DOMAIN</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max CPU (ms)</th><th>Total CPU</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Duration in PWC_DOMAIN</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Duration (ms)</th><th>Total Duration</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Reads in PWC_DOMAIN</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Reads</th><th>Total Reads</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Writes in PWC_DOMAIN</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Writes</th><th>Total Writes</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>PWC_DOMAIN_BKP</h2>
+<h3>Top 10 Queries by Total CPU in PWC_DOMAIN_BKP</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max CPU (ms)</th><th>Total CPU</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Duration in PWC_DOMAIN_BKP</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Duration (ms)</th><th>Total Duration</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Reads in PWC_DOMAIN_BKP</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Reads</th><th>Total Reads</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Writes in PWC_DOMAIN_BKP</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Writes</th><th>Total Writes</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>PWC_REPO</h2>
+<h3>Top 10 Queries by Total CPU in PWC_REPO</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max CPU (ms)</th><th>Total CPU</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Duration in PWC_REPO</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Duration (ms)</th><th>Total Duration</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Reads in PWC_REPO</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Reads</th><th>Total Reads</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Writes in PWC_REPO</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Writes</th><th>Total Writes</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>PWC_REPO_BKP</h2>
+<h3>Top 10 Queries by Total CPU in PWC_REPO_BKP</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max CPU (ms)</th><th>Total CPU</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Duration in PWC_REPO_BKP</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Duration (ms)</th><th>Total Duration</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Reads in PWC_REPO_BKP</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Reads</th><th>Total Reads</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Writes in PWC_REPO_BKP</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Writes</th><th>Total Writes</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>tempdb</h2>
+<h3>Top 10 Queries by Total CPU in tempdb</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max CPU (ms)</th><th>Total CPU</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Duration in tempdb</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Duration (ms)</th><th>Total Duration</th><th>Calls</th><th>&lt;0.2s</th><th>&lt;0.4s</th><th>&lt;0.8s</th><th>&lt;1.6s</th><th>&lt;3.2s</th><th>&lt;6.4s</th><th>&lt;12.8s</th><th>&lt;25s</th><th>&lt;51s</th><th>&lt;102s</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Reads in tempdb</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Reads</th><th>Total Reads</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h3>Top 10 Queries by Total Writes in tempdb</h3>
+<table cellspacing=0>
+<tr><th>Query</th><th>Min / Avg / Max Writes</th><th>Total Writes</th><th>Calls</th><th>&lt;0.8 MB</th><th>&lt;1.5 MB</th><th>&lt;3.1 MB</th><th>&lt;6.2 MB</th><th>&lt;12.5 MB</th><th>&lt;25 MB</th><th>&lt;50 MB</th><th>&lt;100 MB</th><th>&lt;150 MB</th><th>&lt;400 MB</th></tr>
+</table><br/>
+<h2>Queries</h2>
+<h2>Indexes</h2>
+</body></html>

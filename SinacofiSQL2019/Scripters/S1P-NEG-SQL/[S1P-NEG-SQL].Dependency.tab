@@ -1,1 +1,90 @@
 DB	User	Host	Application	Application Group	Calls	Connections	Cpu	Duration	ReadKb	WriteKb	Notes
+ft3	ope_ft3web	arsen.sinacofi.corp	Microsoft JDBC Driver for SQL Server	Microsoft JDBC Driver for SQL Server	0	11	0	4403188155	0	0	
+ft3	ope_ft3web	ares.sinacofi.corp	Microsoft JDBC Driver for SQL Server	Microsoft JDBC Driver for SQL Server	0	13	0	577847447	0	0	
+Swsnew	webuser	WEB_DESARROLLO	Internet Information Services	ASP Page	155060	155072	20674927	2573825630	9544325256	251424	
+ft3	ope_brokerft3	S1P-NEG-SQL			0	2	0	927088967	0	0	
+ValidacionTributaria	ope_credexweb	QUINTERO	.Net SqlClient Data Provider	.Net APP	29091	29092	48419	116254947	2103906056	52672120	
+AdmDBA	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio - Query	MS SQL Server Management Studio	7	9	3687	276591483	5496	40	UI Queries, SQL Server
+master	nt service\sqltelemetry	S1P-NEG-SQL	SQLServerCEIP	SQL Server	5609	5610	300242	435837340	710083800	91688	
+ValidacionTributaria	ope_credexweb	CASABLANCA	.Net SqlClient Data Provider	.Net APP	29508	29508	52704	129133594	2436658000	53760576	
+AdmDBA	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	109	121	233	19493868	20496	32	UI Queries, SQL Server
+tempdb	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	0	1	0	943940	0	0	UI Queries, SQL Server
+master	nt authority\system	S1P-NEG-SQL	Microsoft® Windows® Operating System	COM+ Component	0	1	0	0	0	0	
+ValidacionTributaria	ope_credexweb	CONCON	.Net SqlClient Data Provider	.Net APP	27281	27283	43177	123087734	1472064224	41011000	
+master	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	8	1	548	21261921	74208	72	UI Queries, SQL Server
+ValidacionTributaria	ope_credexweb	PUCHUNCAVI	.Net SqlClient Data Provider	.Net APP	28758	28758	48165	125437933	1884105712	45631048	
+ft3	ope_ruteador	S1P-NEG-SQL			58095	58097	158953	592414	41860816	49088	
+ft3	ope_limpieza	S1P-NEG-SQL			1130275	1130283	444561	1879617	187324216	1272	
+ft3	ope_appsbif	CHINCOL			494359	494364	6836962	294261772	2680943960	1704	
+master	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server	Microsoft SQL Server	2907	2907	77	13328	0	0	SQL Server
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server	Microsoft SQL Server	130	130	0	78936	22880	0	SQL Server
+AdmDBA	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	2067	2092	46455	10655863	10898184	40560	UI Queries, SQL Server
+Monitor	ope_monitoreonagios	atenas	check_mssql_FT3	check_mssql_FT3	182	182	4423	12161	5849352	0	
+intercajas	ope_intercajasweb	BORABORA	.Net SqlClient Data Provider	.Net APP	819	819	1997	27968124	42332032	37752	
+Monitor	ope_monitoreonagios	atenas	check_mssql_Intercajas	check_mssql_Intercajas	504	504	142	5921	16192	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<29648>	DatabaseMail - DatabaseMail - Id<29648>	4	4	15	979990	1376	56	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<42048>	DatabaseMail - DatabaseMail - Id<42048>	4	4	0	979921	1296	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<39016>	DatabaseMail - DatabaseMail - Id<39016>	4	4	0	979972	1320	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<49144>	DatabaseMail - DatabaseMail - Id<49144>	4	4	0	979926	1376	56	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<18112>	DatabaseMail - DatabaseMail - Id<18112>	5	5	0	1929771	2296	40	
+AdmDBA	skylab\ope_respaldo	S1P-NEG-SQL	SQL Management	SQL Management	255	305	1561	8751325	699344	528	
+Swsnew	skylab\ope_respaldo	S1P-NEG-SQL	SQL Management	SQL Management	10	0	437	235155	36320	776	
+ft3	skylab\ope_respaldo	S1P-NEG-SQL	SQL Management	SQL Management	10	0	639	624318	27288	664	
+Monitor	skylab\ope_respaldo	S1P-NEG-SQL	SQL Management	SQL Management	10	0	720	711399	26336	616	
+intercajas	skylab\ope_respaldo	S1P-NEG-SQL	SQL Management	SQL Management	10	0	3875	5375505	26520	816	
+ValidacionTributaria	skylab\ope_respaldo	S1P-NEG-SQL	SQL Management	SQL Management	10	0	11682	9724619	27776	1032	
+intercajas	ope_pwc_intercajas	S1P-NEG-SQL			12	12	2280406	2528792	3925831848	14069752	
+AdmDBA	skylab\ope_sql_neg	S1P-NEG-SQL	SQLPS (ope_sql_neg@S1P-NEG-SQL)	Sql Agent	5	5	0	3367	240	0	
+AdmDBA	ope_dba	S1P-NEG-SQL	OSQL-32	ISQL/OSQL	35	70	0	1136	1080	0	Batch
+master	ope_dba	S1P-NEG-SQL	OSQL-32	ISQL/OSQL	30	0	0	1192	55552	8	Batch
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<2964>	DatabaseMail - DatabaseMail - Id<2964>	4	4	0	979943	1536	96	
+Monitor	ope_dba	S1P-NEG-SQL	OSQL-32	ISQL/OSQL	5	0	16	201	6336	0	Batch
+master	nt authority\system	S1P-NEG-SQL	Microsoft SQL Server VSS Writer	Microsoft SQL Server VSS Writer	55	55	126	2035	28128	0	SQL Server
+intercajas	ope_intercajasweb	MALDIVAS	.Net SqlClient Data Provider	.Net APP	203	203	46	13644943	414608	9896	
+ft3	ope_pwc_bd	S1P-NEG-SQL			9	9	438	897	265456	160	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<31396>	DatabaseMail - DatabaseMail - Id<31396>	4	4	0	979980	1360	56	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<22732>	DatabaseMail - DatabaseMail - Id<22732>	4	4	0	979904	1400	40	
+ft3	ope_monconsft3	C3-GREEN-N-04	Monitor FT3	Monitor FT3	6	6	5547	324866	1046240	0	
+ft3	ope_monconsft3	S1P-NEG-SQL			2	2	500	48571	134960	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<34312>	DatabaseMail - DatabaseMail - Id<34312>	4	4	0	979931	1360	56	
+msdb	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	3	4	0	1099984	0	0	UI Queries, SQL Server
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<52408>	DatabaseMail - DatabaseMail - Id<52408>	4	4	0	979944	1344	56	
+ft3	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	5	1	1314	33127	65592	0	UI Queries, SQL Server
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<22680>	DatabaseMail - DatabaseMail - Id<22680>	4	4	16	979934	1424	56	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<17620>	DatabaseMail - DatabaseMail - Id<17620>	5	5	0	1931551	2344	56	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<48668>	DatabaseMail - DatabaseMail - Id<48668>	4	4	0	979924	1392	32	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<45096>	DatabaseMail - DatabaseMail - Id<45096>	4	4	0	979955	1360	56	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<30324>	DatabaseMail - DatabaseMail - Id<30324>	4	4	0	979937	1360	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<29564>	DatabaseMail - DatabaseMail - Id<29564>	4	4	0	979941	1384	56	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<15240>	DatabaseMail - DatabaseMail - Id<15240>	1	3	0	10	56	16	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<20952>	DatabaseMail - DatabaseMail - Id<20952>	4	4	0	979977	1344	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<17404>	DatabaseMail - DatabaseMail - Id<17404>	5	5	0	1929907	2536	120	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<28724>	DatabaseMail - DatabaseMail - Id<28724>	4	4	0	979901	1296	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<29012>	DatabaseMail - DatabaseMail - Id<29012>	4	4	0	979985	1296	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<11592>	DatabaseMail - DatabaseMail - Id<11592>	4	4	0	979950	1360	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<47012>	DatabaseMail - DatabaseMail - Id<47012>	4	4	16	979951	1360	56	
+ft3	ope_monconsft3	FACEVEDO-VM	Monitor FT3	Monitor FT3	3	3	2860	85750	528160	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<44088>	DatabaseMail - DatabaseMail - Id<44088>	5	5	0	1359912	2256	0	
+ft3	ope_ft3web	arsen-clon.sinacofi.corp	Microsoft JDBC Driver for SQL Server	Microsoft JDBC Driver for SQL Server	0	3	0	0	0	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<38992>	DatabaseMail - DatabaseMail - Id<38992>	4	4	0	979930	1296	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<18240>	DatabaseMail - DatabaseMail - Id<18240>	5	5	0	1929902	2376	16	
+master	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	4	0	1751	939716	215304	152	UI Queries, SQL Server
+model	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	3	0	953	1106	88168	176	UI Queries, SQL Server
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	2	0	1360	1947	780848	160	UI Queries, SQL Server
+Monitor	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	2	0	31063	32360	1370680	136	UI Queries, SQL Server
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<35588>	DatabaseMail - DatabaseMail - Id<35588>	5	5	0	1929841	2352	56	
+intercajas	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	3	0	2167091	1523210	418368008	68872	UI Queries, SQL Server
+ft3	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	4	0	123268	112119	4595040	382264	UI Queries, SQL Server
+Swsnew	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	2	0	1656	2238	142256	464	UI Queries, SQL Server
+ValidacionTributaria	skylab\ope_sql_neg	S1P-NEG-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	5	0	521658	2821125	63332536	1965936	UI Queries, SQL Server
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<32440>	DatabaseMail - DatabaseMail - Id<32440>	4	4	15	979981	1320	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<55696>	DatabaseMail - DatabaseMail - Id<55696>	4	4	0	979980	1312	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<51568>	DatabaseMail - DatabaseMail - Id<51568>	4	4	0	979937	1280	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<20328>	DatabaseMail - DatabaseMail - Id<20328>	4	4	0	979969	1360	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<52896>	DatabaseMail - DatabaseMail - Id<52896>	4	4	0	979964	1376	56	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<26048>	DatabaseMail - DatabaseMail - Id<26048>	4	4	0	979955	1360	56	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<26688>	DatabaseMail - DatabaseMail - Id<26688>	5	5	0	1929856	2392	32	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<36204>	DatabaseMail - DatabaseMail - Id<36204>	4	4	0	979879	1312	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<17132>	DatabaseMail - DatabaseMail - Id<17132>	4	4	15	979970	1360	56	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<17036>	DatabaseMail - DatabaseMail - Id<17036>	4	4	0	979941	1296	0	
+msdb	skylab\ope_sql_neg	S1P-NEG-SQL	DatabaseMail - DatabaseMail - Id<25256>	DatabaseMail - DatabaseMail - Id<25256>	4	4	0	979970	1368	0	

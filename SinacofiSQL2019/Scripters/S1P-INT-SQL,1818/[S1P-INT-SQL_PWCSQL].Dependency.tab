@@ -1,1 +1,37 @@
 DB	User	Host	Application	Application Group	Calls	Connections	Cpu	Duration	ReadKb	WriteKb	Notes
+PWC_DOMAIN	ope_pwc_domain	10.50.7.2			4763	4769	334682	3283377858	241425416	371312	
+master	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio - Query	MS SQL Server Management Studio	3	7	109	129258	0	0	UI Queries, SQL Server
+PWC_REPO	ope_pwc_repo	S1P-INT-SQL\PWCSQL			44	57	11245621	4444662299	7377120096	3150712	
+master	nt service\sqltelemetry$pwcsql	S1P-INT-SQL	SQLServerCEIP	SQL Server	4435	4436	173358	439038857	379303744	94112	
+msdb	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	2	3	0	687357	0	0	UI Queries, SQL Server
+master	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	12	13	110	1227766	16632	64	UI Queries, SQL Server
+master	skylab\ope_sql_int	S1P-INT-SQL	Microsoft SQL Server	Microsoft SQL Server	2679	2679	79	12130	42864	0	SQL Server
+master	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio - Transact-SQL IntelliSense	MS SQL Server Management Studio	10	10	251	536	10640	0	UI Queries, SQL Server
+AdmDBA	skylab\rperez	VDI-95	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	1	1	15	6	416	0	UI Queries, SQL Server
+msdb	skylab\ope_sql_int	S1P-INT-SQL	Microsoft SQL Server	Microsoft SQL Server	133	133	45	98599	24904	0	SQL Server
+master	skylab\ope_sql_int	S1P-INT-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	1830	1840	15953	3062789	4809712	25912	UI Queries, SQL Server
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<35836>	DatabaseMail - DatabaseMail - Id<35836>	4	4	0	979874	1392	56	
+master	skylab\ope_sql_int	S1P-INT-SQL	.Net SqlClient Data Provider	.Net APP	5	5	0	1074	560	0	
+AdmDBA	skylab\ope_sql_int	S1P-INT-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	6	0	6298	92863	231752	4568	UI Queries, SQL Server
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<7484>	DatabaseMail - DatabaseMail - Id<7484>	4	4	0	979953	1480	56	
+master	nt authority\system	S1P-INT-SQL	Microsoft SQL Server VSS Writer	Microsoft SQL Server VSS Writer	50	50	94	1309	19936	0	SQL Server
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<14544>	DatabaseMail - DatabaseMail - Id<14544>	6	6	0	1739418	3200	32	
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<15584>	DatabaseMail - DatabaseMail - Id<15584>	4	4	0	979987	1464	56	
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<36204>	DatabaseMail - DatabaseMail - Id<36204>	4	4	15	979984	1488	56	
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<25348>	DatabaseMail - DatabaseMail - Id<25348>	6	6	31	1738570	3272	32	
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<35672>	DatabaseMail - DatabaseMail - Id<35672>	4	4	32	979923	1416	64	
+model	skylab\ope_sql_int	S1P-INT-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	1	0	156	870	78560	112	UI Queries, SQL Server
+msdb	skylab\ope_sql_int	S1P-INT-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	1	0	391	2590	549704	136	UI Queries, SQL Server
+PWC_DOMAIN	skylab\ope_sql_int	S1P-INT-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	1	0	329	920	367912	136	UI Queries, SQL Server
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<7216>	DatabaseMail - DatabaseMail - Id<7216>	5	5	15	1929871	2480	56	
+PWC_REPO	skylab\ope_sql_int	S1P-INT-SQL	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	1	0	13811	76063	60224432	194400	UI Queries, SQL Server
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<5584>	DatabaseMail - DatabaseMail - Id<5584>	6	6	0	1738578	3336	56	
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<20580>	DatabaseMail - DatabaseMail - Id<20580>	4	4	0	979941	1408	56	
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<36884>	DatabaseMail - DatabaseMail - Id<36884>	4	4	0	979983	1472	56	
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<7812>	DatabaseMail - DatabaseMail - Id<7812>	6	6	16	1739699	3328	32	
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<36772>	DatabaseMail - DatabaseMail - Id<36772>	4	4	0	979947	1424	56	
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<6336>	DatabaseMail - DatabaseMail - Id<6336>	4	4	15	979979	1536	72	
+msdb	skylab\ope_sql_int	S1P-INT-SQL	DatabaseMail - DatabaseMail - Id<34740>	DatabaseMail - DatabaseMail - Id<34740>	6	6	0	1739000	3264	56	
+master	skylab\nhuenul	VDI-59	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	10	11	63	527364	11960	56	UI Queries, SQL Server
+msdb	skylab\nhuenul	VDI-59	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	2	2	0	460020	0	0	UI Queries, SQL Server
+AdmDBA	skylab\nhuenul	VDI-59	Microsoft SQL Server Management Studio	MS SQL Server Management Studio	1	1	15	20	416	0	UI Queries, SQL Server

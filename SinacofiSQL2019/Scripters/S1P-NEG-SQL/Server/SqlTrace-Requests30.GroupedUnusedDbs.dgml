@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+	<Nodes>
+		<Node Id="S1P-NEG-SQL" Category="Database Server" Label="S1P-NEG-SQL&#xA;Windows Server 2016 Datacenter 10.0 X64   Hypervisor - SQL 2017 (RTM-CU25) (KB5003830)&#xA;&#xA;C (119GB, 74GB Data, 0GB Log, 0GB Free)&#xA;E (199GB, 102GB Data, 62GB Log, 1GB Free)&#xA;F (79GB, 25GB Data, 0GB Log, 54GB Free)&#xA;G (199GB, 78GB Data, 0GB Log, 0GB Free)&#xA;H (49GB, 47GB Data, 2GB Log, 0GB Free)&#xA;I (49GB, 28GB Data, 0GB Log, 0GB Free)"/>
+		<Node Id="WEB_DESARROLLO" Category="Web Server" Label="WEB_DESARROLLO&#xA;- ASP Page"/>
+		<Node Id="VDI-95" Category="Workstation" Label="VDI-95&#xA;- MS SQL Server Management Studio"/>
+		<Node Id="QUINTERO&#xA;CASABLANCA&#xA;CONCON&#xA;PUCHUNCAVI" Category="Workstation" Label="QUINTERO&#xA;CASABLANCA&#xA;CONCON&#xA;PUCHUNCAVI&#xA;- .Net APP" Group="Collapsed"/>
+		<Node Id="QUINTERO" Category="Workstation" Label="QUINTERO"/>
+		<Node Id="CASABLANCA" Category="Workstation" Label="CASABLANCA"/>
+		<Node Id="CONCON" Category="Workstation" Label="CONCON"/>
+		<Node Id="PUCHUNCAVI" Category="Workstation" Label="PUCHUNCAVI"/>
+		<Node Id="CHINCOL" Category="Application Server" Label="CHINCOL&#xA;- -"/>
+		<Node Id="atenas" Category="Workstation" Label="atenas&#xA;- check_mssql_FT3&#xA;- check_mssql_Intercajas"/>
+		<Node Id="BORABORA&#xA;MALDIVAS" Category="Workstation" Label="BORABORA&#xA;MALDIVAS&#xA;- .Net APP" Group="Collapsed"/>
+		<Node Id="BORABORA" Category="Workstation" Label="BORABORA"/>
+		<Node Id="MALDIVAS" Category="Workstation" Label="MALDIVAS"/>
+		<Node Id="C3-GREEN-N-04&#xA;FACEVEDO-VM" Category="Workstation" Label="C3-GREEN-N-04&#xA;FACEVEDO-VM&#xA;- Monitor FT3" Group="Collapsed"/>
+		<Node Id="C3-GREEN-N-04" Category="Workstation" Label="C3-GREEN-N-04"/>
+		<Node Id="FACEVEDO-VM" Category="Workstation" Label="FACEVEDO-VM"/>
+		<Node Id="arsen.sinacofi.corp&#xA;ares.sinacofi.corp&#xA;arsen-clon.sinacofi.corp" Category="Workstation" Label="arsen.sinacofi.corp&#xA;ares.sinacofi.corp&#xA;arsen-clon.sinacofi.corp&#xA;- Microsoft JDBC Driver for SQL Server" Group="Collapsed"/>
+		<Node Id="arsen.sinacofi.corp" Category="Workstation" Label="arsen.sinacofi.corp"/>
+		<Node Id="ares.sinacofi.corp" Category="Workstation" Label="ares.sinacofi.corp"/>
+		<Node Id="arsen-clon.sinacofi.corp" Category="Workstation" Label="arsen-clon.sinacofi.corp"/>
+		<Node Id="AdmDBA" Category="Database" Label="AdmDBA&#xA;0,0MB Total&#xA;0,0MB Data" CPU="51936" Calls="2478" Connections="2602" Duration="315497042" ReadsKB="11624840" WritesKB="41160" CrossDatabaseCalls="1" />
+		<Node Id="ft3" Category="Database" Label="ft3&#xA;720,0MB Total&#xA;0,0MB Data" CPU="7575042" Calls="1682768" Connections="1682794" Duration="6206088020" ReadsKB="2916791728" WritesKB="435152" CrossDatabaseCalls="1" />
+		<Node Id="intercajas" Category="Database" Label="intercajas&#xA;15.000,0MB Total&#xA;0,0MB Data" CPU="4453415" Calls="1047" Connections="1034" Duration="51040574" ReadsKB="4386973016" WritesKB="14187088" CrossDatabaseCalls="1" />
+		<Node Id="master" Category="Database" Label="master&#xA;20,0MB Total&#xA;0,0MB Data" CPU="302744" Calls="8613" Connections="8574" Duration="458055532" ReadsKB="710456992" WritesKB="91920" CrossDatabaseCalls="6" />
+		<Node Id="model" Category="Database" Label="model&#xA;0,0MB Total&#xA;0,0MB Data" CPU="953" Calls="3" Connections="0" Duration="1106" ReadsKB="88168" WritesKB="176" CrossDatabaseCalls="0" />
+		<Node Id="Monitor" Category="Database" Label="Monitor&#xA;0,0MB Total&#xA;0,0MB Data" CPU="36364" Calls="703" Connections="686" Duration="762042" ReadsKB="7268896" WritesKB="752" CrossDatabaseCalls="1" />
+		<Node Id="msdb" Category="Database" Label="msdb&#xA;900,0MB Total&#xA;0,0MB Data" CPU="1437" Calls="291" Connections="292" Duration="43520059" ReadsKB="860920" WritesKB="1336" CrossDatabaseCalls="3" />
+		<Node Id="Swsnew" Category="Database" Label="Swsnew&#xA;30,0MB Total&#xA;0,0MB Data" CPU="20677020" Calls="155072" Connections="155072" Duration="2574063023" ReadsKB="9544503832" WritesKB="252664" CrossDatabaseCalls="0" />
+		<Node Id="tempdb" Category="Database" Label="tempdb&#xA;2.048,0MB Total&#xA;0,0MB Data" CPU="0" Calls="0" Connections="1" Duration="943940" ReadsKB="0" WritesKB="0" CrossDatabaseCalls="0" />
+		<Node Id="ValidacionTributaria" Category="Database" Label="ValidacionTributaria&#xA;45.056,0MB Total&#xA;0,0MB Data" CPU="725805" Calls="114653" Connections="114641" Duration="506459952" ReadsKB="7960094304" WritesKB="195041712" CrossDatabaseCalls="0" />
+		<Node Id="LOGSHIPLINK_AGAPE\SQLPROD01_-1178142848" Category="Database Server" Label="LOGSHIPLINK_AGAPE\SQLPROD01_-1178142848" />
+	</Nodes>
+	<Links>
+		<Link Source="S1P-NEG-SQL" Target="S1P-NEG-SQL" CPU="6099565" Calls="1199722" Connections="1199738" Duration="1451927990" ReadsKB="5366307112" WritesKB="16676296" Label="SQL Server&#xA;UI Queries&#xA;Batch&#xA;8 DTS packages&#xA;18 Agent Jobs" />
+		<Link Source="WEB_DESARROLLO" Target="Swsnew" CPU="20674927" Calls="155060" Connections="155072" Duration="2573825630" ReadsKB="9544325256" WritesKB="251424" Label="" />
+		<Link Source="VDI-95" Target="AdmDBA" CPU="3920" Calls="116" Connections="130" Duration="296085351" ReadsKB="25992" WritesKB="72" Label="" />
+		<Link Source="VDI-95" Target="tempdb" CPU="0" Calls="0" Connections="1" Duration="943940" ReadsKB="0" WritesKB="0" Label="" />
+		<Link Source="VDI-95" Target="master" CPU="548" Calls="8" Connections="1" Duration="21261921" ReadsKB="74208" WritesKB="72" Label="" />
+		<Link Source="VDI-95" Target="msdb" CPU="0" Calls="3" Connections="4" Duration="1099984" ReadsKB="0" WritesKB="0" Label="" />
+		<Link Source="VDI-95" Target="ft3" CPU="1314" Calls="5" Connections="1" Duration="33127" ReadsKB="65592" WritesKB="0" Label="" />
+		<Link Source="QUINTERO&#xA;CASABLANCA&#xA;CONCON&#xA;PUCHUNCAVI" Target="ValidacionTributaria" CPU="192465" Calls="114638" Connections="114641" Duration="493914208" ReadsKB="7896733992" WritesKB="193074744" Label="" />
+		<Link Source="QUINTERO&#xA;CASABLANCA&#xA;CONCON&#xA;PUCHUNCAVI" Target="QUINTERO" Category="Contains" />
+		<Link Source="QUINTERO&#xA;CASABLANCA&#xA;CONCON&#xA;PUCHUNCAVI" Target="CASABLANCA" Category="Contains" />
+		<Link Source="QUINTERO&#xA;CASABLANCA&#xA;CONCON&#xA;PUCHUNCAVI" Target="CONCON" Category="Contains" />
+		<Link Source="QUINTERO&#xA;CASABLANCA&#xA;CONCON&#xA;PUCHUNCAVI" Target="PUCHUNCAVI" Category="Contains" />
+		<Link Source="CHINCOL" Target="ft3" CPU="6836962" Calls="494359" Connections="494364" Duration="294261772" ReadsKB="2680943960" WritesKB="1704" Label="" />
+		<Link Source="atenas" Target="Monitor" CPU="4565" Calls="686" Connections="686" Duration="18082" ReadsKB="5865544" WritesKB="0" Label="" />
+		<Link Source="BORABORA&#xA;MALDIVAS" Target="intercajas" CPU="2043" Calls="1022" Connections="1022" Duration="41613067" ReadsKB="42746640" WritesKB="47648" Label="" />
+		<Link Source="BORABORA&#xA;MALDIVAS" Target="BORABORA" Category="Contains" />
+		<Link Source="BORABORA&#xA;MALDIVAS" Target="MALDIVAS" Category="Contains" />
+		<Link Source="C3-GREEN-N-04&#xA;FACEVEDO-VM" Target="ft3" CPU="8407" Calls="9" Connections="9" Duration="410616" ReadsKB="1574400" WritesKB="0" Label="" />
+		<Link Source="C3-GREEN-N-04&#xA;FACEVEDO-VM" Target="C3-GREEN-N-04" Category="Contains" />
+		<Link Source="C3-GREEN-N-04&#xA;FACEVEDO-VM" Target="FACEVEDO-VM" Category="Contains" />
+		<Link Source="arsen.sinacofi.corp&#xA;ares.sinacofi.corp&#xA;arsen-clon.sinacofi.corp" Target="ft3" CPU="0" Calls="0" Connections="27" Duration="4981035602" ReadsKB="0" WritesKB="0" Label="" />
+		<Link Source="arsen.sinacofi.corp&#xA;ares.sinacofi.corp&#xA;arsen-clon.sinacofi.corp" Target="arsen.sinacofi.corp" Category="Contains" />
+		<Link Source="arsen.sinacofi.corp&#xA;ares.sinacofi.corp&#xA;arsen-clon.sinacofi.corp" Target="ares.sinacofi.corp" Category="Contains" />
+		<Link Source="arsen.sinacofi.corp&#xA;ares.sinacofi.corp&#xA;arsen-clon.sinacofi.corp" Target="arsen-clon.sinacofi.corp" Category="Contains" />
+		<Link Source="AdmDBA" Target="S1P-NEG-SQL" CPU="51936" Calls="2478" Connections="2602" Duration="315497042" ReadsKB="11624840" WritesKB="41160" CrossDatabaseCalls="1"/>
+		<Link Source="ft3" Target="S1P-NEG-SQL" CPU="7575042" Calls="1682768" Connections="1682794" Duration="6206088020" ReadsKB="2916791728" WritesKB="435152" CrossDatabaseCalls="1"/>
+		<Link Source="intercajas" Target="S1P-NEG-SQL" CPU="4453415" Calls="1047" Connections="1034" Duration="51040574" ReadsKB="4386973016" WritesKB="14187088" CrossDatabaseCalls="1"/>
+		<Link Source="master" Target="S1P-NEG-SQL" CPU="302744" Calls="8613" Connections="8574" Duration="458055532" ReadsKB="710456992" WritesKB="91920" CrossDatabaseCalls="6"/>
+		<Link Source="model" Target="S1P-NEG-SQL" CPU="953" Calls="3" Connections="0" Duration="1106" ReadsKB="88168" WritesKB="176" CrossDatabaseCalls="0"/>
+		<Link Source="Monitor" Target="S1P-NEG-SQL" CPU="36364" Calls="703" Connections="686" Duration="762042" ReadsKB="7268896" WritesKB="752" CrossDatabaseCalls="1"/>
+		<Link Source="msdb" Target="S1P-NEG-SQL" CPU="1437" Calls="291" Connections="292" Duration="43520059" ReadsKB="860920" WritesKB="1336" CrossDatabaseCalls="3"/>
+		<Link Source="Swsnew" Target="S1P-NEG-SQL" CPU="20677020" Calls="155072" Connections="155072" Duration="2574063023" ReadsKB="9544503832" WritesKB="252664" CrossDatabaseCalls="0"/>
+		<Link Source="tempdb" Target="S1P-NEG-SQL" CPU="0" Calls="0" Connections="1" Duration="943940" ReadsKB="0" WritesKB="0" CrossDatabaseCalls="0"/>
+		<Link Source="ValidacionTributaria" Target="S1P-NEG-SQL" CPU="725805" Calls="114653" Connections="114641" Duration="506459952" ReadsKB="7960094304" WritesKB="195041712" CrossDatabaseCalls="0"/>
+		<Link Source="S1P-NEG-SQL" Target="LOGSHIPLINK_AGAPE\SQLPROD01_-1178142848" LinkedServer="True" Label="Linked Server" />
+	</Links>
+	<Categories>
+		<Category Id="Database Server" />
+		<Category Id="Application Server" />
+		<Category Id="Database" />
+		<Category Id="Trace Server" />
+		<Category Id="Web Server" />
+		<Category Id="Workstation" />
+	</Categories>
+	<Properties>
+		<Property Id="ApplicationNames" Label="Application Names" Description="Application Names" DataType="System.String" />
+		<Property Id="CPU" Label="Total CPU" Description="Total processor used" DataType="System.Int64" />
+		<Property Id="Calls" Label="Number of Calls" Description="Number of calls" DataType="System.Int64" />
+		<Property Id="Connections" Label="Number of Connections" Description="Number of connections" DataType="System.Int64" />
+		<Property Id="CrossDatabaseCalls" Label="Cross Database References" Description="Number of references from other databases" DataType="System.Int64" />
+		<Property Id="Duration" Label="Total Duration" Description="Total duration" DataType="System.Int64" />
+		<Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Progression.Layout.GraphDirection" />
+		<Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+		<Property Id="Layout" DataType="System.String" />
+		<Property Id="ReadsKB" Label="Total KB Read" Description="Total Kb read" DataType="System.Int64" />
+		<Property Id="WritesKB" Label="Total KB Writen" Description="Total Kb writen" DataType="System.Int64" />
+		<Property Id="AdHoc" Label="AdHoc" Description="AdHoc Queries" DataType="System.Boolean" />
+		<Property Id="Replication" Label="Push Replication Queries" Description="Push Replication Queries" DataType="System.Boolean" />
+		<Property Id="RPC" Label="RPC Queries" Description="RPC Queries" DataType="System.Boolean" />
+		<Property Id="Linked Server" Label="Linked Server" Description="Linked Server" DataType="System.Boolean" />
+	</Properties>
+	<Styles>
+		<Style TargetType="Node" GroupLabel="Trace Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Trace Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Stroke" Value="#FF0000FF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Database.png" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Database Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Database Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Database.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Web Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Web Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Globe.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Application Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Application Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Server.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Workstation" ValueLabel="True">
+			<Condition Expression="HasCategory('Workstation')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Monitor.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Database" ValueLabel="True">
+			<Condition Expression="HasCategory('Database')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Table.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="RPC" ValueLabel="True">
+			<Condition Expression="RPC = 'True'" />
+			<Setter Property="Stroke" Value="#FF008000" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Replication" ValueLabel="True">
+			<Condition Expression="Replication = 'True'" />
+			<Setter Property="Stroke" Value="#FF808080" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="AdHoc" ValueLabel="True">
+			<Condition Expression="AdHoc = 'True'" />
+			<Setter Property="Stroke" Value="#FFFF0000" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Inactive" ValueLabel="Function" IsEnabled="true">
+			<Condition Expression="Calls=0" />
+			<Setter Property="StrokeDashArray" Expression="3,6" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Calls" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Calls/119972)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Duration" ValueLabel="Function" IsEnabled="true">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Duration/498103560)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Reads" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,ReadsKB/954432525)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Writes" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,WritesKB/19307474)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Connections" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Connections/119973)" />
+		</Style>
+	</Styles>
+</DirectedGraph>

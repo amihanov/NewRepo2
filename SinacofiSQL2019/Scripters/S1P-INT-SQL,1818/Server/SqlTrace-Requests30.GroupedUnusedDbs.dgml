@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+	<Nodes>
+		<Node Id="S1P-INT-SQL\PWCSQL" Category="Application Server" Label="S1P-INT-SQL\PWCSQL&#xA;Windows Server 2016 Datacenter 10.0 X64   Hypervisor - SQL 2017 (RTM-CU25) (KB5003830)&#xA;&#xA;C (119GB, 62GB Data, 0GB Log, 0GB Free)&#xA;E (199GB, 31GB Data, 0GB Log, 0GB Free)&#xA;F (59GB, 19GB Data, 0GB Log, 0GB Free)&#xA;G (99GB, 39GB Data, 0GB Log, 0GB Free)&#xA;H (59GB, 57GB Data, 0GB Log, 0GB Free)&#xA;I (59GB, 48GB Data, 0GB Log, 0GB Free)&#xA;J (99GB, 91GB Data, 5GB Log, 0GB Free)&#xA;K (49GB, 39GB Data, 0GB Log, 9GB Free)&#xA;L (49GB, 47GB Data, 0GB Log, 0GB Free)&#xA;M (24GB, 24GB Data, 0GB Log, 0GB Free)"/>
+		<Node Id="10.50.7.2" Category="Application Server" Label="10.50.7.2&#xA;- -"/>
+		<Node Id="VDI-95" Category="Workstation" Label="VDI-95&#xA;- MS SQL Server Management Studio"/>
+		<Node Id="S1P-INT-SQL" Category="Database Server" Label="S1P-INT-SQL&#xA;- .Net APP&#xA;- DatabaseMail - DatabaseMail - Id 14544 &#xA;- DatabaseMail - DatabaseMail - Id 15584 &#xA;- DatabaseMail - DatabaseMail - Id 20580 &#xA;- DatabaseMail - DatabaseMail - Id 25348 &#xA;- DatabaseMail - DatabaseMail - Id 34740 &#xA;- DatabaseMail - DatabaseMail - Id 35672 &#xA;- DatabaseMail - DatabaseMail - Id 35836 &#xA;- DatabaseMail - DatabaseMail - Id 36204 &#xA;- DatabaseMail - DatabaseMail - Id 36772 &#xA;- DatabaseMail - DatabaseMail - Id 36884 &#xA;- DatabaseMail - DatabaseMail - Id 5584 &#xA;- DatabaseMail - DatabaseMail - Id 6336 &#xA;- DatabaseMail - DatabaseMail - Id 7216 &#xA;- DatabaseMail - DatabaseMail - Id 7484 &#xA;- DatabaseMail - DatabaseMail - Id 7812 &#xA;- Microsoft SQL Server&#xA;- Microsoft SQL Server VSS Writer&#xA;- MS SQL Server Management Studio&#xA;- SQL Server"/>
+		<Node Id="VDI-59" Category="Workstation" Label="VDI-59&#xA;- MS SQL Server Management Studio"/>
+		<Node Id="AdmDBA" Category="Database" Label="AdmDBA&#xA;0,0MB Total&#xA;0,0MB Data" CPU="6328" Calls="8" Connections="2" Duration="92889" ReadsKB="232584" WritesKB="4568" CrossDatabaseCalls="0" />
+		<Node Id="master" Category="Database" Label="master&#xA;0,0MB Total&#xA;0,0MB Data" CPU="190017" Calls="9034" Connections="9051" Duration="444001083" ReadsKB="384216048" WritesKB="120144" CrossDatabaseCalls="3" />
+		<Node Id="model" Category="Database" Label="model&#xA;0,0MB Total&#xA;0,0MB Data" CPU="156" Calls="1" Connections="0" Duration="870" ReadsKB="78560" WritesKB="112" CrossDatabaseCalls="0" />
+		<Node Id="msdb" Category="Database" Label="msdb&#xA;0,0MB Total&#xA;0,0MB Data" CPU="560" Calls="209" Connections="209" Duration="20693273" ReadsKB="606568" WritesKB="928" CrossDatabaseCalls="2" />
+		<Node Id="PWC_DOMAIN" Category="Database" Label="PWC_DOMAIN&#xA;0,0MB Total&#xA;0,0MB Data" CPU="335011" Calls="4764" Connections="4769" Duration="3283378778" ReadsKB="241793328" WritesKB="371448" CrossDatabaseCalls="0" />
+		<Node Id="PWC_REPO" Category="Database" Label="PWC_REPO&#xA;0,0MB Total&#xA;0,0MB Data" CPU="11259432" Calls="45" Connections="57" Duration="4444738362" ReadsKB="7437344528" WritesKB="3345112" CrossDatabaseCalls="0" />
+		<Node Id="Unused Dbs" Category="Database" Label="PWC_DOMAIN_BKP 0,0MB Total 0,0MB Data&#xA;PWC_REPO_BKP 0,0MB Total 0,0MB Data&#xA;tempdb 0,0MB Total 0,0MB Data&#xA;" />
+	</Nodes>
+	<Links>
+		<Link Source="Unused Dbs" Target="S1P-INT-SQL\PWCSQL" />
+		<Link Source="S1P-INT-SQL\PWCSQL" Target="S1P-INT-SQL\PWCSQL" CPU="11245621" Calls="44" Connections="57" Duration="4444662299" ReadsKB="7377120096" WritesKB="3150712" Label="8 DTS packages&#xA;15 Agent Jobs" />
+		<Link Source="10.50.7.2" Target="PWC_DOMAIN" CPU="334682" Calls="4763" Connections="4769" Duration="3283377858" ReadsKB="241425416" WritesKB="371312" Label="" />
+		<Link Source="VDI-95" Target="master" CPU="470" Calls="25" Connections="30" Duration="1357560" ReadsKB="27272" WritesKB="64" Label="" />
+		<Link Source="VDI-95" Target="msdb" CPU="0" Calls="2" Connections="3" Duration="687357" ReadsKB="0" WritesKB="0" Label="" />
+		<Link Source="VDI-95" Target="AdmDBA" CPU="15" Calls="1" Connections="1" Duration="6" ReadsKB="416" WritesKB="0" Label="" />
+		<Link Source="S1P-INT-SQL" Target="master" CPU="189484" Calls="8999" Connections="9010" Duration="442116159" ReadsKB="384176816" WritesKB="120024" Label="" />
+		<Link Source="S1P-INT-SQL" Target="msdb" CPU="560" Calls="205" Connections="204" Duration="19545896" ReadsKB="606568" WritesKB="928" Label="" />
+		<Link Source="S1P-INT-SQL" Target="AdmDBA" CPU="6298" Calls="6" Connections="0" Duration="92863" ReadsKB="231752" WritesKB="4568" Label="" />
+		<Link Source="S1P-INT-SQL" Target="model" CPU="156" Calls="1" Connections="0" Duration="870" ReadsKB="78560" WritesKB="112" Label="" />
+		<Link Source="S1P-INT-SQL" Target="PWC_DOMAIN" CPU="329" Calls="1" Connections="0" Duration="920" ReadsKB="367912" WritesKB="136" Label="" />
+		<Link Source="S1P-INT-SQL" Target="PWC_REPO" CPU="13811" Calls="1" Connections="0" Duration="76063" ReadsKB="60224432" WritesKB="194400" Label="" />
+		<Link Source="VDI-59" Target="master" CPU="63" Calls="10" Connections="11" Duration="527364" ReadsKB="11960" WritesKB="56" Label="" />
+		<Link Source="VDI-59" Target="msdb" CPU="0" Calls="2" Connections="2" Duration="460020" ReadsKB="0" WritesKB="0" Label="" />
+		<Link Source="VDI-59" Target="AdmDBA" CPU="15" Calls="1" Connections="1" Duration="20" ReadsKB="416" WritesKB="0" Label="" />
+		<Link Source="AdmDBA" Target="S1P-INT-SQL\PWCSQL" CPU="6328" Calls="8" Connections="2" Duration="92889" ReadsKB="232584" WritesKB="4568" CrossDatabaseCalls="0"/>
+		<Link Source="master" Target="S1P-INT-SQL\PWCSQL" CPU="190017" Calls="9034" Connections="9051" Duration="444001083" ReadsKB="384216048" WritesKB="120144" CrossDatabaseCalls="3"/>
+		<Link Source="model" Target="S1P-INT-SQL\PWCSQL" CPU="156" Calls="1" Connections="0" Duration="870" ReadsKB="78560" WritesKB="112" CrossDatabaseCalls="0"/>
+		<Link Source="msdb" Target="S1P-INT-SQL\PWCSQL" CPU="560" Calls="209" Connections="209" Duration="20693273" ReadsKB="606568" WritesKB="928" CrossDatabaseCalls="2"/>
+		<Link Source="PWC_DOMAIN" Target="S1P-INT-SQL\PWCSQL" CPU="335011" Calls="4764" Connections="4769" Duration="3283378778" ReadsKB="241793328" WritesKB="371448" CrossDatabaseCalls="0"/>
+		<Link Source="PWC_REPO" Target="S1P-INT-SQL\PWCSQL" CPU="11259432" Calls="45" Connections="57" Duration="4444738362" ReadsKB="7437344528" WritesKB="3345112" CrossDatabaseCalls="0"/>
+	</Links>
+	<Categories>
+		<Category Id="Database Server" />
+		<Category Id="Application Server" />
+		<Category Id="Database" />
+		<Category Id="Trace Server" />
+		<Category Id="Web Server" />
+		<Category Id="Workstation" />
+	</Categories>
+	<Properties>
+		<Property Id="ApplicationNames" Label="Application Names" Description="Application Names" DataType="System.String" />
+		<Property Id="CPU" Label="Total CPU" Description="Total processor used" DataType="System.Int64" />
+		<Property Id="Calls" Label="Number of Calls" Description="Number of calls" DataType="System.Int64" />
+		<Property Id="Connections" Label="Number of Connections" Description="Number of connections" DataType="System.Int64" />
+		<Property Id="CrossDatabaseCalls" Label="Cross Database References" Description="Number of references from other databases" DataType="System.Int64" />
+		<Property Id="Duration" Label="Total Duration" Description="Total duration" DataType="System.Int64" />
+		<Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Progression.Layout.GraphDirection" />
+		<Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+		<Property Id="Layout" DataType="System.String" />
+		<Property Id="ReadsKB" Label="Total KB Read" Description="Total Kb read" DataType="System.Int64" />
+		<Property Id="WritesKB" Label="Total KB Writen" Description="Total Kb writen" DataType="System.Int64" />
+		<Property Id="AdHoc" Label="AdHoc" Description="AdHoc Queries" DataType="System.Boolean" />
+		<Property Id="Replication" Label="Push Replication Queries" Description="Push Replication Queries" DataType="System.Boolean" />
+		<Property Id="RPC" Label="RPC Queries" Description="RPC Queries" DataType="System.Boolean" />
+		<Property Id="Linked Server" Label="Linked Server" Description="Linked Server" DataType="System.Boolean" />
+	</Properties>
+	<Styles>
+		<Style TargetType="Node" GroupLabel="Trace Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Trace Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Stroke" Value="#FF0000FF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Database.png" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Database Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Database Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Database.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Web Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Web Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Globe.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Application Server" ValueLabel="True">
+			<Condition Expression="HasCategory('Application Server')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Server.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Workstation" ValueLabel="True">
+			<Condition Expression="HasCategory('Workstation')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Monitor.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Node" GroupLabel="Database" ValueLabel="True">
+			<Condition Expression="HasCategory('Database')" />
+			<Setter Property="Background" Value="#00FFFFFF" />
+			<Setter Property="Icon" Value="pack://application:,,,/Microsoft.VisualStudio.Progression.GraphControl;component/Icons/Table.png" />
+			<Setter Property="Stroke" Value="#000000FF" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="RPC" ValueLabel="True">
+			<Condition Expression="RPC = 'True'" />
+			<Setter Property="Stroke" Value="#FF008000" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Replication" ValueLabel="True">
+			<Condition Expression="Replication = 'True'" />
+			<Setter Property="Stroke" Value="#FF808080" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="AdHoc" ValueLabel="True">
+			<Condition Expression="AdHoc = 'True'" />
+			<Setter Property="Stroke" Value="#FFFF0000" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Inactive" ValueLabel="Function" IsEnabled="true">
+			<Condition Expression="Calls=0" />
+			<Setter Property="StrokeDashArray" Expression="3,6" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Calls" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Calls/921)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Duration" ValueLabel="Function" IsEnabled="true">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Duration/444466229)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Reads" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,ReadsKB/737712009)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Writes" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,WritesKB/315071)" />
+		</Style>
+		<Style TargetType="Link" GroupLabel="Connections" ValueLabel="Function" IsEnabled="false">
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Connections/921)" />
+		</Style>
+	</Styles>
+</DirectedGraph>

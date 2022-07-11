@@ -2,10 +2,23 @@
 <DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
 	<Nodes>
 		<Node Id="S1P-INT-SQL\PWCSQL" Category="Trace Server" Label="S1P-INT-SQL\PWCSQL&#xA;Windows Server 2016 Datacenter 10.0 X64   Hypervisor - SQL 2017 (RTM-CU25) (KB5003830)&#xA;&#xA;C (119GB, 62GB Data, 0GB Log, 0GB Free)&#xA;E (199GB, 31GB Data, 0GB Log, 0GB Free)&#xA;F (59GB, 19GB Data, 0GB Log, 0GB Free)&#xA;G (99GB, 39GB Data, 0GB Log, 0GB Free)&#xA;H (59GB, 57GB Data, 0GB Log, 0GB Free)&#xA;I (59GB, 48GB Data, 0GB Log, 0GB Free)&#xA;J (99GB, 91GB Data, 5GB Log, 0GB Free)&#xA;K (49GB, 39GB Data, 0GB Log, 9GB Free)&#xA;L (49GB, 47GB Data, 0GB Log, 0GB Free)&#xA;M (24GB, 24GB Data, 0GB Log, 0GB Free)"/>
-		<Node Id="Unused Dbs" Category="Database" Label="AdmDBA 0,0MB&#xA;PWC_DOMAIN 0,0MB&#xA;PWC_DOMAIN_BKP 0,0MB&#xA;PWC_REPO 0,0MB&#xA;PWC_REPO_BKP 0,0MB&#xA;" />
+		<Node Id="-" Category="Application" Label="-" />
+		<Node Id=".Net APP&#xA;Microsoft SQL Server VSS Writer&#xA;SQL Server" Category="Application" Label=".Net APP&#xA;Microsoft SQL Server VSS Writer&#xA;SQL Server" />
+		<Node Id="DatabaseMail - DatabaseMail - Id 14544 &#xA;DatabaseMail - DatabaseMail - Id 15584 &#xA;DatabaseMail - DatabaseMail - Id 20580 &#xA;DatabaseMail - DatabaseMail - Id 25348 &#xA;DatabaseMail - DatabaseMail - Id 34740 &#xA;DatabaseMail - DatabaseMail - Id 35672 &#xA;DatabaseMail - DatabaseMail - Id 35836 &#xA;DatabaseMail - DatabaseMail - Id 36204 &#xA;DatabaseMail - DatabaseMail - Id 36772 &#xA;DatabaseMail - DatabaseMail - Id 36884 &#xA;DatabaseMail - DatabaseMail - Id 5584 &#xA;DatabaseMail - DatabaseMail - Id 6336 &#xA;DatabaseMail - DatabaseMail - Id 7216 &#xA;DatabaseMail - DatabaseMail - Id 7484 &#xA;DatabaseMail - DatabaseMail - Id 7812 " Category="Application" Label="DatabaseMail - DatabaseMail - Id 14544 &#xA;DatabaseMail - DatabaseMail - Id 15584 &#xA;DatabaseMail - DatabaseMail - Id 20580 &#xA;DatabaseMail - DatabaseMail - Id 25348 &#xA;DatabaseMail - DatabaseMail - Id 34740 &#xA;DatabaseMail - DatabaseMail - Id 35672 &#xA;DatabaseMail - DatabaseMail - Id 35836 &#xA;DatabaseMail - DatabaseMail - Id 36204 &#xA;DatabaseMail - DatabaseMail - Id 36772 &#xA;DatabaseMail - DatabaseMail - Id 36884 &#xA;DatabaseMail - DatabaseMail - Id 5584 &#xA;DatabaseMail - DatabaseMail - Id 6336 &#xA;DatabaseMail - DatabaseMail - Id 7216 &#xA;DatabaseMail - DatabaseMail - Id 7484 &#xA;DatabaseMail - DatabaseMail - Id 7812 " />
+		<Node Id="S1P-INT-SQL" Category="Database Server" Label="S1P-INT-SQL" />
+		<Node Id="PWC_DOMAIN" Category="Database" Label="PWC_DOMAIN&#xA;0,0MB" />
+		<Node Id="PWC_REPO" Category="Database" Label="PWC_REPO&#xA;0,0MB" />
+		<Node Id="Unused Dbs" Category="Database" Label="AdmDBA 0,0MB&#xA;PWC_DOMAIN_BKP 0,0MB&#xA;PWC_REPO_BKP 0,0MB&#xA;" />
 	</Nodes>
 	<Links>
 		<Link Source="Unused Dbs" Target="S1P-INT-SQL\PWCSQL" />
+		<Link Source="PWC_DOMAIN" Target="S1P-INT-SQL\PWCSQL" />
+		<Link Source="PWC_REPO" Target="S1P-INT-SQL\PWCSQL" />
+		<Link Source="-" Target="PWC_DOMAIN" Calls="4763" />
+		<Link Source="-" Target="PWC_REPO" Calls="44" />
+		<Link Source=".Net APP&#xA;Microsoft SQL Server VSS Writer&#xA;SQL Server" Target="S1P-INT-SQL\PWCSQL" Calls="4490" />
+		<Link Source="DatabaseMail - DatabaseMail - Id 14544 &#xA;DatabaseMail - DatabaseMail - Id 15584 &#xA;DatabaseMail - DatabaseMail - Id 20580 &#xA;DatabaseMail - DatabaseMail - Id 25348 &#xA;DatabaseMail - DatabaseMail - Id 34740 &#xA;DatabaseMail - DatabaseMail - Id 35672 &#xA;DatabaseMail - DatabaseMail - Id 35836 &#xA;DatabaseMail - DatabaseMail - Id 36204 &#xA;DatabaseMail - DatabaseMail - Id 36772 &#xA;DatabaseMail - DatabaseMail - Id 36884 &#xA;DatabaseMail - DatabaseMail - Id 5584 &#xA;DatabaseMail - DatabaseMail - Id 6336 &#xA;DatabaseMail - DatabaseMail - Id 7216 &#xA;DatabaseMail - DatabaseMail - Id 7484 &#xA;DatabaseMail - DatabaseMail - Id 7812 " Target="S1P-INT-SQL\PWCSQL" Calls="71" />
+		<Link Source="S1P-INT-SQL" Target="S1P-INT-SQL\PWCSQL" Calls="2812" />
 	</Links>
 	<Categories>
 		<Category Id="Database Server" />
@@ -93,7 +106,7 @@
 			<Setter Property="Stroke" Value="#FF008000" />
 		</Style>
 		<Style TargetType="Link" GroupLabel="Calls" ValueLabel="Function" IsEnabled="true">
-			<Setter Property="StrokeThickness" Expression="Math.Max(1,Calls/1)" />
+			<Setter Property="StrokeThickness" Expression="Math.Max(1,Calls/476)" />
 		</Style>
 	</Styles>
 </DirectedGraph>
