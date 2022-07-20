@@ -1,0 +1,13 @@
+﻿[JobMonitorAuditoria].sql                                                                                                                                       	       54	      974
+[JobMonitorJobFallido].sql                                                                                                                                      	     1083	      979
+[JobCycleErrorLog].sql                                                                                                                                          	     2113	      994
+[JobMonitorLoginFail].sql                                                                                                                                       	     3161	      978
+[JobPurgeMail].sql                                                                                                                                              	     4186	      964
+[JobMonitorSesiones].sql                                                                                                                                        	     5203	      976
+[JobMonitorEspacioBD].sql                                                                                                                                       	     6233	     1362
+[syspolicy_purge_history].sql                                                                                                                                   	     7653	     2082
+[JobAvisoCambioPassword].sql                                                                                                                                    	     9792	      984
+[JobCpuMonitor].sql                                                                                                                                             	    10824	      971
+[JobMonitorErrorLog].sql                                                                                                                                        	    11848	      976
+[JobSpaceDisc].sql                                                                                                                                              	    12871	     1039
+[BackupFull].sql                                                                                                                                                	    13955	     1042

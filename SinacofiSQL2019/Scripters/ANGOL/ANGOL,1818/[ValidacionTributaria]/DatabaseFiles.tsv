@@ -1,0 +1,3 @@
+Name	File Name	File Size	File Group Name	MaxSize	Growth	Is Growth Percentage	Is Disk	Is Log
+ValidacionTributaria_PRIMARY	E:\USER\ValidacionTributaria\ValidacionTributaria_PRIMARY.mdf	5318377472	PRIMARY	-1	1280	False	True	False
+ValidacionTributaria_LOG	F:\LOG\ValidacionTributaria\ValidacionTributaria_LOG.ldf	545259520		2199023255552	1280	False	False	True

@@ -1,0 +1,6 @@
+﻿[dbo].[fncDesEnmascaraSueldo].sql                                                                                                                               	       62	      613
+[dbo].[fncDiaHabil].sql                                                                                                                                         	      727	      780
+[dbo].[fncDV].sql                                                                                                                                               	     1553	     1204
+[dbo].[fncEnmascaraSueldo].sql                                                                                                                                  	     2816	      528
+[dbo].[fncFmtRut].sql                                                                                                                                           	     3394	      468
+[dbo].[fncPeriodo].sql                                                                                                                                          	     3913	      612

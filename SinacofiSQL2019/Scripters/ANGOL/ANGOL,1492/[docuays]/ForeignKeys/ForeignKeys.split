@@ -1,0 +1,10 @@
+﻿[dbo].[AspNetUserClaims].[FK_dbo.AspNetUserClaims_dbo.AspNetUsers_UserId].sql                                                                                   	      106	      313
+[dbo].[AspNetUserLogins].[FK_dbo.AspNetUserLogins_dbo.AspNetUsers_UserId].sql                                                                                   	      525	      313
+[dbo].[AspNetUserRoles].[FK_dbo.AspNetUserRoles_dbo.AspNetRoles_RoleId].sql                                                                                     	      942	      309
+[dbo].[AspNetUserRoles].[FK_dbo.AspNetUserRoles_dbo.AspNetUsers_UserId].sql                                                                                     	     1355	      309
+[dbo].[PiezaAtributoes].[FK_dbo.PiezaAtributoes_dbo.Atributoes_AtributoID].sql                                                                                  	     1771	      326
+[dbo].[PiezaAtributoes].[FK_dbo.PiezaAtributoes_dbo.Piezas_PiezaID].sql                                                                                         	     2197	      302
+[dbo].[PiezaCategorias].[FK_dbo.PiezaCategorias_dbo.Categorias_CategoriaID].sql                                                                                 	     2607	      330
+[dbo].[PiezaCategorias].[FK_dbo.PiezaCategorias_dbo.Piezas_PiezaID].sql                                                                                         	     3037	      302
+[dbo].[Relacions].[FK_dbo.Relacions_dbo.Piezas_PiezaID].sql                                                                                                     	     3427	      259
+[dbo].[Relacions].[FK_dbo.Relacions_dbo.Piezas_PiezaPosteriorID].sql                                                                                            	     3783	      305

@@ -1,0 +1,5 @@
+﻿[dbo].[vis_tblConsolidacionDetalle].sql                                                                                                                         	       68	      360
+[dbo].[vis_tblRegistroConsolidacion].sql                                                                                                                        	      497	      364
+[dbo].[vis_tblResumenConsolidacion].sql                                                                                                                         	      929	      360
+[dbo].[vwUltimoArchivoEnviado].sql                                                                                                                              	     1352	     2741
+[dbo].[vwUltimoArchivoEnviadoValidado].sql                                                                                                                      	     4164	     3211

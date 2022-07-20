@@ -1,0 +1,14 @@
+﻿[dbo].[__MigrationHistory].sql                                                                                                                                  	       59	      294
+[dbo].[AspNetRoles].sql                                                                                                                                         	      405	      235
+[dbo].[AspNetUserClaims].sql                                                                                                                                    	      697	      267
+[dbo].[AspNetUserLogins].sql                                                                                                                                    	     1021	      251
+[dbo].[AspNetUserRoles].sql                                                                                                                                     	     1328	      201
+[dbo].[AspNetUsers].sql                                                                                                                                         	     1581	      631
+[dbo].[Atributoes].sql                                                                                                                                          	     2263	      275
+[dbo].[Categorias].sql                                                                                                                                          	     2589	      283
+[dbo].[PiezaAtributoes].sql                                                                                                                                     	     2928	      370
+[dbo].[PiezaCategorias].sql                                                                                                                                     	     3354	      314
+[dbo].[Piezas].sql                                                                                                                                              	     3715	      272
+[dbo].[PiezasTemp].sql                                                                                                                                          	     4038	      284
+[dbo].[PiezasTemp2].sql                                                                                                                                         	     4374	      239
+[dbo].[Relacions].sql                                                                                                                                           	     4663	      307

@@ -1,0 +1,15 @@
+Schema	TableName	Rows	Reserve Space	Space Used	Index Space Used	Unused Space	Type	Blob Columns
+dbo	__MigrationHistory	11	139264	81920	16384	40960	BTree	1
+dbo	AspNetRoles	2	147456	8192	24576	114688	BTree	0
+dbo	AspNetUserClaims	0	0	0	0	0	BTree	2
+dbo	AspNetUserLogins	0	0	0	0	0	BTree	0
+dbo	AspNetUserRoles	3	221184	8192	40960	172032	BTree	0
+dbo	AspNetUsers	3	147456	8192	24576	114688	BTree	3
+dbo	Atributoes	4	73728	8192	8192	57344	BTree	1
+dbo	Categorias	15	73728	8192	8192	57344	BTree	2
+dbo	PiezaAtributoes	11388	60522496	58245120	1548288	729088	BTree	1
+dbo	PiezaCategorias	8177	2383872	884736	1007616	491520	BTree	0
+dbo	Piezas	8177	1253376	999424	16384	237568	BTree	1
+dbo	PiezasTemp	1340	270336	172032	16384	81920	BTree	1
+dbo	PiezasTemp2	0	73728	8192	8192	57344	BTree	1
+dbo	Relacions	36705	8609792	3842048	4431872	335872	BTree	0

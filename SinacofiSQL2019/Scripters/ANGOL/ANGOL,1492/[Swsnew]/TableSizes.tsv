@@ -1,0 +1,16 @@
+Schema	TableName	Rows	Reserve Space	Space Used	Index Space Used	Unused Space	Type	Blob Columns
+dbo	AdminLogs	0	0	0	0	0	Heap	0
+dbo	CurrentUsers	2459	466944	409600	8192	49152	Heap	0
+dbo	Entidades	1	147456	8192	24576	114688	Heap	0
+dbo	Institucion	12	73728	8192	8192	57344	Heap	0
+dbo	MacroServicios	70	73728	32768	8192	32768	Heap	0
+dbo	MenuStruc	224	73728	24576	8192	40960	Heap	0
+dbo	ProfileMenu	3163	606208	204800	253952	147456	Heap	0
+dbo	Profiles	4	73728	8192	8192	57344	Heap	0
+dbo	ProfileTipoTransaccion	19	147456	8192	24576	114688	BTree	0
+dbo	sysdiagrams	1	221184	57344	24576	139264	Heap	1
+dbo	TiposTransaccion	168	147456	24576	24576	98304	Heap	0
+dbo	UserLogs	0	0	0	0	0	Heap	0
+dbo	UserMenus	0	0	0	0	0	Heap	0
+dbo	Usuarios	30255	2834432	1785856	909312	139264	Heap	0
+dbo	Webs	10	73728	8192	8192	57344	Heap	0

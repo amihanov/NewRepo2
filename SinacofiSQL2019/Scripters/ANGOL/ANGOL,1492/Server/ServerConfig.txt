@@ -1,0 +1,77 @@
+﻿affinity I/O mask                                                      : 0
+affinity mask                                                          : 0
+affinity64 I/O mask                                                    : 0
+affinity64 mask                                                        : 0
+Allow cross db ownership chaining                                      : 0
+Allow INSERT into a Hadoop external table                              : 0
+Allow recursion for server level triggers                              : 1
+Allow remote access                                                    : 0
+Allow the use of the REMOTE_DATA_ARCHIVE data access for databases     : 0
+Allow triggers to be invoked within triggers                           : 1
+Allow updates to system tables                                         : 0
+Allows execution of external scripts                                   : 0
+Automatic soft-NUMA is enabled by default                              : 0
+Blocked process reporting threshold                                    : 0
+c2 audit mode                                                          : 0
+CLR strict security enabled in the server                              : 1
+CLR user code execution enabled in the server                          : 0
+Common Criteria compliance mode enabled                                : 0
+Configure SQL Server to connect to external Hadoop or Microsoft Azure storage blob data sources through PolyBase : 0
+Configure SQL Server to encrypt control and data channels when using PolyBase : 1
+cost threshold for parallelism                                         : 50
+Create DTC transaction for remote procedures                           : 0
+cursor threshold                                                       : -1
+DB connection timeout for full-text protocol handler (s)               : 60
+Dedicated Admin Connections are allowed from remote clients            : 0
+Default fill factor percentage                                         : 0
+default full-text language                                             : 1033
+Default hash bucket count for the access check result security cache   : 0
+default language                                                       : 0
+Default quota for the access check result security cache               : 0
+Disallow returning results from triggers                               : 0
+Enable checksum of backups by default                                  : 0
+Enable compression of backups by default                               : 0
+Enable or disable Ad Hoc Distributed Queries                           : 0
+Enable or disable Agent XPs                                            : 1
+Enable or disable command shell                                        : 1
+Enable or disable Database Mail XPs                                    : 1
+Enable or disable EKM provider                                         : 0
+Enable or disable Ole Automation Procedures                            : 0
+Enable or disable Replication XPs                                      : 0
+Enable or disable SMO and DMO XPs                                      : 1
+Enable or disable the default trace                                    : 1
+Enables contained databases and contained authentication               : 0
+Max number of full-text crawl buffers                                  : 100
+Max number of full-text notifications buffers                          : 100
+Maximum  crawl ranges allowed in full-text indexing                    : 4
+maximum degree of parallelism                                          : 0
+Maximum estimated cost allowed by query governor                       : 0
+Maximum recovery interval in minutes                                   : 0
+Maximum size of a text field in replication.                           : 65536
+Maximum size of server memory (MB)                                     : 98303
+maximum time to wait for query memory (s)                              : -1
+Maximum worker threads                                                 : 0
+Memory for index create sorts (kBytes)                                 : 0
+minimum memory per query (kBytes)                                      : 1024
+Minimum size of server memory (MB)                                     : 16
+Network packet size                                                    : 4096
+Number of locks for all users                                          : 0
+Number of open database objects                                        : 0
+Number of reserved full-text crawl buffers                             : 0
+Number of reserved full-text notifications buffers                     : 0
+Number of user connections allowed                                     : 0
+Priority boost                                                         : 0
+Recovery policy for DTC transactions with unknown outcome              : 0
+remote login timeout                                                   : 10
+remote query timeout                                                   : 600
+scan for startup stored procedures                                     : 0
+set working set size                                                   : 0
+Sets the FILESTREAM access level                                       : 0
+show advanced options                                                  : 0
+Tape retention period in days                                          : 0
+Transform noise words for full-text query                              : 0
+two digit year cutoff                                                  : 2049
+Use precomputed rank for full-text query                               : 0
+User mode scheduler uses lightweight pooling                           : 0
+user options                                                           : 0
+When this option is set, plan cache size is further reduced for single-use adhoc OLTP workload. : 0

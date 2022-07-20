@@ -1,0 +1,5 @@
+﻿[dbo].[DF_DuplicadorJobs_FechaCreacion].sql                                                                                                                     	       72	      122
+[dbo].[DF_DuplicadorMensaje_FechaCreacion].sql                                                                                                                  	      269	      129
+[dbo].[CURRENT_TIMESTAMP_POC].sql                                                                                                                               	      460	      105
+[dbo].[DF_tblMensaje_dCreatedAt].sql                                                                                                                            	      630	      112
+[dbo].[DF_tblParametro_dCreatedAt].sql                                                                                                                          	      809	      116

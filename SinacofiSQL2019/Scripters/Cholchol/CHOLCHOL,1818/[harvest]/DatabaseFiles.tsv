@@ -1,0 +1,3 @@
+Name	File Name	File Size	File Group Name	MaxSize	Growth	Is Growth Percentage	Is Disk	Is Log
+harvest_PRIMARY	E:\USER\harvest\harvest_PRIMARY.mdf	10737418240	PRIMARY	-1	1280	False	True	False
+harvest_LOG	F:\LOG\harvest\harvest_LOG.ldf	8388608		2199023255552	1280	False	False	True

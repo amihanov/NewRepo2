@@ -1,0 +1,15 @@
+﻿[dbo].[DF__actividad__fecCr__2FBBA29F].sql                                                                                                                      	       71	      120
+[dbo].[DF__autorizaf__fecCr__30AFC6D8].sql                                                                                                                      	      262	      118
+[dbo].[DF__contribuy__autor__0CFC7647].sql                                                                                                                      	      451	      131
+[dbo].[DF__contribuy__comun__0A20099C].sql                                                                                                                      	      653	      109
+[dbo].[DF__contribuy__corre__0FD8E2F2].sql                                                                                                                      	      833	      109
+[dbo].[DF__contribuy__direc__092BE563].sql                                                                                                                      	     1013	      110
+[dbo].[DF__contribuy__empre__0DF09A80].sql                                                                                                                      	     1194	      117
+[dbo].[DF__contribuy__fecAc__0C08520E].sql                                                                                                                      	     1382	      119
+[dbo].[DF__contribuy__fecCr__0B142DD5].sql                                                                                                                      	     1572	      114
+[dbo].[DF__contribuy__mater__064F78B8].sql                                                                                                                      	     1757	      110
+[dbo].[DF__contribuy__nombr__07439CF1].sql                                                                                                                      	     1938	      110
+[dbo].[DF__contribuy__pater__055B547F].sql                                                                                                                      	     2119	      110
+[dbo].[DF__contribuy__rutCo__04673046].sql                                                                                                                      	     2300	      118
+[dbo].[DF__contribuy__telef__0EE4BEB9].sql                                                                                                                      	     2489	      111
+[dbo].[DF__contribuye__giro__0837C12A].sql                                                                                                                      	     2671	      107

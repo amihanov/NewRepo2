@@ -1,0 +1,5 @@
+﻿[dbo].[TOP_FIELD].sql                                                                                                                                           	       50	      313
+[dbo].[TOP_IDXSTATS].sql                                                                                                                                        	      416	      333
+[dbo].[TOP_PARAM].sql                                                                                                                                           	      799	      239
+[dbo].[TOP_SP].sql                                                                                                                                              	     1085	      300
+[dbo].[TOP_VIRTUALIDX].sql                                                                                                                                      	     1440	      274

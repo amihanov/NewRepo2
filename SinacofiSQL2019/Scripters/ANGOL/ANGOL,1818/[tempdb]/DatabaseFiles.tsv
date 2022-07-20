@@ -1,0 +1,6 @@
+Name	File Name	File Size	File Group Name	MaxSize	Growth	Is Growth Percentage	Is Disk	Is Log
+tempdev	C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\tempdb.mdf	209715200	PRIMARY	-1	8192	False	True	False
+templog	C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\templog.ldf	75497472		-1	8192	False	False	True
+temp2	C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\tempdb_mssql_2.ndf	209715200	PRIMARY	-1	8192	False	True	False
+temp3	C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\tempdb_mssql_3.ndf	209715200	PRIMARY	-1	8192	False	True	False
+temp4	C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\tempdb_mssql_4.ndf	209715200	PRIMARY	-1	8192	False	True	False

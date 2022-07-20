@@ -1,0 +1,10 @@
+Path	Name	Date	FileSize
+msdb\Maintenance Plans\	BackupFull	04/27/2020 13:36:45	26283
+msdb\Data Collector\	PerfCountersCollect	08/19/2021 13:22:38	88462
+msdb\Data Collector\	PerfCountersUpload	08/19/2021 13:22:38	218042
+msdb\Data Collector\	QueryActivityCollect	08/19/2021 13:22:38	368458
+msdb\Data Collector\	QueryActivityUpload	08/19/2021 13:22:38	1980612
+msdb\Data Collector\	SqlTraceCollect	08/19/2021 13:22:38	64622
+msdb\Data Collector\	SqlTraceUpload	08/19/2021 13:22:38	896556
+msdb\Data Collector\	TSQLQueryCollect	08/19/2021 13:22:38	44124
+msdb\Data Collector\	TSQLQueryUpload	08/19/2021 13:22:38	34218

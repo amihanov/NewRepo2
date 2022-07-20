@@ -1,0 +1,5 @@
+Schema	TableName	Rows	Reserve Space	Space Used	Index Space Used	Unused Space	Type	Blob Columns
+dbo	SNMAN	25940	2564096	2482176	8192	73728	Heap	0
+dbo	SNNUM	1	73728	8192	8192	57344	Heap	0
+dbo	USUARIOS	21	73728	8192	8192	57344	Heap	0
+dbo	USUARIOS_bkp	0	0	0	0	0	Heap	0

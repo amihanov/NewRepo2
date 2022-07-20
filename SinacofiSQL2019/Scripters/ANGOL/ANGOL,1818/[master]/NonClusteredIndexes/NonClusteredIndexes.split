@@ -1,0 +1,12 @@
+﻿[dbo].[AspNetRoles].[RoleNameIndex].sql                                                                                                                         	       68	      153
+[dbo].[AspNetUserClaims].[IX_UserId].sql                                                                                                                        	      290	      149
+[dbo].[AspNetUserLogins].[IX_UserId].sql                                                                                                                        	      508	      149
+[dbo].[AspNetUserRoles].[IX_RoleId].sql                                                                                                                         	      725	      148
+[dbo].[AspNetUserRoles].[IX_UserId].sql                                                                                                                         	      941	      148
+[dbo].[AspNetUsers].[UserNameIndex].sql                                                                                                                         	     1157	      157
+[dbo].[PiezaAtributoes].[IX_AtributoID].sql                                                                                                                     	     1386	      156
+[dbo].[PiezaAtributoes].[IX_PiezaID].sql                                                                                                                        	     1611	      150
+[dbo].[PiezaCategorias].[IX_CategoriaID].sql                                                                                                                    	     1834	      158
+[dbo].[PiezaCategorias].[IX_PiezaID].sql                                                                                                                        	     2061	      150
+[dbo].[Relacions].[IX_PiezaID].sql                                                                                                                              	     2274	      144
+[dbo].[Relacions].[IX_PiezaPosteriorID].sql                                                                                                                     	     2490	      162

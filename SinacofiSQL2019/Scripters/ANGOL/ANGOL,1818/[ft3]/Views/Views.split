@@ -1,0 +1,5 @@
+﻿[dbo].[descriptor].sql                                                                                                                                          	       51	      299
+[dbo].[estructura].sql                                                                                                                                          	      401	      298
+[dbo].[view_pasoTbl].sql                                                                                                                                        	      752	      300
+[dbo].[vista_e23].sql                                                                                                                                           	     1102	      291
+[dbo].[vw_paso11].sql                                                                                                                                           	     1443	      354

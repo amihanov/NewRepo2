@@ -1,0 +1,14 @@
+Schema	TableName	Rows	Reserve Space	Space Used	Index Space Used	Unused Space	Type	Blob Columns
+dbo	__MigrationHistory	0	0	0	0	0	BTree	1
+dbo	AspNetRoles	0	0	0	0	0	BTree	0
+dbo	AspNetUserClaims	0	0	0	0	0	BTree	2
+dbo	AspNetUserLogins	0	0	0	0	0	BTree	0
+dbo	AspNetUserRoles	0	0	0	0	0	BTree	0
+dbo	AspNetUsers	0	0	0	0	0	BTree	3
+dbo	Atributoes	0	0	0	0	0	BTree	1
+dbo	Categorias	0	0	0	0	0	BTree	2
+dbo	PiezaAtributoes	0	0	0	0	0	BTree	1
+dbo	PiezaCategorias	0	0	0	0	0	BTree	0
+dbo	Piezas	0	0	0	0	0	BTree	1
+dbo	Relacions	0	0	0	0	0	BTree	0
+dbo	RoleViewModels	0	0	0	0	0	BTree	1

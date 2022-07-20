@@ -1,0 +1,38 @@
+﻿[##MS_AgentSigningCertificate##].sql                                                                                                                            	       65	      575
+[##MS_PolicyEventProcessingLogin##].sql                                                                                                                         	      708	      584
+[##MS_PolicySigningCertificate##].sql                                                                                                                           	     1358	      568
+[##MS_PolicyTsqlExecutionLogin##].sql                                                                                                                           	     1992	      578
+[##MS_SmoExtendedSigningCertificate##].sql                                                                                                                      	     2641	      583
+[##MS_SQLAuthenticatorCertificate##].sql                                                                                                                        	     3293	      577
+[##MS_SQLReplicationSigningCertificate##].sql                                                                                                                   	     3944	      592
+[##MS_SQLResourceSigningCertificate##].sql                                                                                                                      	     4607	      583
+[atapia].sql                                                                                                                                                    	     5231	      503
+[cgarrido].sql                                                                                                                                                  	     5777	      509
+[lnino].sql                                                                                                                                                     	     6326	      500
+[NT AUTHORITY_SYSTEM].sql                                                                                                                                       	     6880	      457
+[NT Service_MSSQLSERVER].sql                                                                                                                                    	     7394	      463
+[NT SERVICE_SQLSERVERAGENT].sql                                                                                                                                 	     7917	      469
+[NT SERVICE_SQLTELEMETRY].sql                                                                                                                                   	     8444	      465
+[NT SERVICE_SQLWriter].sql                                                                                                                                      	     8964	      459
+[NT SERVICE_Winmgmt].sql                                                                                                                                        	     9476	      455
+[ope_credex].sql                                                                                                                                                	     9976	      529
+[ope_credexweb].sql                                                                                                                                             	    10553	      538
+[ope_mantencionBD].sql                                                                                                                                          	    11142	      533
+[ope_replica].sql                                                                                                                                               	    11721	      518
+[ope_sa].sql                                                                                                                                                    	    12280	      503
+[ope_xemantics].sql                                                                                                                                             	    12831	      524
+[rperez].sql                                                                                                                                                    	    13396	      503
+[sa].sql                                                                                                                                                        	    13936	      491
+[Sermalu1].sql                                                                                                                                                  	    14470	      509
+[Sermalu2].sql                                                                                                                                                  	    15022	      509
+[Sermalu3].sql                                                                                                                                                  	    15574	      509
+[SKYLAB_nhuenul].sql                                                                                                                                            	    16132	      447
+[SKYLAB_rperez].sql                                                                                                                                             	    16627	      445
+[SKYLAB_svasquez].sql                                                                                                                                           	    17122	      449
+[SKYLAB_usr_rojo_s2].sql                                                                                                                                        	    17624	      455
+[SKYLAB_usr_rojo_s3].sql                                                                                                                                        	    18132	      455
+[SKYLAB_usr_rojo_s5].sql                                                                                                                                        	    18640	      455
+[SKYLAB_usr_xemantics_01].sql                                                                                                                                   	    19153	      465
+[svasquez].sql                                                                                                                                                  	    19661	      509
+[usuarioFW1].sql                                                                                                                                                	    20215	      515
+[webuser].sql                                                                                                                                                   	    20772	      506

@@ -1,0 +1,16 @@
+﻿[dbo].[MRI_CONNECT_INFO].sql                                                                                                                                    	       57	     4147
+[dbo].[MRI_CONTAINER].sql                                                                                                                                       	     4258	     1265
+[dbo].[MRI_CR_CONNECT_INFO].sql                                                                                                                                 	     5583	    70848
+[dbo].[MRI_CR_FOLDER].sql                                                                                                                                       	    76485	     6606
+[dbo].[MRI_CR_PROJECT_GROUP].sql                                                                                                                                	    83152	      852
+[dbo].[MRI_CR_REPOSITORY].sql                                                                                                                                   	    84062	      495
+[dbo].[MRI_CR_SAP_CONNECT_INFO].sql                                                                                                                             	    84621	     4730
+[dbo].[MRI_FOLDER].sql                                                                                                                                          	    89402	      577
+[dbo].[MRI_NAMESPACE].sql                                                                                                                                       	    90033	      355
+[dbo].[MRI_PROJECT].sql                                                                                                                                         	    90440	      586
+[dbo].[MRI_PROJECT_GROUP].sql                                                                                                                                   	    91084	      483
+[dbo].[MRI_REPOSITORY].sql                                                                                                                                      	    91622	      357
+[dbo].[MRI_SAP_CONNECT_INFO].sql                                                                                                                                	    92040	      595
+[dbo].[MRI_SERVICE].sql                                                                                                                                         	    92687	      528
+[dbo].[MRX_CONNECTIONS].sql                                                                                                                                     	    93271	     1500
+[dbo].[MRX_SERVICE].sql                                                                                                                                         	    94823	      336

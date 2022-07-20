@@ -1,0 +1,1046 @@
+
+GO
+--SqlScripter----[dbo].[BS_INDICATORSDATA_MSR_DATE_ONLY].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[BS_INDICATORSDATA_MSR_DATE_ONLY]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[BS_INDICATORSDATA_MSR_DATE_ONLY]')
+GO
+CREATE TRIGGER [dbo].[BS_INDICATORSDATA_MSR_DATE_ONLY]
+ON  [dbo].[BS_INDICATORSDATA]
+   INSTEAD OF INSERT
+AS 
+BEGIN
+
+	SET NOCOUNT ON;
+
+
+
+INSERT INTO [dbo].[BS_INDICATORSDATA]
+           ([BS_INDICATORSID]
+           ,[INPUTUSER]
+           ,[INPUTDATE]
+           ,[MSR_REAL_VALUE]
+           ,[MSR_PLANNED_VALUE]
+           ,[MSR_DATE])
+SELECT 
+[BS_INDICATORSID]
+           ,[INPUTUSER]
+           ,[INPUTDATE]
+           ,[MSR_REAL_VALUE]
+           ,[MSR_PLANNED_VALUE]
+           ,CAST ([MSR_DATE] AS DATE)
+FROM Inserted 
+
+
+END
+GO
+
+GO
+--SqlScripter----[dbo].[BS_INDICATORSDATA_MSR_DATE_ONLY_UPD].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[BS_INDICATORSDATA_MSR_DATE_ONLY_UPD]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[BS_INDICATORSDATA_MSR_DATE_ONLY_UPD]')
+GO
+CREATE TRIGGER [dbo].[BS_INDICATORSDATA_MSR_DATE_ONLY_UPD]
+ON  [dbo].[BS_INDICATORSDATA]
+   INSTEAD OF UPDATE
+AS 
+BEGIN
+
+	SET NOCOUNT ON;
+
+
+	
+UPDATE BS_INDICATORSDATA SET 
+BS_INDICATORSID = inserted.BS_INDICATORSID,
+INPUTUSER = inserted.INPUTUSER,
+INPUTDATE = inserted.INPUTDATE,
+ MSR_REAL_VALUE = inserted.MSR_REAL_VALUE,
+  MSR_PLANNED_VALUE = inserted.MSR_PLANNED_VALUE,
+   MSR_DATE = CAST(inserted.MSR_DATE AS DATE)
+ FROM inserted  JOIN BS_INDICATORSDATA ON BS_INDICATORSDATA.BS_INDICATORSDATAID=INSERTED.BS_INDICATORSDATAID
+
+	
+
+
+END
+GO
+
+GO
+--SqlScripter----[dbo].[BS_INDICATORSDATA_TOHISTORY].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[BS_INDICATORSDATA_TOHISTORY]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[BS_INDICATORSDATA_TOHISTORY]')
+GO
+CREATE TRIGGER [dbo].[BS_INDICATORSDATA_TOHISTORY]
+ON  [DBO].[BS_INDICATORSDATA]
+   AFTER INSERT,UPDATE
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    INSERT INTO [DBO].[BS_INDICATORSDATA_HISTORY]
+    SELECT * From Inserted
+
+
+END
+GO
+
+GO
+--SqlScripter----[dbo].[Check_NC_Relations].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[Check_NC_Relations]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[Check_NC_Relations]')
+GO
+CREATE TRIGGER [dbo].[Check_NC_Relations]
+ON  dbo.[PROC_NODES]
+   FOR DELETE
+AS 
+BEGIN
+	SET NOCOUNT ON;
+	DECLARE @CANT INT
+	SELECT	@CANT = COUNT(*)
+	FROM	VARCHILD_NCCC_PROCESOS
+	WHERE	CODIGO_PROCESO IN (SELECT PROC_NODESID FROM DELETED)
+	IF (@CANT > 0)
+	BEGIN
+		RAISERROR ('It is not possible to continue with the operation. The Process Node is related to one or more Non-conformities.', 16, 1)
+		ROLLBACK TRANSACTION
+	END
+END
+GO
+
+GO
+--SqlScripter----[dbo].[IK_EDIT_AreaNCCC].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[IK_EDIT_AreaNCCC]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[IK_EDIT_AreaNCCC]')
+GO
+CREATE TRIGGER [dbo].[IK_EDIT_AreaNCCC]
+ON  [dbo].[TBL_AREA_CAUSAS]
+   INSTEAD OF UPDATE
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DECLARE @newDescripcion nvarchar(500)
+	DECLARE @newCodigoGenerado nvarchar(500)
+	DECLARE @newCode int
+	DECLARE @newCodePadre int
+	DECLARE @newBorrado int
+	SELECT @newCode = CODIGO, @newDescripcion = DESCRIPCION, @newCodePadre = CODIGO_PADRE , @newBorrado = L_BORRADO FROM INSERTED
+
+	IF (@newCode = @newCodePadre)
+	BEGIN
+		ROLLBACK TRAN
+		RAISERROR('EL AREA PADRE NO PUEDE SER LA MISMA QUE EL AREA QUE SE ESTA EDITANDO.', 16, 1)
+		RETURN
+	END
+	IF (@newCode = 1)
+	BEGIN
+		ROLLBACK TRAN
+		RAISERROR('EL AREA #1 NO PUEDE SER EDITADA.', 16, 1)
+		RETURN
+	END
+	DECLARE @OK int
+	DECLARE @CODIGO int
+	DECLARE @CODIGOPADRE int
+	DECLARE @CODIGOPADREAUX int
+	DECLARE @NIVEL int
+
+	DECLARE @CODIGO_PRIMER_REGISTRO INT
+	
+	SET @OK = 1 - 0
+	SET @CODIGO = @newCode
+	SET @CODIGOPADRE = @newCodePadre
+	SET @NIVEL = 0
+
+	WHILE (@OK = 1)
+	BEGIN
+		SET @CODIGO_PRIMER_REGISTRO = -1
+		IF (@CODIGOPADRE = 1  or  @CODIGOPADRE = -1)
+			BEGIN
+				SET @OK = 0
+				IF (@CODIGOPADRE = -1)
+				BEGIN
+					SET @CODIGO_PRIMER_REGISTRO = @CODIGO
+					SET @NIVEL = 1
+				END
+			END
+		ELSE
+			BEGIN
+				IF (@CODIGO = @CODIGOPADRE)
+					BEGIN
+						SET @OK = -1
+					END
+				ELSE
+					BEGIN
+						SELECT @CODIGOPADREAUX = CODIGO_PADRE FROM TBL_AREA_CAUSAS WHERE CODIGO = @CODIGOPADRE
+						SET @CODIGOPADRE = @CODIGOPADREAUX
+					END
+			END
+		IF (@CODIGO_PRIMER_REGISTRO = -1)
+			SET @NIVEL = @NIVEL + 1
+	END
+
+	SET @newCodigoGenerado = dbo.CONCAT4('N_', CAST(@NIVEL AS NVARCHAR(100)), ' - ', @newDescripcion)
+
+	IF (@OK = -1)
+		RAISERROR('HAY UNA DEPENDENCIA CIRCULAR.', 16, 1)
+	ELSE
+		UPDATE TBL_AREA_CAUSAS SET DESCRIPCION = @newDescripcion, CODIGO_PADRE = @newCodePadre, CODIGO_GENERADO = @newCodigoGenerado, NIVEL = @NIVEL, L_BORRADO = @newBorrado WHERE CODIGO = @newCode  
+END
+GO
+
+GO
+--SqlScripter----[dbo].[IK_EDIT_CausaNoConformidad].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[IK_EDIT_CausaNoConformidad]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[IK_EDIT_CausaNoConformidad]')
+GO
+CREATE TRIGGER [dbo].[IK_EDIT_CausaNoConformidad]
+ON  [dbo].[TBL_NCCC_CAUSAS]
+   INSTEAD OF UPDATE
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DECLARE @newDescripcion nvarchar(500)
+	DECLARE @newCodigoGenerado nvarchar(500)
+	DECLARE @newCode int
+	DECLARE @newCodePadre int
+	SELECT @newCode = CODIGO, @newDescripcion = DESCRIPCION, @newCodePadre = CODIGO_PADRE FROM INSERTED
+
+	IF (@newCode = @newCodePadre)
+	BEGIN
+		RAISERROR('LA CAUSA PADRE NO PUEDE SER LA MISMA QUE LA CAUSA QUE SE ESTA EDITANDO', 16, 1)
+	END
+
+	DECLARE @OK int
+	DECLARE @CODIGO int
+	DECLARE @CODIGOPADRE int
+	DECLARE @CODIGOPADREAUX int
+	DECLARE @NIVEL int
+
+	DECLARE @CODIGO_PRIMER_REGISTRO INT
+	
+	SET @OK = 1 - 0
+	SET @CODIGO = @newCode
+	SET @CODIGOPADRE = @newCodePadre
+	SET @NIVEL = 0
+
+	WHILE (@OK = 1)
+	BEGIN
+		SET @CODIGO_PRIMER_REGISTRO = -1
+		IF (@CODIGOPADRE = 1  or  @CODIGOPADRE = -1)
+			BEGIN
+				SET @OK = 0
+				IF (@CODIGOPADRE = -1)
+				BEGIN
+					SET @CODIGO_PRIMER_REGISTRO = @CODIGO
+					SET @NIVEL = 1
+				END
+			END
+		ELSE
+			BEGIN
+				IF (@CODIGO = @CODIGOPADRE)
+					BEGIN
+						SET @OK = -1
+					END
+				ELSE
+					BEGIN
+						SELECT @CODIGOPADREAUX = CODIGO_PADRE FROM TBL_NCCC_CAUSAS WHERE CODIGO = @CODIGOPADRE
+						SET @CODIGOPADRE = @CODIGOPADREAUX
+					END
+			END
+		IF (@CODIGO_PRIMER_REGISTRO = -1)
+			SET @NIVEL = @NIVEL + 1
+	END
+
+	SET @newCodigoGenerado = dbo.CONCAT4('N_', CAST(@NIVEL AS NVARCHAR(100)), ' - ', @newDescripcion)
+	
+	IF (@OK = -1)
+		RAISERROR('HAY UNA DEPENDENCIA CIRCULAR', 16, 1)
+	ELSE
+		UPDATE TBL_NCCC_CAUSAS SET DESCRIPCION = @newDescripcion, CODIGO_PADRE = @newCodePadre, CODIGO_GENERADO = @newCodigoGenerado, NIVEL = @NIVEL WHERE CODIGO = @newCode  
+END
+GO
+
+GO
+--SqlScripter----[dbo].[IK_EDIT_RequisitoNormativoNoConformidad].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[IK_EDIT_RequisitoNormativoNoConformidad]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[IK_EDIT_RequisitoNormativoNoConformidad]')
+GO
+CREATE TRIGGER [dbo].[IK_EDIT_RequisitoNormativoNoConformidad]
+ON  [dbo].[TBL_NCCC_REQUISITOSNORMATIVOS]
+   INSTEAD OF UPDATE
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DECLARE @newDescripcion nvarchar(500)
+	DECLARE @newCodigoGenerado nvarchar(500)
+	DECLARE @newCode int
+	DECLARE @newCodePadre int
+	SELECT @newCode = CODIGO, @newDescripcion = DESCRIPCION, @newCodePadre = CODIGO_PADRE FROM INSERTED
+
+	IF (@newCode = @newCodePadre)
+	BEGIN
+		RAISERROR('EL REQUISITO NORMATIVO PADRE NO PUEDE SER EL MISMO QUE EL REQUISITO NORMATIVO QUE SE ESTA EDITANDO', 16, 1)
+	END
+
+	DECLARE @OK int
+	DECLARE @CODIGO int
+	DECLARE @CODIGOPADRE int
+	DECLARE @CODIGOPADREAUX int
+	DECLARE @NIVEL int
+	
+	SET @OK = 1 - 0
+	SET @CODIGO = @newCode
+	SET @CODIGOPADRE = @newCodePadre
+	SET @NIVEL = 0
+
+	DECLARE @CANT_ITER INT
+	SET @CANT_ITER = 0
+
+	WHILE (@OK = 1)
+	BEGIN
+		SET @NIVEL = @NIVEL + 1
+		IF (@CODIGOPADRE = -1)
+			BEGIN
+				SET @OK = 0
+				IF (@CANT_ITER = 0)
+					SET @NIVEL = 1
+				ELSE
+					SET @NIVEL = @NIVEL - 1
+			END
+		ELSE
+			BEGIN
+				IF (@CODIGO = @CODIGOPADRE)
+					BEGIN
+						SET @OK = -1
+					END
+				ELSE
+					BEGIN
+						SELECT @CODIGOPADREAUX = CODIGO_PADRE FROM TBL_NCCC_REQUISITOSNORMATIVOS WHERE CODIGO = @CODIGOPADRE
+						SET @CODIGOPADRE = @CODIGOPADREAUX
+					END
+			END
+		SET @CANT_ITER = @CANT_ITER + 1
+		IF (@CANT_ITER > 30)
+			BEGIN
+				SET @OK = 0
+				SET @newCodePadre = -1
+			END
+	END
+
+	SET @newCodigoGenerado = dbo.CONCAT4('N_', CAST(@NIVEL AS NVARCHAR(100)), ' - ', @newDescripcion)
+
+	IF (@OK = -1)
+		RAISERROR('HAY UNA DEPENDENCIA CIRCULAR', 16, 1)
+	ELSE
+		UPDATE TBL_NCCC_REQUISITOSNORMATIVOS SET DESCRIPCION = @newDescripcion, CODIGO_PADRE = @newCodePadre, CODIGO_GENERADO = @newCodigoGenerado, NIVEL = @NIVEL WHERE CODIGO = @newCode  
+END
+GO
+
+GO
+--SqlScripter----[dbo].[IK_NEW_AreaNCCC].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[IK_NEW_AreaNCCC]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[IK_NEW_AreaNCCC]')
+GO
+CREATE TRIGGER [dbo].[IK_NEW_AreaNCCC]
+ON  [dbo].[TBL_AREA_CAUSAS]
+   INSTEAD OF INSERT 
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DECLARE @newDescripcion nvarchar(500)
+	DECLARE @newCodigoGenerado nvarchar(500)
+	DECLARE @newCode int
+	DECLARE @newCodePadre int
+	DECLARE @newBorrado int, @hayBorrado int
+	SET @hayBorrado = (SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='TBL_AREA_CAUSAS'  AND COLUMN_NAME LIKE 'L_BORRADO')
+	IF @hayBorrado=0
+		SELECT @newCode = CODIGO, @newDescripcion = DESCRIPCION, @newCodePadre = CODIGO_PADRE FROM INSERTED
+	ELSE
+		SELECT @newCode = CODIGO, @newDescripcion = DESCRIPCION, @newCodePadre = CODIGO_PADRE, @newBorrado = L_BORRADO FROM INSERTED
+
+	DECLARE @OK int
+	DECLARE @CODIGO int
+	DECLARE @CODIGOPADRE int
+	DECLARE @CODIGOPADREAUX int
+	DECLARE @NIVEL int
+
+	DECLARE @CODIGO_PRIMER_REGISTRO INT
+	
+	SET @OK = 1 - 0
+	SET @CODIGO = @newCode
+	SET @CODIGOPADRE = @newCodePadre
+	SET @NIVEL = 0
+
+	WHILE (@OK = 1)
+	BEGIN
+		SET @CODIGO_PRIMER_REGISTRO = -1
+		IF (@CODIGOPADRE = 1  or  @CODIGOPADRE = -1)
+			BEGIN
+				SET @OK = 0
+				IF (@CODIGOPADRE = -1)
+				BEGIN
+					SET @CODIGO_PRIMER_REGISTRO = @CODIGO
+					SET @NIVEL = 1
+				END
+			END
+		ELSE
+			BEGIN
+				SELECT @CODIGOPADREAUX = CODIGO_PADRE FROM TBL_AREA_CAUSAS WHERE CODIGO = @CODIGOPADRE
+				SET @CODIGOPADRE = @CODIGOPADREAUX
+			END
+		IF (@CODIGO_PRIMER_REGISTRO = -1)
+			SET @NIVEL = @NIVEL + 1
+	END
+
+	SET @newCodigoGenerado = dbo.CONCAT4('N_', CAST(@NIVEL AS NVARCHAR(100)), ' - ', @newDescripcion)
+
+	IF @hayBorrado=0
+		INSERT INTO TBL_AREA_CAUSAS(DESCRIPCION, CODIGO_PADRE, CODIGO_GENERADO, NIVEL) VALUES (@newDescripcion, @newCodePadre, @newCodigoGenerado, @NIVEL)
+	ELSE
+		INSERT INTO TBL_AREA_CAUSAS(DESCRIPCION, CODIGO_PADRE, CODIGO_GENERADO, NIVEL, L_BORRADO) VALUES (@newDescripcion, @newCodePadre, @newCodigoGenerado, @NIVEL, @newBorrado)
+END
+GO
+
+GO
+--SqlScripter----[dbo].[IK_NEW_CausaNoConformidad].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[IK_NEW_CausaNoConformidad]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[IK_NEW_CausaNoConformidad]')
+GO
+CREATE TRIGGER [dbo].[IK_NEW_CausaNoConformidad]
+ON  [dbo].[TBL_NCCC_CAUSAS]
+   INSTEAD OF INSERT 
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DECLARE @newDescripcion nvarchar(500)
+	DECLARE @newCodigoGenerado nvarchar(500)
+	DECLARE @newCode int
+	DECLARE @newCodePadre int
+	SELECT @newCode = CODIGO, @newDescripcion = DESCRIPCION, @newCodePadre = CODIGO_PADRE FROM INSERTED
+
+	DECLARE @OK int
+	DECLARE @CODIGO int
+	DECLARE @CODIGOPADRE int
+	DECLARE @CODIGOPADREAUX int
+	DECLARE @NIVEL int
+
+	DECLARE @CODIGO_PRIMER_REGISTRO INT
+	
+	SET @OK = 1 - 0
+	SET @CODIGO = @newCode
+	SET @CODIGOPADRE = @newCodePadre
+	SET @NIVEL = 0
+
+	WHILE (@OK = 1)
+	BEGIN
+		SET @CODIGO_PRIMER_REGISTRO = -1
+		IF (@CODIGOPADRE = 1  or  @CODIGOPADRE = -1)
+			BEGIN
+				SET @OK = 0
+				IF (@CODIGOPADRE = -1)
+				BEGIN
+					SET @CODIGO_PRIMER_REGISTRO = @CODIGO
+					SET @NIVEL = 1
+				END
+			END
+		ELSE
+			BEGIN
+				SELECT @CODIGOPADREAUX = CODIGO_PADRE FROM TBL_NCCC_CAUSAS WHERE CODIGO = @CODIGOPADRE
+				SET @CODIGOPADRE = @CODIGOPADREAUX
+			END
+		IF (@CODIGO_PRIMER_REGISTRO = -1)
+			SET @NIVEL = @NIVEL + 1
+	END
+
+	SET @newCodigoGenerado = dbo.CONCAT4('N_', CAST(@NIVEL AS NVARCHAR(100)), ' - ', @newDescripcion)
+
+	INSERT INTO TBL_NCCC_CAUSAS VALUES (@newDescripcion, @newCodePadre, @newCodigoGenerado, @NIVEL)
+END
+GO
+
+GO
+--SqlScripter----[dbo].[IK_NEW_RequisitoNormativoNoConformidad].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[IK_NEW_RequisitoNormativoNoConformidad]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[IK_NEW_RequisitoNormativoNoConformidad]')
+GO
+CREATE TRIGGER [dbo].[IK_NEW_RequisitoNormativoNoConformidad]
+ON  [dbo].[TBL_NCCC_REQUISITOSNORMATIVOS]
+   INSTEAD OF INSERT 
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DECLARE @newDescripcion nvarchar(500)
+	DECLARE @newCodigoGenerado nvarchar(500)
+	DECLARE @newCode int
+	DECLARE @newCodePadre int
+	SELECT @newCode = CODIGO, @newDescripcion = DESCRIPCION, @newCodePadre = CODIGO_PADRE FROM INSERTED
+
+	DECLARE @OK int
+	DECLARE @CODIGO int
+	DECLARE @CODIGOPADRE int
+	DECLARE @CODIGOPADREAUX int
+	DECLARE @NIVEL int
+	
+	SET @OK = 1 - 0
+	SET @CODIGO = @newCode
+	SET @CODIGOPADRE = @newCodePadre
+	SET @NIVEL = 0
+
+	DECLARE @CANT_ITER INT
+	SET @CANT_ITER = 0
+
+	WHILE (@OK = 1)
+	BEGIN
+		SET @NIVEL = @NIVEL + 1
+		IF (@CODIGOPADRE = -1)
+			BEGIN
+				SET @OK = 0
+				IF (@CANT_ITER = 0)
+					SET @NIVEL = 1
+				ELSE
+					SET @NIVEL = @NIVEL - 1
+			END
+		ELSE
+			BEGIN
+				SELECT @CODIGOPADREAUX = CODIGO_PADRE FROM TBL_NCCC_REQUISITOSNORMATIVOS WHERE CODIGO = @CODIGOPADRE
+				SET @CODIGOPADRE = @CODIGOPADREAUX
+			END	
+		SET @CANT_ITER = @CANT_ITER + 1
+	END
+
+	SET @newCodigoGenerado = dbo.CONCAT4('N_', CAST(@NIVEL AS NVARCHAR(100)), ' - ', @newDescripcion)
+
+	INSERT INTO TBL_NCCC_REQUISITOSNORMATIVOS VALUES (@newDescripcion, @newCodePadre, @newCodigoGenerado, @NIVEL)
+END
+GO
+
+GO
+--SqlScripter----[dbo].[IK_PEOPLE_UNIQUE_GUID].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[IK_PEOPLE_UNIQUE_GUID]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[IK_PEOPLE_UNIQUE_GUID]')
+GO
+CREATE TRIGGER [dbo].[IK_PEOPLE_UNIQUE_GUID]
+ON IK_PEOPLE
+AFTER INSERT, UPDATE
+AS
+
+IF (
+	SELECT COUNT(*) FROM IK_PEOPLE 
+	WHERE 
+		[GUID] IN (
+			SELECT [GUID] FROM inserted
+		)
+		AND
+		NOT CODIGO IN (SELECT CODIGO FROM inserted)
+
+	)>0
+
+BEGIN
+RAISERROR ('GUID already exists.', 16, 1)
+
+END
+GO
+
+GO
+--SqlScripter----[dbo].[ik_trig_DOCUMENTOS_Validate_Id].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_trig_DOCUMENTOS_Validate_Id]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[ik_trig_DOCUMENTOS_Validate_Id]')
+GO
+CREATE TRIGGER [dbo].[ik_trig_DOCUMENTOS_Validate_Id]
+ON [dbo].[DOCUMENTOS]
+FOR  INSERT,UPDATE
+AS
+IF (@@ROWCOUNT=1)
+BEGIN
+	IF UPDATE(CODIGOISO)
+	BEGIN
+		DECLARE @ERRORDESC VARCHAR(200)
+
+		DECLARE @CODIGOISO varchar(50)
+		SET @CODIGOISO = (SELECT CODIGOISO FROM inserted)
+
+		IF (LEFT(@CODIGOISO,1)=' ')
+		BEGIN
+			SET @ERRORDESC = 'El código de un documento no puede comenzar con un espacio'
+			RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+			RETURN
+		END
+		IF (RIGHT(@CODIGOISO,1)=' ')
+		BEGIN
+			SET @ERRORDESC = 'El código de un documento no puede terminar con un espacio'
+			RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+			RETURN
+		END
+
+		SET @CODIGOISO = (SELECT RTRIM(LTRIM(CODIGOISO)) FROM inserted)
+
+
+		DECLARE @REVISION int
+		SET @REVISION = (SELECT ISNULL(REVISION,0) FROM inserted)
+
+		DECLARE @CODIGO INT
+		SET @CODIGO = (SELECT ISNULL(CODIGO,-1) FROM inserted)
+
+		DECLARE @CODIGOBASADOEN INT
+		SET @CODIGOBASADOEN = (SELECT ISNULL(CODIGOBASADOEN,0) FROM inserted)
+		IF (@CODIGOBASADOEN=0)
+		BEGIN
+			SET @CODIGOBASADOEN = (SELECT ISNULL(CODIGOBASADOEN,0) FROM DOCUMENTOS WHERE CODIGO=@CODIGO)			
+		END
+
+		
+		IF (SELECT COUNT(*) FROM deleted WHERE CODIGO=@CODIGO AND RTRIM(LTRIM(CODIGOISO))= RTRIM(LTRIM(@CODIGOISO)) AND REVISION=@REVISION ) = 1 --No cambio ni el el codigo ni la revision, se estan editando otras propiedades. No hay que validar nada mas.
+		BEGIN
+			RETURN
+		END
+		
+		CREATE TABLE #AUX_KEY (VALUE NVARCHAR(50), DATA INT)
+
+		IF (SELECT ISNULL(PROCESO,0) FROM DOCUMENTOS WHERE CODIGO=@CODIGO) != 0 --Se esta modificando el codigo iso de un doc que ya inició los tramites
+		BEGIN			
+			DECLARE @AllowISOIdChangeAfterRevision INT
+			
+			INSERT INTO #AUX_KEY VALUES('DOC.AllowISOIdChangeAfterRevision', 0)--DEF VALUE=DISABLED
+			BEGIN TRY
+				INSERT INTO #AUX_KEY
+				exec master.dbo.xp_regread 'HKEY_LOCAL_MACHINE','%IKREGINSTANCE_NLS%CommonSettings','DOC.AllowISOIdChangeAfterRevision'
+			END TRY
+			BEGIN CATCH
+			END CATCH
+			SELECT @AllowISOIdChangeAfterRevision=MAX(ISNULL([DATA],0)) FROM #AUX_KEY WHERE [VALUE]='DOC.AllowISOIdChangeAfterRevision'
+
+			IF @AllowISOIdChangeAfterRevision=0
+			BEGIN
+				--ROLLBACK TRAN
+				SET @ERRORDESC = 'No se puede modificar el código de un documento luego de iniciada su aprobación'
+				RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+				RETURN
+			END
+		END
+
+		IF (SELECT ESTADO FROM DOCUMENTOS WHERE CODIGO=@CODIGO) != 1 --Se esta modificando el codigo iso de un doc vigente u obsoleto
+		BEGIN			
+			DECLARE @AllowISOIdChangeOnCurrent INT
+			
+			INSERT INTO #AUX_KEY VALUES('DOC.AllowISOIdChangeOnCurrent', 0)--DEF VALUE=DISABLED
+			BEGIN TRY
+				INSERT INTO #AUX_KEY
+				exec master.dbo.xp_regread 'HKEY_LOCAL_MACHINE','%IKREGINSTANCE_NLS%CommonSettings','DOC.AllowISOIdChangeOnCurrent'
+			END TRY
+			BEGIN CATCH
+			END CATCH
+			SELECT @AllowISOIdChangeOnCurrent=MAX(ISNULL([DATA],0)) FROM #AUX_KEY WHERE [VALUE]='DOC.AllowISOIdChangeOnCurrent'
+
+			IF @AllowISOIdChangeOnCurrent=0
+			BEGIN
+				--ROLLBACK TRAN
+				SET @ERRORDESC = 'No se puede modificar el código de un documento luego de que entró en vigencia'
+				RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+				RETURN
+			END
+		END
+		
+		
+		
+		IF (SELECT COUNT(*) FROM DOCUMENTOS WHERE CODIGOISO LIKE @CODIGOISO AND CODIGO != @CODIGO)>0 --Es valido que modifique el código o la config. permite que se modifique el código. Veirifico validez del cambio
+		BEGIN
+			IF (@CODIGOBASADOEN > 0 )
+			--es nueva version de otro doc
+			BEGIN	
+				DECLARE @CODIGOISO_BASADOEN varchar(50)
+				SELECT @CODIGOISO_BASADOEN=RTRIM(LTRIM(CODIGOISO)) FROM DOCUMENTOS WHERE CODIGO=@CODIGOBASADOEN
+				IF @CODIGOISO_BASADOEN = @CODIGOISO
+				--la version anterior tiene el mismo código
+				BEGIN
+					IF (SELECT COUNT(*) FROM DOCUMENTOS WHERE CODIGOISO LIKE @CODIGOISO AND CODIGO != @CODIGO AND REVISION>=@REVISION)>0
+					BEGIN							
+						SET @ERRORDESC = '{@LOC Loc_Id_Exists_GraterOrEqualRevisionNumber}: ' + @CODIGOISO + ' Rev. ' + LTRIM(STR(@REVISION))
+						RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+						RETURN
+					END		
+					ELSE
+					BEGIN
+						IF (SELECT ESTADO FROM DOCUMENTOS WHERE CODIGO=@CODIGO) != 1 --Se esta modificando la revision (el codigo sigue siendo el mismo) de un doc vigente u obsoleto
+						BEGIN							
+							IF (SELECT COUNT(*) FROM DOCUMENTOS WHERE CODIGOISO LIKE @CODIGOISO AND CODIGO != @CODIGO AND ESTADO=1)>0 --tiene version en desarrollo
+							BEGIN							
+								SET @ERRORDESC = 'No se puede cambiar la revisión de un documento vigente que ya tiene una nueva versión' 
+								RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+								RETURN
+							END
+						END
+						RETURN --ESTA OK
+					END
+				END				
+			END
+
+
+
+
+			DECLARE @CODIGO_TIPO_DOC INT
+			SET @CODIGO_TIPO_DOC = (SELECT CODIGOTIPO FROM inserted)
+
+			DECLARE @L_AUTOCOD INT
+			SET @L_AUTOCOD = (SELECT L_AUTOCOD FROM TIPOSDOCUMENTOS WHERE CODIGO=@CODIGO_TIPO_DOC )
+				
+			IF @L_AUTOCOD=1 
+			BEGIN
+				DECLARE @MAX_TRIES INT 
+				SET @MAX_TRIES= 256
+				DECLARE @TRY_COUNT INT --CONTADOR, POR SI SE INGRESO UNA MASCARA QUE GENERE SIEMPRE EL MISMO RESULTADO
+				SET @TRY_COUNT= 0
+				WHILE ((@TRY_COUNT<@MAX_TRIES) AND (SELECT COUNT(*) FROM DOCUMENTOS WHERE CODIGOISO LIKE @CODIGOISO AND REVISION>= @REVISION AND CODIGO != ISNULL(@CODIGO,-1))>0)
+				BEGIN
+					UPDATE TIPOSDOCUMENTOS SET CANT=CANT+1 WHERE CODIGO=@CODIGO_TIPO_DOC
+					SET @CODIGOISO=(SELECT dbo.[ik_doc_getIsoIdFromMask](@CODIGO_TIPO_DOC))		
+					SET @TRY_COUNT=@TRY_COUNT+1
+				END
+				UPDATE DOCUMENTOS SET CODIGOISO=@CODIGOISO WHERE CODIGO=@CODIGO
+			END
+			ELSE
+			BEGIN
+				DECLARE @AllowISOIdRecycle INT
+					
+				INSERT INTO #AUX_KEY VALUES('DOC.AllowISOIdRecycle', 0)--DEF VALUE=DISABLED
+				BEGIN TRY
+					INSERT INTO #AUX_KEY
+					exec master.dbo.xp_regread 'HKEY_LOCAL_MACHINE','%IKREGINSTANCE_NLS%CommonSettings','DOC.AllowISOIdRecycle'
+				END TRY
+				BEGIN CATCH
+				END CATCH
+				SELECT @AllowISOIdRecycle=MAX(ISNULL([DATA],0)) FROM #AUX_KEY WHERE [VALUE]='DOC.AllowISOIdRecycle'
+
+				IF @AllowISOIdRecycle=0
+				BEGIN
+					--ROLLBACK TRAN
+					SET @ERRORDESC = '{@LOC Loc_Id_Exists}: ' + @CODIGOISO 
+					RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+					RETURN
+				END
+				ELSE
+				BEGIN
+					--CHEQUEO SI HAY VERSIONES EN DESA O VIG.
+					IF (SELECT COUNT(*) FROM DOCUMENTOS WHERE  ESTADO !=3 AND CODIGOISO LIKE @CODIGOISO AND CODIGO != @CODIGO)>0 
+					BEGIN
+						SET @ERRORDESC = '{@LOC Loc_Id_Exists}: ' + @CODIGOISO 
+						RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+						RETURN
+					END
+					
+					IF (SELECT COUNT(*) FROM DOCUMENTOS WHERE CODIGOISO LIKE @CODIGOISO AND CODIGO != @CODIGO AND REVISION>=@REVISION)>0
+					BEGIN				
+						SET @ERRORDESC = '{@LOC Loc_Id_Exists_GraterOrEqualRevisionNumber}: ' + @CODIGOISO + ' Rev. ' + LTRIM(STR(@REVISION))
+						RAISERROR(@ERRORDESC ,16,1, @CODIGOISO,'')
+						RETURN
+					END
+
+				END
+			END
+		END
+	END
+END
+GO
+
+GO
+--SqlScripter----[dbo].[ik_trig_TIPOSDOCUMENTOS_UPD_Validate].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_trig_TIPOSDOCUMENTOS_UPD_Validate]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[ik_trig_TIPOSDOCUMENTOS_UPD_Validate]')
+GO
+CREATE TRIGGER [dbo].[ik_trig_TIPOSDOCUMENTOS_UPD_Validate]
+ON [dbo].[TIPOSDOCUMENTOS]
+FOR  INSERT,UPDATE
+AS
+	IF (@@ROWCOUNT=1)
+	BEGIN
+		DECLARE @MASCARA NVARCHAR(50)
+		DECLARE @DESCRIPCION NVARCHAR(200)
+		DECLARE @CODIGO INT
+		DECLARE @TIPO NVARCHAR(10)
+		DECLARE @CANT INT
+		DECLARE @Success INT
+		DECLARE @L_MASCARA TINYINT
+		DECLARE @L_CANT TINYINT
+
+		SELECT @CODIGO=CODIGO, @TIPO=TIPO, @DESCRIPCION=DESCRIPCION, @MASCARA=MASCARA, @CANT=CANT FROM INSERTED
+		IF UPDATE(MASCARA)
+			SET @L_MASCARA=1
+		ELSE
+			SET @L_MASCARA=0
+		IF UPDATE(CANT)
+			SET @L_CANT=1
+		ELSE
+			SET @L_CANT=0
+		SET @Success=1
+		EXEC dbo.ik_documents_vldTipoDoc @CODIGO, @TIPO, @DESCRIPCION, @MASCARA, @CANT OUTPUT, @L_MASCARA, @L_CANT, @Success OUTPUT
+		IF @Success <> 1
+		BEGIN	
+			ROLLBACK TRAN
+		END
+		if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ik_documents_vldTipoDoc_ext]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+		BEGIN
+			SET @Success=1
+			EXEC dbo.ik_documents_vldTipoDoc_ext @CODIGO, @TIPO, @DESCRIPCION, @MASCARA OUTPUT, @CANT OUTPUT, @L_MASCARA, @L_CANT, @Success OUTPUT
+			IF @Success <> 1
+			BEGIN	
+				ROLLBACK TRAN
+			END
+		END
+	END
+GO
+
+GO
+--SqlScripter----[dbo].[ik_trig_TIPOSDOCUMENTOS_UPD_Validate_Mask].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_trig_TIPOSDOCUMENTOS_UPD_Validate_Mask]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[ik_trig_TIPOSDOCUMENTOS_UPD_Validate_Mask]')
+GO
+CREATE TRIGGER [dbo].[ik_trig_TIPOSDOCUMENTOS_UPD_Validate_Mask]
+ON dbo.TIPOSDOCUMENTOS
+FOR  INSERT,UPDATE
+AS
+IF (@@ROWCOUNT=1)
+BEGIN
+DECLARE @mask varchar(50)
+SET @mask = (SELECT MASCARA FROM inserted)
+IF (LEN(@mask)>0)
+BEGIN
+IF (CHARINDEX('[ORD]',@mask) = 0)
+BEGIN
+IF (UPDATE(MASCARA) )
+BEGIN
+UPDATE TIPOSDOCUMENTOS SET MASCARA= (SELECT MASCARA FROM deleted) WHERE CODIGO = (SELECT CODIGO FROM deleted)
+END
+ROLLBACK TRAN
+RAISERROR('Loc_CodAutoGen_NotDefined',16,1, @mask,'')
+END
+IF (CHARINDEX('[DT]',@mask) = 0)
+BEGIN
+IF (UPDATE(MASCARA))
+BEGIN
+UPDATE TIPOSDOCUMENTOS SET MASCARA= (SELECT MASCARA FROM deleted) WHERE CODIGO = (SELECT CODIGO FROM deleted)
+END
+ROLLBACK TRAN
+RAISERROR('Loc_CodAutoGen_NotDefined',16,1, @mask,'')
+END
+END
+IF (SELECT CANT FROM inserted)IS NULL
+BEGIN
+UPDATE TIPOSDOCUMENTOS SET CANT = (SELECT COUNT(CODIGO) FROM DOCUMENTOS WHERE CODIGOTIPO = (SELECT CODIGO FROM inserted)) WHERE CODIGO = (SELECT CODIGO FROM inserted)
+END
+END
+GO
+
+GO
+--SqlScripter----[dbo].[ik_update_contactclient].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_update_contactclient]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[ik_update_contactclient]')
+GO
+CREATE TRIGGER [dbo].[ik_update_contactclient]
+ON dbo.VAR_CONTACTOS
+FOR  UPDATE
+AS
+DECLARE @oldClientID int, @newClientID int
+DECLARE @filas int, @codasunto int
+DECLARE @oldClientName varchar(100), @newClientName varchar(100)
+SET @filas = @@ROWCOUNT
+IF  (@filas = 0 )
+RETURN
+IF UPDATE(CLIENTE)
+BEGIN
+IF (@filas = 1)
+BEGIN
+SELECT @oldClientID = CLIENTE FROM deleted
+SELECT @newClientID = CLIENTE FROM inserted
+SELECT @oldClientName = DESCRIPCION FROM TBL_CLIENTES WHERE CODIGO = @oldClientID
+SELECT @newClientName = DESCRIPCION FROM TBL_CLIENTES WHERE CODIGO = @newClientID
+SELECT @codasunto = CODIGONC FROM inserted
+UPDATE VAR_REGISTRO_CONTACTOS SET
+EMISOR = REPLACE(EMISOR,'(' + @oldClientName +  ') ' ,'(' + @newClientName +  ') ') ,
+RECEPTOR = REPLACE(RECEPTOR,'(' + @oldClientName +  ') ' ,'(' + @newClientName +  ') ')
+WHERE CODIGO_CONTACTO = @codasunto
+END
+END
+GO
+
+GO
+--SqlScripter----[dbo].[ik_update_contactname].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_update_contactname]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[ik_update_contactname]')
+GO
+CREATE TRIGGER [dbo].[ik_update_contactname]
+ON dbo.VAR_CONTACTO_PERSONAS
+FOR UPDATE
+AS
+DECLARE @oldName varchar(100), @newName varchar(100), @empresa varchar(100)
+DECLARE @filas int, @codasunto int
+SET @filas = @@ROWCOUNT
+IF  (@filas = 0 )
+RETURN
+IF UPDATE(NOMBRE)
+BEGIN
+IF (@filas = 1)
+BEGIN
+SELECT @oldname = NOMBRE FROM deleted
+SELECT @newname = NOMBRE FROM inserted
+SELECT @codasunto = CODIGO_CONTACTO FROM inserted
+SELECT @empresa =  CLI.DESCRIPCION  FROM VAR_CONTACTOS CON JOIN TBL_CLIENTES CLI ON CLI.CODIGO = CON.CLIENTE WHERE CON.CODIGONC = @codasunto
+UPDATE VAR_REGISTRO_CONTACTOS SET
+EMISOR = REPLACE(EMISOR,'(' + @empresa +  ') ' + @oldname,'(' + @empresa +  ') ' + @newname) ,
+RECEPTOR = REPLACE(RECEPTOR, '(' + @empresa +  ') ' + @oldname,'(' + @empresa +  ') ' + @newname)
+WHERE CODIGO_CONTACTO = @codasunto
+END
+END
+GO
+
+GO
+--SqlScripter----[dbo].[ik_update_enterprisename].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_update_enterprisename]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[ik_update_enterprisename]')
+GO
+CREATE TRIGGER [dbo].[ik_update_enterprisename]
+ON dbo.DATOSEMPRESA
+FOR  UPDATE
+AS
+DECLARE @oldName varchar(100), @newName varchar(100)
+DECLARE @filas int
+SET @filas = @@ROWCOUNT
+IF  (@filas = 0 )
+RETURN
+IF UPDATE(DESCRIPCIONABREVIADA)
+BEGIN
+IF (@filas = 1)
+BEGIN
+SELECT @oldname = DESCRIPCIONABREVIADA FROM deleted
+SELECT @newname = DESCRIPCIONABREVIADA FROM inserted
+UPDATE VAR_REGISTRO_CONTACTOS SET
+EMISOR = REPLACE(EMISOR,'(' + @oldName +  ') ' ,'(' + @newName +  ') ' ) ,
+RECEPTOR = REPLACE(RECEPTOR, '(' + @oldName +  ') ' ,'(' + @newName +  ') ' )
+END
+END
+GO
+
+GO
+--SqlScripter----[dbo].[IK_UPDATE_PASSWORD_LASTDATE].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[IK_UPDATE_PASSWORD_LASTDATE]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[IK_UPDATE_PASSWORD_LASTDATE]')
+GO
+CREATE TRIGGER [dbo].[IK_UPDATE_PASSWORD_LASTDATE]
+ON dbo.IK_PEOPLE
+FOR UPDATE
+AS
+
+DECLARE @filas int
+SET @filas = @@ROWCOUNT
+IF  (@filas != 1 ) RETURN
+
+
+IF UPDATE(WEBPASSWORD)
+BEGIN
+	DECLARE @USERID INT
+	SELECT @USERID=CODIGO FROM INSERTED
+	UPDATE IK_PEOPLE SET PASSWORD_LASTDATE=GETDATE() WHERE CODIGO=@USERID
+
+END
+GO
+
+GO
+--SqlScripter----[dbo].[ik_update_personname].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('[dbo].[ik_update_personname]') IS NOT NULL EXEC('DROP TRIGGER [dbo].[ik_update_personname]')
+GO
+CREATE TRIGGER [dbo].[ik_update_personname]
+ON dbo.TBL_PERSONASCONTACTOS
+FOR  UPDATE
+AS
+DECLARE @oldName varchar(100), @newName varchar(100), @empresa varchar(100)
+DECLARE @filas int
+SET @filas = @@ROWCOUNT
+IF  (@filas = 0 )
+RETURN
+IF UPDATE(DESCRIPCION)
+BEGIN
+IF (@filas = 1)
+BEGIN
+SELECT @oldname = DESCRIPCION FROM deleted
+SELECT @newname = DESCRIPCION FROM inserted
+SELECT @empresa =   DESCRIPCIONABREVIADA  FROM DATOSEMPRESA
+UPDATE VAR_REGISTRO_CONTACTOS SET
+EMISOR = REPLACE(EMISOR,'(' + @empresa +  ') ' + @oldname,'(' + @empresa +  ') ' + @newname) ,
+RECEPTOR = REPLACE(RECEPTOR, '(' + @empresa +  ') ' + @oldname,'(' + @empresa +  ') ' + @newname)
+END
+END
+GO

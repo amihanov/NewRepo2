@@ -1,0 +1,6 @@
+Schema	TableName	Rows	Reserve Space	Space Used	Index Space Used	Unused Space	Type	Blob Columns
+dbo	TOP_FIELD	0	0	0	0	0	Heap	0
+dbo	TOP_IDXSTATS	0	0	0	0	0	Heap	0
+dbo	TOP_PARAM	0	0	0	0	0	Heap	0
+dbo	TOP_SP	0	0	0	0	0	Heap	0
+dbo	TOP_VIRTUALIDX	0	0	0	0	0	Heap	0

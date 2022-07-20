@@ -1,0 +1,14 @@
+﻿[dbo].[AdminLogs].sql                                                                                                                                           	       50	      412
+[dbo].[CurrentUsers].sql                                                                                                                                        	      515	      296
+[dbo].[Entidades].sql                                                                                                                                           	      861	      787
+[dbo].[Institucion].sql                                                                                                                                         	     1700	      187
+[dbo].[MacroServicios].sql                                                                                                                                      	     1942	      255
+[dbo].[MenuStruc].sql                                                                                                                                           	     2247	      293
+[dbo].[ProfileMenu].sql                                                                                                                                         	     2592	      310
+[dbo].[Profiles].sql                                                                                                                                            	     2951	      264
+[dbo].[sysdiagrams].sql                                                                                                                                         	     3267	      284
+[dbo].[TiposTransaccion].sql                                                                                                                                    	     3608	      292
+[dbo].[UserLogs].sql                                                                                                                                            	     3949	      309
+[dbo].[UserMenus].sql                                                                                                                                           	     4308	      295
+[dbo].[Usuarios].sql                                                                                                                                            	     4652	      219
+[dbo].[Webs].sql                                                                                                                                                	     4916	      205
