@@ -1,0 +1,9 @@
+Path	Name	Date	FileSize
+msdb\Data Collector\	PerfCountersCollect	03/20/2021 11:06:03	88462
+msdb\Data Collector\	PerfCountersUpload	03/20/2021 11:06:03	218042
+msdb\Data Collector\	QueryActivityCollect	03/20/2021 11:06:03	368458
+msdb\Data Collector\	QueryActivityUpload	03/20/2021 11:06:03	1980612
+msdb\Data Collector\	SqlTraceCollect	03/20/2021 11:06:03	64622
+msdb\Data Collector\	SqlTraceUpload	03/20/2021 11:06:03	896556
+msdb\Data Collector\	TSQLQueryCollect	03/20/2021 11:06:03	44124
+msdb\Data Collector\	TSQLQueryUpload	03/20/2021 11:06:03	34218

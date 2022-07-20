@@ -1,0 +1,11 @@
+﻿ServerName       : ANGOL
+PhysicalMemoryMB : 131071
+ProcessorCount   : 4
+ProcessorType    : (x64)
+ServerCollation  : SQL_Latin1_General_CP1_CI_AS
+WindowsVersion   : Windows Server 2016 Datacenter 10.0 <X64> (Build 14393: ) (Hypervisor)
+IsClustered      : False
+SqlEdition       : Developer Edition (64-bit)
+SqlMayorVersion  : Microsoft SQL Server 2017 (RTM-CU25) (KB5003830)
+SqlMinorVersion  : 14.0.3401.7 (X64)
+Version          : 140

@@ -1,0 +1,9 @@
+﻿[dbo].[balance_sql].sql                                                                                                                                         	       52	     4252
+[dbo].[eerr1_acf_sql].sql                                                                                                                                       	     4358	     6851
+[dbo].[eerr1_def_sql].sql                                                                                                                                       	    11263	     4550
+[dbo].[eerr1_sql].sql                                                                                                                                           	    15863	     5205
+[dbo].[eerr2_sql].sql                                                                                                                                           	    21118	     3902
+[dbo].[ratios_sql].sql                                                                                                                                          	    25071	     2492
+[dbo].[rgc_sql].sql                                                                                                                                             	    27611	     7792
+[dbo].[ventas_acf_sql].sql                                                                                                                                      	    35458	     5683
+[dbo].[ventas_sql].sql                                                                                                                                          	    41192	     4899

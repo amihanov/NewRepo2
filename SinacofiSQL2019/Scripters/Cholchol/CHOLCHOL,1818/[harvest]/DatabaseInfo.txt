@@ -1,0 +1,25 @@
+﻿Name                       : harvest
+Id                         : 6
+Compatibility Level        : 100
+Recovery Model             : SIMPLE
+Collation                  : Modern_Spanish_CI_AS
+Offline                    : False
+Read Only                  : False
+Dbo Use Only               : False
+Single User                : False
+Creation Date              : 07/12/2019 11:21:33
+Active Connections         : 0
+Last Backup Size           : 8326820864
+Last Backup Size Change    : 01/01/0001 00:00:00
+Database Files Size        : 10737418240
+Log Files Size             : 8388608
+Table Size                 : 0
+Rows                       : 0
+Tables                     : 0
+Tables > 500 MB            : 0
+Tables >500 MB With Blobs  : 0
+Stored Procedures          : 0
+Functions                  : 0
+Views                      : 0
+Triggers                   : 0
+Extended Stored Procedures : 0

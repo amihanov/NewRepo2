@@ -1,0 +1,10 @@
+﻿[DatabaseMailUserRole].sql                                                                                                                                      	       55	       73
+[db_ssisadmin].sql                                                                                                                                              	      175	       57
+[db_ssisltduser].sql                                                                                                                                            	      281	       61
+[db_ssisoperator].sql                                                                                                                                           	      392	       63
+[managed_backup].sql                                                                                                                                            	      504	       50
+[smart_admin].sql                                                                                                                                               	      600	       47
+[SQLAgentOperatorRole].sql                                                                                                                                      	      702	       73
+[SQLAgentReaderRole].sql                                                                                                                                        	      828	       69
+[SQLAgentUserRole].sql                                                                                                                                          	      948	       65
+[TargetServersRole].sql                                                                                                                                         	     1065	       67

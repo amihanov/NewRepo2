@@ -1,0 +1,14 @@
+﻿[JobMonitorAuditoria].sql                                                                                                                                       	       54	      978
+[JobMonitorLoginFail].sql                                                                                                                                       	     1086	      978
+[JobMonitorEspacioBD].sql                                                                                                                                       	     2118	     1362
+[JobCycleErrorLog].sql                                                                                                                                          	     3531	      992
+[JobSpaceDisc].sql                                                                                                                                              	     4570	     1043
+[JobAvisoCambioPassword].sql                                                                                                                                    	     5670	      984
+[JobMonitorErrorLog].sql                                                                                                                                        	     6707	      976
+[JobReporteDiario].sql                                                                                                                                          	     7734	      976
+[JobPurgeMail].sql                                                                                                                                              	     8757	      964
+[JobCpuMonitor].sql                                                                                                                                             	     9769	      975
+[syspolicy_purge_history].sql                                                                                                                                   	    10802	     2082
+[JobMonitorSesiones].sql                                                                                                                                        	    12937	      976
+[JobMonitorJobFallido].sql                                                                                                                                      	    13968	      979
+[BackupFull].sql                                                                                                                                                	    14992	     1050

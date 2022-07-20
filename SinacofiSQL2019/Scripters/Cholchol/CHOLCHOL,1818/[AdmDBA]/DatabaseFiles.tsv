@@ -1,0 +1,3 @@
+Name	File Name	File Size	File Group Name	MaxSize	Growth	Is Growth Percentage	Is Disk	Is Log
+AdmDBA	E:\USER\AdmDBA_01.mdf	536870912	PRIMARY	4294967296	16384	False	True	False
+AdmDBA_log	F:\LOG\AdmDBA_01.ldf	140378112		1073741824	16384	False	False	True

@@ -1,0 +1,14 @@
+﻿[dbo].[spAvisoCambioPassword].sql                                                                                                                               	       62	     4421
+[dbo].[spBackupDatabases].sql                                                                                                                                   	     4541	     4007
+[dbo].[spBloqueoUsuarioFT3].sql                                                                                                                                 	     8608	     5465
+[dbo].[spCpuMonitor].sql                                                                                                                                        	    14126	     3943
+[dbo].[spHelpReport].sql                                                                                                                                        	    18122	    12499
+[dbo].[spMonitorAuditoria].sql                                                                                                                                  	    30680	     2236
+[dbo].[spMonitorErrorLog].sql                                                                                                                                   	    32974	     3891
+[dbo].[spMonitorEspacioBD].sql                                                                                                                                  	    36924	     4622
+[dbo].[spMonitorEspacioBDLog].sql                                                                                                                               	    41608	     3248
+[dbo].[spMonitorJobFallido].sql                                                                                                                                 	    44916	     3252
+[dbo].[spMonitorLoginFail].sql                                                                                                                                  	    48227	     4050
+[dbo].[spMonitorSesiones].sql                                                                                                                                   	    52335	     3983
+[dbo].[spPurgeMail].sql                                                                                                                                         	    56370	     1412
+[dbo].[spSpaceDisc].sql                                                                                                                                         	    57834	     4736

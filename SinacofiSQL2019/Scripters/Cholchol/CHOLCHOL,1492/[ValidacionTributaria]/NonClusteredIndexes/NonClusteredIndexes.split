@@ -1,0 +1,5 @@
+﻿[dbo].[archivo].[archivo_uq].sql                                                                                                                                	       61	      155
+[dbo].[empresa].[empresa_uq].sql                                                                                                                                	      277	      167
+[dbo].[form22].[f22_rutperiodo].sql                                                                                                                             	      508	      172
+[dbo].[form29].[In_rut].sql                                                                                                                                     	      736	      146
+[dbo].[usuario].[indx_usuario_1].sql                                                                                                                            	      947	      153

@@ -1,0 +1,13 @@
+﻿[dbo].[__MigrationHistory].sql                                                                                                                                  	       59	      294
+[dbo].[AspNetRoles].sql                                                                                                                                         	      405	      235
+[dbo].[AspNetUserClaims].sql                                                                                                                                    	      697	      267
+[dbo].[AspNetUserLogins].sql                                                                                                                                    	     1021	      251
+[dbo].[AspNetUserRoles].sql                                                                                                                                     	     1328	      201
+[dbo].[AspNetUsers].sql                                                                                                                                         	     1581	      631
+[dbo].[Atributoes].sql                                                                                                                                          	     2263	      224
+[dbo].[Categorias].sql                                                                                                                                          	     2538	      232
+[dbo].[PiezaAtributoes].sql                                                                                                                                     	     2826	      319
+[dbo].[PiezaCategorias].sql                                                                                                                                     	     3201	      263
+[dbo].[Piezas].sql                                                                                                                                              	     3511	      221
+[dbo].[Relacions].sql                                                                                                                                           	     3782	      256
+[dbo].[RoleViewModels].sql                                                                                                                                      	     4093	      190

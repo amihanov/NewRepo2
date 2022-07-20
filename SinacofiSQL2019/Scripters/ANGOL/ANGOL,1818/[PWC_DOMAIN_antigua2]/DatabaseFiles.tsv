@@ -1,0 +1,3 @@
+Name	File Name	File Size	File Group Name	MaxSize	Growth	Is Growth Percentage	Is Disk	Is Log
+PWC_DOMAIN	E:\USER\PWC_DOMAIN\pwc_domain_v2.mdf	1073741824	PRIMARY	-1	8192	False	True	False
+PWC_DOMAIN_log	E:\USER\PWC_DOMAIN\pwc_domain.ldf	536870912		2199023255552	8192	False	False	True

@@ -1,0 +1,3 @@
+﻿[dbo].[DuplicadorJob].[PK_DuplicadorJob].sql                                                                                                                    	       73	      169
+[dbo].[DuplicadorJobDetalle].[PK_MensajeDuplicadorResultado].sql                                                                                                	      335	      211
+[dbo].[DuplicadorMensaje].[PK_DuplicadorMensajes].sql                                                                                                           	      628	      178

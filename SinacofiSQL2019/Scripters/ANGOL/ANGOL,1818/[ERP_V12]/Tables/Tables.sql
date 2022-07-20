@@ -1,0 +1,83 @@
+
+GO
+--SqlScripter----[dbo].[TOP_FIELD].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TOP_FIELD](
+	[FIELD_TABLE] [varchar](64) NOT NULL,
+	[FIELD_NAME] [varchar](32) NOT NULL,
+	[FIELD_TYPE] [varchar](2) NOT NULL,
+	[FIELD_PREC] [varchar](4) NOT NULL,
+	[FIELD_DEC] [varchar](4) NOT NULL
+)
+ON [PRIMARY]
+
+GO
+--SqlScripter----[dbo].[TOP_IDXSTATS].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TOP_IDXSTATS](
+	[IDX_ENV] [varchar](32) NOT NULL,
+	[IDX_TABLE] [varchar](32) NOT NULL,
+	[IDX_NAME] [varchar](32) NOT NULL,
+	[IDX_KEY] [varchar](255) NOT NULL,
+	[IDX_USE] [float] NOT NULL,
+	[R_E_C_N_O_] [int] NOT NULL
+)
+ON [PRIMARY]
+
+GO
+--SqlScripter----[dbo].[TOP_PARAM].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TOP_PARAM](
+	[PARAM_NAME] [varchar](50) NOT NULL,
+	[PARAM_SESSION] [smallint] NOT NULL,
+	[PARAM_VALUE] [varchar](50) NOT NULL
+)
+ON [PRIMARY]
+
+GO
+--SqlScripter----[dbo].[TOP_SP].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TOP_SP](
+	[SP_NOME] [varchar](20) NOT NULL,
+	[SP_VERSAO] [varchar](20) NOT NULL,
+	[SP_DATA] [varchar](8) NOT NULL,
+	[SP_HORA] [varchar](8) NOT NULL,
+	[SP_ASSINAT] [varchar](3) NOT NULL
+)
+ON [PRIMARY]
+
+GO
+--SqlScripter----[dbo].[TOP_VIRTUALIDX].sql
+GO
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TOP_VIRTUALIDX](
+	[IDX_ENV] [varchar](32) NOT NULL,
+	[IDX_TABLE] [varchar](32) NOT NULL,
+	[IDX_NAME] [varchar](32) NOT NULL,
+	[IDX_KEY] [varchar](255) NOT NULL
+)
+ON [PRIMARY]

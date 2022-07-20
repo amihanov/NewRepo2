@@ -1,0 +1,8 @@
+﻿[dbo].[PC_DBOBJECT].[FK_PC_DBOBJECT_PC_].sql                                                                                                                    	       73	      249
+[dbo].[PC_ICLASS_SIG].[FK_PC_ICLASS_SIG_P].sql                                                                                                                  	      397	      243
+[dbo].[PC_NAMESPACE].[FK_PC_NAMESPACE_PC].sql                                                                                                                   	      714	      248
+[dbo].[PC_NAMESPACE_SEQUENCE].[FK_PC_NAMESPACE_SE].sql                                                                                                          	     1045	      262
+[dbo].[PC_PACKAGE].[FK_PC_PACKAGE_PC_R].sql                                                                                                                     	     1379	      244
+[dbo].[PR_ATTRIBUTE].[FK_PR_ATTRIBUTE_PR].sql                                                                                                                   	     1697	      240
+[dbo].[PR_GANNOTATIONS].[FK_PR_GANNOTATIONS].sql                                                                                                                	     2014	      246
+[dbo].[PR_RESOURCE].[FK_PR_RESOURCE_PR_].sql                                                                                                                    	     2333	      245

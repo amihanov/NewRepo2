@@ -1,0 +1,11 @@
+﻿[dbo].[PoblaFlatFiles].sql                                                                                                                                      	       55	     1323
+[dbo].[PoblaFlatFilesTarget].sql                                                                                                                                	     1439	     1341
+[dbo].[PoblaRelXmlTabla].sql                                                                                                                                    	     2837	      708
+[dbo].[PoblaRelXmlTablaTarget].sql                                                                                                                              	     3608	      726
+[dbo].[RelacionaAPPC2Table].sql                                                                                                                                 	     4394	     1417
+[dbo].[RelacionaSP].sql                                                                                                                                         	     5863	      685
+[dbo].[RelacionaSpASP].sql                                                                                                                                      	     6603	     1394
+[dbo].[RelSPSP].sql                                                                                                                                             	     8045	      984
+[dbo].[RelSPTabla].sql                                                                                                                                          	     9080	      991
+[dbo].[RelSPVista].sql                                                                                                                                          	    10122	      991
+[dbo].[RelVistaTabla].sql                                                                                                                                       	    11167	      993

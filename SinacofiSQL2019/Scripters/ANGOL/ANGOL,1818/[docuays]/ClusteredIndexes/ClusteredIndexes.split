@@ -1,0 +1,14 @@
+﻿[dbo].[__MigrationHistory].[PK_dbo.__MigrationHistory].sql                                                                                                      	       87	      212
+[dbo].[AspNetRoles].[PK_dbo.AspNetRoles].sql                                                                                                                    	      372	      169
+[dbo].[AspNetUserClaims].[PK_dbo.AspNetUserClaims].sql                                                                                                          	      624	      179
+[dbo].[AspNetUserLogins].[PK_dbo.AspNetUserLogins].sql                                                                                                          	      886	      227
+[dbo].[AspNetUserRoles].[PK_dbo.AspNetUserRoles].sql                                                                                                            	     1194	      197
+[dbo].[AspNetUsers].[PK_dbo.AspNetUsers].sql                                                                                                                    	     1464	      169
+[dbo].[Atributoes].[PK_dbo.Atributoes].sql                                                                                                                      	     1704	      175
+[dbo].[Categorias].[PK_dbo.Categorias].sql                                                                                                                      	     1950	      176
+[dbo].[PiezaAtributoes].[PK_dbo.PiezaAtributoes].sql                                                                                                            	     2207	      190
+[dbo].[PiezaCategorias].[PK_dbo.PiezaCategorias].sql                                                                                                            	     2478	      191
+[dbo].[Piezas].[PK_dbo.Piezas].sql                                                                                                                              	     2732	      164
+[dbo].[PiezasTemp].[PK_dbo.PiezasTemp].sql                                                                                                                      	     2967	      176
+[dbo].[PiezasTemp2].[PK_dbo.PiezasTemp2].sql                                                                                                                    	     3216	      178
+[dbo].[Relacions].[PK_dbo.Relacions].sql                                                                                                                        	     3463	      173

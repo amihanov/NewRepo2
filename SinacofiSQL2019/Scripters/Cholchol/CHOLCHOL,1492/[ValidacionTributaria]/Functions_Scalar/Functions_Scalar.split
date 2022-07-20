@@ -1,0 +1,6 @@
+﻿[dbo].[DigitoVerificador].sql                                                                                                                                   	       58	     1671
+[dbo].[fn_diagramobjects].sql                                                                                                                                   	     1787	     1948
+[dbo].[ISZERO].sql                                                                                                                                              	     3782	     1046
+[dbo].[ivasor].sql                                                                                                                                              	     4875	      952
+[dbo].[ObtenerDigitoVerificador].sql                                                                                                                            	     5892	     1106
+[dbo].[redonsor].sql                                                                                                                                            	     7047	      930

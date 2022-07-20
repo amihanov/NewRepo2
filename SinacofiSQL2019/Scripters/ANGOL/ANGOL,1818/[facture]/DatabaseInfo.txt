@@ -1,0 +1,25 @@
+﻿Name                       : facture
+Id                         : 18
+Compatibility Level        : 140
+Recovery Model             : 
+Collation                  : SQL_Latin1_General_CP1_CI_AS
+Offline                    : False
+Read Only                  : False
+Dbo Use Only               : False
+Single User                : False
+Creation Date              : 10/16/2020 10:50:45
+Active Connections         : 17
+Last Backup Size           : 483539968
+Last Backup Size Change    : 05/10/2022 01:09:22
+Database Files Size        : 2147483648
+Log Files Size             : 52428800
+Table Size                 : 0
+Rows                       : 0
+Tables                     : 0
+Tables > 500 MB            : 0
+Tables >500 MB With Blobs  : 0
+Stored Procedures          : 0
+Functions                  : 0
+Views                      : 0
+Triggers                   : 0
+Extended Stored Procedures : 0

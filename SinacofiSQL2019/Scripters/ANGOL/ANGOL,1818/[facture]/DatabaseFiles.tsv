@@ -1,0 +1,3 @@
+Name	File Name	File Size	File Group Name	MaxSize	Growth	Is Growth Percentage	Is Disk	Is Log
+facture	E:\USER\facture\facture.mdf	2147483648	PRIMARY	-1	65536	False	True	False
+facture_log	E:\USER\facture\facture_log.ldf	52428800		2199023255552	32768	False	False	True
